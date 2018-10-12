@@ -36,3 +36,12 @@
 *.filters
 *.vcxproj
 *.sln
+*.tlog
+*.lastbuildstate
+*.pdb
+*.idb
+*.ipch
+*.opendb
+*.log
+*.ilk
+Log.txt
