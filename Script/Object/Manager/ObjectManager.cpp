@@ -10,8 +10,8 @@ ObjectManager::ObjectManager(){
 
 ObjectManager::~ObjectManager(){
 
-	const auto begin = vectorObject.begin();
-	const auto end = vectorObject.end();
+	auto begin = vectorObject.begin();
+	auto end = vectorObject.end();
 	//Šm•Û‚µ‚½ƒƒ‚ƒŠ‚Ì‰ğ•ú
 	for(auto itr = begin; itr != end; itr++){
 
@@ -27,8 +27,8 @@ ObjectManager::~ObjectManager(){
 
 void ObjectManager::Update(){
 
-	const auto begin = vectorObject.begin();
-	const auto end = vectorObject.end();
+	auto begin = vectorObject.begin();
+	auto end = vectorObject.end();
 	//XV
 	for(auto itr = begin; itr != end; itr++){
 
@@ -40,8 +40,8 @@ void ObjectManager::Update(){
 
 void ObjectManager::Draw(){
 
-	const auto begin = vectorObject.begin();
-	const auto end = vectorObject.end();
+	auto begin = vectorObject.begin();
+	auto end = vectorObject.end();
 	//•`‰æ
 	for(auto itr = begin; itr != end; itr++){
 

@@ -5,7 +5,7 @@ class PlayerController{
 public:
 	PlayerController();
 	~PlayerController();
-	void Update();
+	int Update();
 	void Draw();
 
 private:

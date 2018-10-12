@@ -2,8 +2,6 @@
 
 #include "../Library/StationeryObject.h"
 
-class Rigidbody;
-
 class Player : public BoxObject{
 
 public:
@@ -14,7 +12,6 @@ public:
 	virtual void Draw() override;
 
 private:
-	Rigidbody *rigidBody;
 
 };
 

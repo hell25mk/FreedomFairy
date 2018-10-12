@@ -8,12 +8,13 @@ PlayerController::PlayerController(){
 PlayerController::~PlayerController(){
 }
 
-void PlayerController::Update(){
+int PlayerController::Update(){
 
 	if(Keyboard::GetInstance().Input(keycode::KeyCode_Space) == 1){
 		
 	}
 
+	return 0;
 }
 
 void PlayerController::Draw(){
