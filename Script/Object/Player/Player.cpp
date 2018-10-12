@@ -1,6 +1,6 @@
 #include "Player.h"
-#include "../../Input/Keyboard.h"
-#include "../../Input/KeyCode.h"
+#include "../../Input/Keyboard/Keyboard.h"
+#include "../../Input/Keyboard/KeyCode.h"
 
 Player::Player(){
 }
