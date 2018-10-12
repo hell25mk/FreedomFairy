@@ -2,6 +2,8 @@
 
 #include "../Library/StationeryObject.h"
 
+class PlayerController;
+
 class Player : public BoxObject{
 
 public:
@@ -10,8 +12,11 @@ public:
 	virtual ~Player();
 	virtual void Update() override;
 	virtual void Draw() override;
+	void Move();
+	void Shot();
 
 private:
+	PlayerController* controller;
 
 };
 
