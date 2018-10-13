@@ -1,11 +1,11 @@
 #include "Keyboard.h"
 #include "DxLib.h"
 
-const byte Keyboard::KeyType_Num = 256;
+const char Keyboard::KeyType_Num = 256;
 
 Keyboard::Keyboard(){
 
-	arrKeyFrame = new byte[KeyType_Num];
+	arrKeyFrame = new char[KeyType_Num];
 
 }
 
