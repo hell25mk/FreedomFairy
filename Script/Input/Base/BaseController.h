@@ -5,20 +5,15 @@
 
 #pragma once
 
-enum{
-	eAtacck,
-};
-
 class BaseController{
 
 public:
 	BaseController();
-	~BaseController();
-	int Update();
-	void Draw();
+	virtual ~BaseController();
+	virtual void Update()= 0;
+	virtual int Input() = 0;
 
 private:
-	int bAttack;
 
 };
 

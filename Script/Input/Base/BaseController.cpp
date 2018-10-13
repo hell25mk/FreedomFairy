@@ -6,15 +6,14 @@ BaseController::BaseController(){
 BaseController::~BaseController(){
 }
 
-int BaseController::Update(){
+void BaseController::Update(){
 
+
+	
+}
+
+int BaseController::Input(){
 
 
 	return 0;
-}
-
-void BaseController::Draw(){
-
-
-
 }
