@@ -1,7 +1,8 @@
 #pragma once
 
-#include "../DesignPattern/Singleton.h"
+#include "../DesignPattern/Singleton/Singleton.h"
 
+class Keyboard;
 class SceneManager;
 
 class GameMain : public Singleton<GameMain>{
@@ -19,6 +20,7 @@ protected:
 
 private:
 	SceneManager* sceneManager;
+	Keyboard* keyboard;
 
 };
 

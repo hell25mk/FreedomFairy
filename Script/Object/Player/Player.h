@@ -2,6 +2,7 @@
 
 #include "../Library/StationeryObject.h"
 
+class Keyboard;
 class Controller;
 
 class Player : public BoxObject{
@@ -16,6 +17,7 @@ public:
 	void Shot();
 
 private:
+	Keyboard* keyboard;
 	Controller* controller;
 
 };

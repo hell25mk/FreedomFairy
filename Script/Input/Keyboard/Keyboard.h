@@ -1,19 +1,12 @@
 #pragma once
 
-#include "../../DesignPattern/Singleton/Singleton.h"
-
-class Keyboard : public Singleton<Keyboard>{
+class Keyboard{
 
 public:
-	friend class Singleton<Keyboard>;
-	virtual void Create() override;
-	virtual void Destroy() override;
+	Keyboard();
+	~Keyboard();
 	void Update();
 	int Input(int argKeyCode);
-
-protected:
-	Keyboard(){ }
-	virtual ~Keyboard(){ }
 
 private:
 	static const int KeyType_Num;

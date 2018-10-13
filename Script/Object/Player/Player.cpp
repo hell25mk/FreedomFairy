@@ -26,19 +26,19 @@ void Player::Draw(){
 
 void Player::Move(){
 
-	if(Keyboard::GetInstance().Input(keycode::KeyCode_Up) >= 1){
+	if(keyboard->Input(keycode::KeyCode_Up) >= 1){
 		vec2.y -= 1.5f;
 	}
 
-	if(Keyboard::GetInstance().Input(keycode::KeyCode_Down) >= 1){
+	if(keyboard->Input(keycode::KeyCode_Down) >= 1){
 		vec2.y += 1.5f;
 	}
 
-	if(Keyboard::GetInstance().Input(keycode::KeyCode_Left) >= 1){
+	if(keyboard->Input(keycode::KeyCode_Left) >= 1){
 		vec2.x -= 1.5f;
 	}
 
-	if(Keyboard::GetInstance().Input(keycode::KeyCode_Right) >= 1){
+	if(keyboard->Input(keycode::KeyCode_Right) >= 1){
 		vec2.x += 1.5f;
 	}
 
@@ -46,7 +46,7 @@ void Player::Move(){
 
 void Player::Shot(){
 
-	if(Keyboard::GetInstance().Input(keycode::KeyCode_Z) >= 1){
+	if(keyboard->Input(keycode::KeyCode_Z) >= 1){
 
 	}
 

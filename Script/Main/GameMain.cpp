@@ -1,11 +1,11 @@
 #include "GameMain.h"
-#include "../Input/Keyboard.h"
-#include "../Input/KeyCode.h"
+#include "../Input/Keyboard/Keyboard.h"
+#include "../Input/Keyboard/KeyCode.h"
 #include "../Scene/Manager/SceneManager.h"
 
 void GameMain::Create(){
 
-	Keyboard::GetInstance().Create();
+	keyboard = new Keyboard();
 	sceneManager = new SceneManager();
 
 }
@@ -13,15 +13,15 @@ void GameMain::Create(){
 void GameMain::Destroy(){
 
 	delete sceneManager;
-	Keyboard::GetInstance().Destroy();
+	delete keyboard;
 
 }
 
 bool GameMain::Update(){
 
-	Keyboard::GetInstance().Update();
+	keyboard->Update();
 
-	if(Keyboard::GetInstance().Input(keycode::KeyCode_Escape) == 1){
+	if(keyboard->Input(keycode::KeyCode_Escape) == 1){
 		return false;
 	}
 

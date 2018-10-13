@@ -3,13 +3,13 @@
 
 const int Keyboard::KeyType_Num = 256;
 
-void Keyboard::Create(){
+Keyboard::Keyboard(){
 
 	arrKeyFrame = new int[KeyType_Num];
 
 }
 
-void Keyboard::Destroy(){
+Keyboard::~Keyboard(){
 
 	delete[] arrKeyFrame;
 
