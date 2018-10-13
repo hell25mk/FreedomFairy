@@ -9,11 +9,11 @@ enum{
 	eAtacck,
 };
 
-class Controller{
+class BaseController{
 
 public:
-	Controller();
-	~Controller();
+	BaseController();
+	~BaseController();
 	int Update();
 	void Draw();
 
