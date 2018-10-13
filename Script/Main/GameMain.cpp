@@ -1,6 +1,6 @@
 #include "GameMain.h"
-#include "../Input/Keyboard/Keyboard.h"
-#include "../Input/Keyboard/KeyCode.h"
+#include "../Input/Library/Controller.h"
+#include "../Input/Library/KeyCode.h"
 #include "../Scene/Manager/SceneManager.h"
 
 void GameMain::Create(){

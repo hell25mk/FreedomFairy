@@ -3,7 +3,7 @@
 #include "../Library/StationeryObject.h"
 
 class Keyboard;
-class Controller;
+class BaseController;
 
 class Player : public BoxObject{
 
@@ -18,7 +18,7 @@ public:
 
 private:
 	Keyboard* keyboard;
-	Controller* controller;
+	BaseController* controller;
 
 };
 
