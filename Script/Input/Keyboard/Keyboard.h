@@ -9,7 +9,7 @@ public:
 	int Input(int argKeyCode);
 
 private:
-	static const int KeyType_Num;
-	int *arrKeyFrame;
+	static const byte KeyType_Num;
+	byte *arrKeyFrame;
 
 };
