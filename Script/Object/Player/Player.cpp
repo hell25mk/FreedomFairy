@@ -2,10 +2,24 @@
 #include "../../Input/Library/Controller.h"
 #include "../../Input/Library/KeyCode.h"
 
+enum EnumPlayerAction{
+	eMove_Up,
+	eMove_Down,
+	eMove_Left,
+	eMove_Right,
+
+	eAttack_Shot,
+
+	eActionNum,
+};
+
 Player::Player(){
 }
 
 Player::Player(float x, float y, int rad, unsigned int color):BoxObject(x, y, rad, color){
+
+	actionType = new bool[eActionNum];
+
 }
 
 Player::~Player(){
@@ -26,19 +40,19 @@ void Player::Draw(){
 
 void Player::Move(){
 
-	if(keyboard->Input(keycode::KeyCode_Up) >= 1){
+	if(actionType[eMove_Up]){
 		vec2.y -= 1.5f;
 	}
 
-	if(keyboard->Input(keycode::KeyCode_Down) >= 1){
+	if(actionType[eMove_Down]){
 		vec2.y += 1.5f;
 	}
 
-	if(keyboard->Input(keycode::KeyCode_Left) >= 1){
+	if(actionType[eMove_Left]){
 		vec2.x -= 1.5f;
 	}
 
-	if(keyboard->Input(keycode::KeyCode_Right) >= 1){
+	if(actionType[eMove_Right]){
 		vec2.x += 1.5f;
 	}
 
@@ -46,7 +60,7 @@ void Player::Move(){
 
 void Player::Shot(){
 
-	if(keyboard->Input(keycode::KeyCode_Z) >= 1){
+	if(actionType[eAttack_Shot]){
 
 	}
 

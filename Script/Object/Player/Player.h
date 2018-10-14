@@ -2,6 +2,8 @@
 
 #include "../Library/StationeryObject.h"
 
+enum EnumPlayerAction : int;
+
 class Keyboard;
 class BaseController;
 
@@ -19,6 +21,7 @@ public:
 private:
 	Keyboard* keyboard;
 	BaseController* controller;
+	bool* actionType;
 
 };
 
