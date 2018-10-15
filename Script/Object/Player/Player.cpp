@@ -7,7 +7,7 @@ const float Player::moveSpeed = 3.0f;
 Player::Player(){
 }
 
-Player::Player(float x, float y, int rad, unsigned int color):BoxObject(x, y, rad, color){
+Player::Player(float x, float y, int rad, unsigned int color):CircleObject(x, y, rad, color){
 
 	controller = new Controller();
 
@@ -32,7 +32,7 @@ bool Player::Update(){
 
 void Player::Draw(){
 
-	BoxObject::Draw();
+	CircleObject::Draw();
 
 }
 

@@ -4,7 +4,7 @@
 
 class Controller;
 
-class Player : public BoxObject{
+class Player : public CircleObject{
 
 public:
 	Player();
