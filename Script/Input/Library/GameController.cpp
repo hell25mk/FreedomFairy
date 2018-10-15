@@ -15,7 +15,7 @@ GameController::~GameController(){
 
 }
 
-void GameController::Update(){
+bool GameController::Update(){
 
 	char tmpKey[256];
 
@@ -31,6 +31,7 @@ void GameController::Update(){
 
 	}
 
+	return true;
 }
 
 int GameController::Input(int argKeyCode){

@@ -10,7 +10,7 @@ public:
 	Player();
 	Player(float x, float y, int rad, unsigned int color);
 	virtual ~Player();
-	virtual void Update() override;
+	virtual bool Update() override;
 	virtual void Draw() override;
 	void Move();
 	void Shot();

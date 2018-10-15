@@ -8,7 +8,7 @@ class GameController : public BaseController{
 public:
 	GameController();
 	virtual ~GameController();
-	virtual void Update() override;
+	virtual bool Update() override;
 	virtual int Input(int argKeyCode) override;
 
 private:
@@ -27,7 +27,7 @@ public:
 	PlayerController();
 	PlayerController(int actionTypeNum);
 	virtual ~PlayerController();
-	virtual void Update() override;
+	virtual bool Update() override;
 	virtual int Input(int requestCode);
 	
 private:

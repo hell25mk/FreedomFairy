@@ -10,10 +10,10 @@ BoxObject::BoxObject(float x, float y, int rad, unsigned int color):BaseObject(x
 BoxObject::~BoxObject(){
 }
 
-void BoxObject::Update(){
+bool BoxObject::Update(){
 
 
-
+	return true;
 }
 
 void BoxObject::Draw(){

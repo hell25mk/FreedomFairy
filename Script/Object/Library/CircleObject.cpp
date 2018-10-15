@@ -10,10 +10,10 @@ CircleObject::CircleObject(float x, float y, int rad, unsigned int color):BaseOb
 CircleObject::~CircleObject(){
 }
 
-void CircleObject::Update(){
+bool CircleObject::Update(){
 
 
-
+	return true;
 }
 
 void CircleObject::Draw(){

@@ -9,7 +9,7 @@ public:
 	TitleScene();
 	TitleScene(SceneManager* sMgr);
 	virtual ~TitleScene();
-	virtual void Update() override;
+	virtual bool Update() override;
 	virtual void Draw() override;
 
 };
@@ -24,7 +24,7 @@ public:
 	GameScene();
 	GameScene(SceneManager* sMgr);
 	virtual ~GameScene();
-	virtual void Update() override;
+	virtual bool Update() override;
 	virtual void Draw() override;
 
 private:

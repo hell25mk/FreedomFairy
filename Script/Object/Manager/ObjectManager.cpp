@@ -25,7 +25,7 @@ ObjectManager::~ObjectManager(){
 
 }
 
-void ObjectManager::Update(){
+bool ObjectManager::Update(){
 
 	auto begin = vectorObject.begin();
 	auto end = vectorObject.end();
@@ -36,6 +36,7 @@ void ObjectManager::Update(){
 
 	}
 
+	return true;
 }
 
 void ObjectManager::Draw(){

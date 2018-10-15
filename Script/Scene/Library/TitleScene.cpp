@@ -9,10 +9,10 @@ TitleScene::TitleScene(SceneManager* sMgr):BaseScene(sMgr){
 TitleScene::~TitleScene(){
 }
 
-void TitleScene::Update(){
+bool TitleScene::Update(){
 
 
-
+	return true;
 }
 
 void TitleScene::Draw(){

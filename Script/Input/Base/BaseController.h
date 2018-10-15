@@ -10,7 +10,7 @@ class BaseController{
 public:
 	BaseController();
 	virtual ~BaseController();
-	virtual void Update()= 0;
+	virtual bool Update()= 0;
 	virtual int Input(int argKeyCode) = 0;
 
 private:

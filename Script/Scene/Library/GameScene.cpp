@@ -16,10 +16,11 @@ GameScene::~GameScene(){
 
 }
 
-void GameScene::Update(){
+bool GameScene::Update(){
 
 	objManager->Update();
 
+	return true;
 }
 
 void GameScene::Draw(){

@@ -9,7 +9,7 @@ class SceneManager{
 public:
 	SceneManager();
 	~SceneManager();
-	void Update();
+	bool Update();
 	void Draw();
 
 private:

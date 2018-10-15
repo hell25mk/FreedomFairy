@@ -9,7 +9,7 @@ public:
 	BoxObject();
 	BoxObject(float x, float y, int rad, unsigned int color);
 	virtual ~BoxObject();
-	virtual void Update() override;
+	virtual bool Update() override;
 	virtual void Draw() override;
 
 };
@@ -22,7 +22,7 @@ public:
 	CircleObject();
 	CircleObject(float x, float y, int rad, unsigned int color);
 	virtual ~CircleObject();
-	virtual void Update() override;
+	virtual bool Update() override;
 	virtual void Draw() override;
 
 };

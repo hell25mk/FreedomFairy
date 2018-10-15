@@ -15,7 +15,7 @@ class ObjectManager{
 public:
 	ObjectManager();
 	~ObjectManager();
-	void Update();
+	bool Update();
 	void Draw();
 
 private:

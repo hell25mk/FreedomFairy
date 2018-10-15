@@ -21,13 +21,14 @@ Player::~Player(){
 
 }
 
-void Player::Update(){
+bool Player::Update(){
 
 	controller->Update();
 
 	Move();
 	Shot();
 
+	return true;
 }
 
 void Player::Draw(){

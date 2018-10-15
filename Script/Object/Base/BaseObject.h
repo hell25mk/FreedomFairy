@@ -8,7 +8,7 @@ public:
 	BaseObject();
 	BaseObject(float x, float y, int rad, unsigned int color);
 	virtual ~BaseObject();
-	virtual void Update() = 0;
+	virtual bool Update() = 0;
 	virtual void Draw() = 0;
 
 protected:

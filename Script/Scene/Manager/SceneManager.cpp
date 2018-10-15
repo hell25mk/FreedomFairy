@@ -19,10 +19,11 @@ SceneManager::~SceneManager(){
 
 }
 
-void SceneManager::Update(){
+bool SceneManager::Update(){
 
 	stackScene.top()->Update();
 
+	return true;
 }
 
 void SceneManager::Draw(){

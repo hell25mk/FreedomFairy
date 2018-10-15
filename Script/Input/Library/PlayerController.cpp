@@ -12,10 +12,11 @@ PlayerController::~PlayerController(){
 PlayerController::PlayerController(int actionTypeNum){
 }
 
-void PlayerController::Update(){
+bool PlayerController::Update(){
 
 	inputState = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
+	return true;
 }
 
 int PlayerController::Input(int requestCode){
