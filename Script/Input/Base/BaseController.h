@@ -11,7 +11,7 @@ public:
 	BaseController();
 	virtual ~BaseController();
 	virtual void Update()= 0;
-	virtual int Input() = 0;
+	virtual int Input(int argKeyCode) = 0;
 
 private:
 

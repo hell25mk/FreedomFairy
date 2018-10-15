@@ -2,9 +2,6 @@
 
 #include "../Library/StationeryObject.h"
 
-enum EnumPlayerAction : int;
-
-class Keyboard;
 class BaseController;
 
 class Player : public BoxObject{
@@ -19,9 +16,10 @@ public:
 	void Shot();
 
 private:
-	Keyboard* keyboard;
+	static const float moveSpeed;
+
+private:
 	BaseController* controller;
-	bool* actionType;
 
 };
 

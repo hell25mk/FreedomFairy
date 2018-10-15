@@ -1,31 +1,29 @@
 #include "Player.h"
+#include "DxLib.h"
 #include "../../Input/Library/Controller.h"
 #include "../../Input/Library/KeyCode.h"
 
-enum EnumPlayerAction{
-	eMove_Up,
-	eMove_Down,
-	eMove_Left,
-	eMove_Right,
-
-	eAttack_Shot,
-
-	eActionNum,
-};
+const float Player::moveSpeed = 3.0f;
 
 Player::Player(){
 }
 
 Player::Player(float x, float y, int rad, unsigned int color):BoxObject(x, y, rad, color){
 
-	actionType = new bool[eActionNum];
+	controller = new PlayerController();
 
 }
 
 Player::~Player(){
+
+	delete controller;
+	controller = NULL;
+
 }
 
 void Player::Update(){
+
+	controller->Update();
 
 	Move();
 	Shot();
@@ -40,27 +38,32 @@ void Player::Draw(){
 
 void Player::Move(){
 
-	if(actionType[eMove_Up]){
-		vec2.y -= 1.5f;
+	//上キー入力
+	if(controller->Input(PAD_INPUT_UP)){
+		vec2.y -= moveSpeed;
 	}
 
-	if(actionType[eMove_Down]){
-		vec2.y += 1.5f;
+	//下キー入力
+	if(controller->Input(PAD_INPUT_DOWN)){
+		vec2.y += moveSpeed;
 	}
 
-	if(actionType[eMove_Left]){
-		vec2.x -= 1.5f;
+	//左キー入力
+	if(controller->Input(PAD_INPUT_LEFT)){
+		vec2.x -= moveSpeed;
 	}
 
-	if(actionType[eMove_Right]){
-		vec2.x += 1.5f;
+	//右キー入力
+	if(controller->Input(PAD_INPUT_RIGHT)){
+		vec2.x += moveSpeed;
 	}
 
 }
 
 void Player::Shot(){
 
-	if(actionType[eAttack_Shot]){
+	//Zキー入力
+	if(controller->Input(PAD_INPUT_1)){
 
 	}
 

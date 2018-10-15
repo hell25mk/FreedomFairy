@@ -1,27 +1,37 @@
 #pragma once
 
-#pragma region Keyboard
-class Keyboard{
+#include "../Base/BaseController.h"
+
+#pragma region GameController
+class GameController : public BaseController{
 
 public:
-	Keyboard();
-	~Keyboard();
-	void Update();
-	int Input(int argKeyCode);
+	GameController();
+	virtual ~GameController();
+	virtual void Update() override;
+	virtual int Input(int argKeyCode) override;
 
 private:
 	static const int KeyType_Num;
+
+private:
 	int *arrKeyFrame;
 
 };
 #pragma endregion
 
-#pragma region GamePad
-class GamePad{
+#pragma region PlayerController
+class PlayerController : public BaseController{
 
 public:
-	GamePad();
-	~GamePad();
+	PlayerController();
+	PlayerController(int actionTypeNum);
+	virtual ~PlayerController();
+	virtual void Update() override;
+	virtual int Input(int requestCode);
+	
+private:
+	int inputState;
 
 };
 #pragma endregion

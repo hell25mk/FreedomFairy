@@ -5,7 +5,7 @@
 
 void GameMain::Create(){
 
-	keyboard = new Keyboard();
+	keyboard = new GameController();
 	sceneManager = new SceneManager();
 
 }
