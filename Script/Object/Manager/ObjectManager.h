@@ -5,7 +5,6 @@
 
 #pragma once
 
-#include <vector>
 #include <list>
 
 class BaseObject;
@@ -19,6 +18,8 @@ public:
 	void Draw();
 
 private:
-	std::vector<BaseObject*> vectorObject;
+	std::list<BaseObject*> listObject;
+	std::list<BaseObject*>::iterator listBegin;
+	std::list<BaseObject*>::iterator listEnd;
 
 };

@@ -4,33 +4,29 @@
 
 ObjectManager::ObjectManager(){
 
-	vectorObject.push_back(new Player(10.0f,10.0f));
+	listObject.push_back(new Player(10.0f,10.0f));
+
+	listBegin = listObject.begin();
+	listEnd = listObject.end();
 
 }
 
 ObjectManager::~ObjectManager(){
 
-	auto begin = vectorObject.begin();
-	auto end = vectorObject.end();
 	//Šm•Û‚µ‚½ƒƒ‚ƒŠ‚Ì‰ğ•ú
-	for(auto itr = begin; itr != end; itr++){
+	for(auto itr = listBegin; itr != listEnd; itr++){
 
 		delete *itr;
 		*itr = nullptr;
 
 	}
 
-	//vector‚Ì‰ğ•ú
-	std::vector<BaseObject*>().swap(vectorObject);
-
 }
 
 bool ObjectManager::Update(){
 
-	auto begin = vectorObject.begin();
-	auto end = vectorObject.end();
 	//XV
-	for(auto itr = begin; itr != end; itr++){
+	for(auto itr = listBegin; itr != listEnd; itr++){
 
 		(*itr)->Update();
 
@@ -41,10 +37,8 @@ bool ObjectManager::Update(){
 
 void ObjectManager::Draw(){
 
-	auto begin = vectorObject.begin();
-	auto end = vectorObject.end();
 	//•`‰æ
-	for(auto itr = begin; itr != end; itr++){
+	for(auto itr = listBegin; itr != listEnd; itr++){
 
 		(*itr)->Draw();
 
