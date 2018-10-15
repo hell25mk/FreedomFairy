@@ -2,7 +2,6 @@
 
 #include "../DesignPattern/Singleton/Singleton.h"
 
-class GameController;
 class SceneManager;
 
 class GameMain : public Singleton<GameMain>{
@@ -20,7 +19,6 @@ protected:
 
 private:
 	SceneManager* sceneManager;
-	GameController* keyboard;
 
 };
 
