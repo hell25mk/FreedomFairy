@@ -15,7 +15,7 @@ void GameMain::Destroy(){
 
 bool GameMain::Update(){
 
-	if(sceneManager->Update()){
+	if(!sceneManager->Update()){
 		return false;
 	}
 
