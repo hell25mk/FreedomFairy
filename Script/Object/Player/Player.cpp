@@ -1,7 +1,6 @@
 #include "Player.h"
 #include "DxLib.h"
-#include "../../Input/Library/Controller.h"
-#include "../../Input/Library/KeyCode.h"
+#include "../../Input/Controller.h"
 
 const float Player::moveSpeed = 3.0f;
 
@@ -10,7 +9,7 @@ Player::Player(){
 
 Player::Player(float x, float y, int rad, unsigned int color):BoxObject(x, y, rad, color){
 
-	controller = new PlayerController();
+	controller = new Controller();
 
 }
 

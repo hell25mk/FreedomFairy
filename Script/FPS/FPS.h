@@ -13,8 +13,8 @@ public:
 	void Wait();
 
 protected:
-	FPS();
-	virtual ~FPS();
+	FPS(){ }
+	virtual ~FPS(){ }
 	
 private:
 	static const int Sample_N;	//•½‹Ï‚ğæ‚éƒTƒ“ƒvƒ‹”

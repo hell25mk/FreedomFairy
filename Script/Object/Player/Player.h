@@ -2,7 +2,7 @@
 
 #include "../Library/StationeryObject.h"
 
-class BaseController;
+class Controller;
 
 class Player : public BoxObject{
 
@@ -19,7 +19,7 @@ private:
 	static const float moveSpeed;
 
 private:
-	BaseController* controller;
+	Controller* controller;
 
 };
 
