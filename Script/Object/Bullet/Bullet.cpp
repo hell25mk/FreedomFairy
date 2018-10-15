@@ -5,10 +5,11 @@
 Bullet::Bullet(){
 }
 
-Bullet::Bullet(float x, float y, float speed):BaseObject(x, y){
+Bullet::Bullet(Vector2D<float>* vec, float speed){
 
+	vec2.Set(vec->GetX(), vec->GetY());
 	moveSpeed = speed;
-	radius = 5;
+	radius = 3;
 	color = GetColor(255, 255, 255);
 
 }

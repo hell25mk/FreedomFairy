@@ -1,8 +1,9 @@
 #include "Player.h"
 #include "DxLib.h"
 #include "../../Input/Controller.h"
-#include "../Muzzle/Muzzle.h"
+#include "../Bullet/Bullet.h"
 #include "../../Main/Window.h"
+#include "../Manager/ObjectManager.h"
 
 const float Player::moveSpeed = 3.0f;
 
@@ -12,7 +13,6 @@ Player::Player(){
 Player::Player(float x, float y):BaseObject(x, y){
 
 	controller = new Controller();
-	muzzle = new Muzzle(&vec2);
 
 	radius = 15;
 	color = GetColor(255, 255, 255);
@@ -21,8 +21,6 @@ Player::Player(float x, float y):BaseObject(x, y){
 
 Player::~Player(){
 
-	delete muzzle;
-	muzzle = nullptr;
 	delete controller;
 	controller = nullptr;
 
@@ -34,8 +32,6 @@ bool Player::Update(){
 
 	Move();
 	Shot();
-
-	muzzle->Update();
 
 	return true;
 }
@@ -74,7 +70,8 @@ void Player::Shot(){
 
 	//ZƒL[“ü—Í
 	if(controller->Input(PAD_INPUT_1)){
-		muzzle->Shot();
+		Bullet* bullet = new Bullet(&vec2, -7.0f);
+		ObjectManager::GetInstance().ListPush(bullet);
 	}
 
 }

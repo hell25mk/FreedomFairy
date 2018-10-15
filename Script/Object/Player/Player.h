@@ -3,7 +3,6 @@
 #include "../Base/BaseObject.h"
 
 class Controller;
-class Muzzle;
 
 class Player : public BaseObject{
 
@@ -21,7 +20,6 @@ private:
 
 private:
 	Controller* controller;
-	Muzzle* muzzle;
 
 };
 
