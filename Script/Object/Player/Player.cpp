@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "DxLib.h"
 #include "../../Input/Controller.h"
+#include "../../Main/Window.h"
 
 const float Player::moveSpeed = 3.0f;
 
@@ -10,7 +11,7 @@ Player::Player(){
 Player::Player(float x, float y):BaseObject(x, y){
 
 	controller = new Controller();
-	radius = 5;
+	radius = 15;
 	color = GetColor(255, 255, 255);
 
 }
@@ -41,22 +42,22 @@ void Player::Draw(){
 void Player::Move(){
 
 	//上キー入力
-	if(controller->Input(PAD_INPUT_UP)){
+	if(controller->Input(PAD_INPUT_UP) && vec2.y >= 0.0f){
 		vec2.y -= moveSpeed;
 	}
 
 	//下キー入力
-	if(controller->Input(PAD_INPUT_DOWN)){
+	if(controller->Input(PAD_INPUT_DOWN) && vec2.y <= Window::GetInstance().GetWindowHeight()){
 		vec2.y += moveSpeed;
 	}
 
 	//左キー入力
-	if(controller->Input(PAD_INPUT_LEFT)){
+	if(controller->Input(PAD_INPUT_LEFT) && vec2.x >= 0.0f){
 		vec2.x -= moveSpeed;
 	}
 
 	//右キー入力
-	if(controller->Input(PAD_INPUT_RIGHT)){
+	if(controller->Input(PAD_INPUT_RIGHT) && vec2.x <= Window::GetInstance().GetWindowWidth()){
 		vec2.x += moveSpeed;
 	}
 
