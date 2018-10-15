@@ -1,9 +1,11 @@
 #include "FPS.h"
 #include "DxLib.h"
 #include <cmath>
+#include "../Main/Window.h"
 
 const int FPS::Sample_N = 60;
 const int FPS::Loop_FPS = 60;
+const int Color_White = GetColor(255, 255, 255);
 
 void FPS::Create(){
 
@@ -37,7 +39,7 @@ bool FPS::Update(){
 
 void FPS::Draw(){
 
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "%.1f", fps);
+	DrawFormatString(Window::GetInstance().GetWindowWidth() - 100, Window::GetInstance().GetWindowHeight() - 50, Color_White, "%.2f FPS", fps);
 
 }
 
