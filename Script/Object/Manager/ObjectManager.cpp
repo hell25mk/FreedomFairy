@@ -4,7 +4,7 @@
 
 ObjectManager::ObjectManager(){
 
-	vectorObject.push_back(new Player(10.0f,10.0f,250,GetColor(255,255,255)));
+	vectorObject.push_back(new Player(10.0f,10.0f,5,GetColor(255,255,255)));
 
 }
 
