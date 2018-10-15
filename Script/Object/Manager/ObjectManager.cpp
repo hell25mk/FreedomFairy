@@ -45,3 +45,12 @@ void ObjectManager::Draw(){
 	}
 
 }
+
+void ObjectManager::ListPush(BaseObject* obj){
+
+	listObject.push_back(obj);
+
+	listBegin = listObject.begin();
+	listEnd = listObject.end();
+
+}

@@ -16,6 +16,7 @@ public:
 	~ObjectManager();
 	bool Update();
 	void Draw();
+	void ListPush(BaseObject* obj);
 
 private:
 	std::list<BaseObject*> listObject;
