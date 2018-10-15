@@ -7,9 +7,11 @@ const float Player::moveSpeed = 3.0f;
 Player::Player(){
 }
 
-Player::Player(float x, float y, int rad, unsigned int color):CircleObject(x, y, rad, color){
+Player::Player(float x, float y):BaseObject(x, y){
 
 	controller = new Controller();
+	radius = 5;
+	color = GetColor(255, 255, 255);
 
 }
 
@@ -32,7 +34,7 @@ bool Player::Update(){
 
 void Player::Draw(){
 
-	CircleObject::Draw();
+	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);
 
 }
 

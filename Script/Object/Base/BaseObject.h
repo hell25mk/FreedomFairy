@@ -6,6 +6,7 @@ class BaseObject{
 
 public:
 	BaseObject();
+	BaseObject(float x, float y);
 	BaseObject(float x, float y, int rad, unsigned int color);
 	virtual ~BaseObject();
 	virtual bool Update() = 0;

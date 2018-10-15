@@ -3,6 +3,12 @@
 BaseObject::BaseObject(){
 }
 
+BaseObject::BaseObject(float x, float y){
+
+	this->vec2.Set(x, y);
+
+}
+
 BaseObject::BaseObject(float x, float y, int rad, unsigned int color){
 
 	this->vec2.Set(x, y);

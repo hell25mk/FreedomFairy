@@ -1,14 +1,14 @@
 #pragma once
 
-#include "../Library/StationeryObject.h"
+#include "../Base/BaseObject.h"
 
 class Controller;
 
-class Player : public CircleObject{
+class Player : public BaseObject{
 
 public:
 	Player();
-	Player(float x, float y, int rad, unsigned int color);
+	Player(float x, float y);
 	virtual ~Player();
 	virtual bool Update() override;
 	virtual void Draw() override;
