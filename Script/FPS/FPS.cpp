@@ -39,7 +39,7 @@ bool FPS::Update(){
 
 void FPS::Draw(){
 
-	DrawFormatString(Window::GetInstance().GetWindowWidth() - 100, Window::GetInstance().GetWindowHeight() - 50, Color_White, "%.2f FPS", fps);
+	DrawFormatString(Window::GetInstance().GetWindowWidth() - 100, Window::GetInstance().GetWindowHeight() - 30, Color_White, "%.2f FPS", fps);
 
 }
 

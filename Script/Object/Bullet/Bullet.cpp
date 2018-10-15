@@ -1,20 +1,30 @@
 #include "Bullet.h"
-#include "../../Main/Window.h"
 #include "DxLib.h"
+
+const int Game_WidthSize = 420;
+const int Game_HeightSize = 480;
+
+const int Image_AllNum = 176;
+const int Image_Size = 16;
 
 Bullet::Bullet(){
 }
 
-Bullet::Bullet(Vector2D<float>* vec, float speed){
+Bullet::Bullet(Vector2D<float> vec, float speed){
 
-	vec2.Set(vec->GetX(), vec->GetY());
+	vec2 = vec;
 	moveSpeed = speed;
-	radius = 3;
-	color = GetColor(255, 255, 255);
+	
+	image = new int[Image_AllNum];
+	LoadDivGraph("Image/Bullet/danmaku.png", Image_AllNum, 16, 11, Image_Size, Image_Size, image);
+	
 
 }
 
 Bullet::~Bullet(){
+
+	delete[] image;
+
 }
 
 bool Bullet::Update(){
@@ -25,7 +35,7 @@ bool Bullet::Update(){
 		return false;
 	}
 
-	if(vec2.GetY() >= Window::GetInstance().GetWindowHeight()){
+	if(vec2.GetY() >= Game_HeightSize){
 		return false;
 	}
 
@@ -33,7 +43,7 @@ bool Bullet::Update(){
 		return false;
 	}
 
-	if(vec2.GetX() >= Window::GetInstance().GetWindowWidth()){
+	if(vec2.GetX() >= Game_WidthSize){
 		return false;
 	}
 
@@ -42,6 +52,6 @@ bool Bullet::Update(){
 
 void Bullet::Draw(){
 
-	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);
+	DrawRotaGraph(vec2.GetDx(), vec2.GetDy(), 1.0, 0.0, image[48], true);
 
 }

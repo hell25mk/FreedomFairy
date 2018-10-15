@@ -16,10 +16,9 @@ public:
 	void Shot();
 
 private:
-	static const float moveSpeed;
-
-private:
 	Controller* controller;
+	int* image;
+	float moveSpeed;
 
 };
 
