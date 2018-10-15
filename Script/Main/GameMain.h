@@ -3,6 +3,7 @@
 #include "../DesignPattern/Singleton/Singleton.h"
 
 class SceneManager;
+class FPS;
 
 class GameMain : public Singleton<GameMain>{
 
@@ -19,6 +20,7 @@ protected:
 
 private:
 	SceneManager* sceneManager;
+	FPS* fpsManager;
 
 };
 
