@@ -5,9 +5,10 @@
 Bullet::Bullet(){
 }
 
-Bullet::Bullet(float x, float y):BaseObject(x, y){
+Bullet::Bullet(float x, float y, float speed):BaseObject(x, y){
 
-	radius = 15;
+	moveSpeed = speed;
+	radius = 5;
 	color = GetColor(255, 255, 255);
 
 }

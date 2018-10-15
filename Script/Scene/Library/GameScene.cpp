@@ -6,25 +6,25 @@ GameScene::GameScene(){
 
 GameScene::GameScene(SceneManager* sMgr):BaseScene(sMgr){
 
-	objManager = new ObjectManager();
+	ObjectManager::GetInstance().Create();
 
 }
 
 GameScene::~GameScene(){
 
-	delete objManager;
+	ObjectManager::GetInstance().Destroy();
 
 }
 
 bool GameScene::Update(){
 
-	objManager->Update();
+	ObjectManager::GetInstance().Update();
 
 	return true;
 }
 
 void GameScene::Draw(){
 
-	objManager->Draw();
+	ObjectManager::GetInstance().Draw();
 
 }

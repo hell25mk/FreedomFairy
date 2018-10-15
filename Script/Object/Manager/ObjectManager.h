@@ -5,18 +5,24 @@
 
 #pragma once
 
+#include "../../DesignPattern/Singleton/Singleton.h"
 #include <list>
 
 class BaseObject;
 
-class ObjectManager{
+class ObjectManager : public Singleton<ObjectManager>{
 
 public:
-	ObjectManager();
-	~ObjectManager();
+	friend class Singleton<ObjectManager>;
+	virtual void Create() override;
+	virtual void Destroy() override;
 	bool Update();
 	void Draw();
 	void ListPush(BaseObject* obj);
+
+protected:
+	ObjectManager(){ }
+	virtual ~ObjectManager(){ }
 
 private:
 	std::list<BaseObject*> listObject;

@@ -2,16 +2,16 @@
 #include "../Player/Player.h"
 #include "DxLib.h"
 
-ObjectManager::ObjectManager(){
+void ObjectManager::Create(){
 
-	listObject.push_back(new Player(10.0f,10.0f));
+	listObject.push_back(new Player(10.0f, 10.0f));
 
 	listBegin = listObject.begin();
 	listEnd = listObject.end();
 
 }
 
-ObjectManager::~ObjectManager(){
+void ObjectManager::Destroy(){
 
 	//Šm•Û‚µ‚½ƒƒ‚ƒŠ‚Ì‰ð•ú
 	for(auto itr = listBegin; itr != listEnd; itr++){
@@ -26,9 +26,16 @@ ObjectManager::~ObjectManager(){
 bool ObjectManager::Update(){
 
 	//XV
-	for(auto itr = listBegin; itr != listEnd; itr++){
+	for(auto itr = listBegin; itr != listEnd; ){
 
-		(*itr)->Update();
+		if(!(*itr)->Update()){
+			delete *itr;
+			*itr = nullptr;
+			itr = listObject.erase(itr);
+			continue;
+		}
+
+		itr++;
 
 	}
 
@@ -43,6 +50,12 @@ void ObjectManager::Draw(){
 		(*itr)->Draw();
 
 	}
+
+#ifdef _DEBUG
+	clsDx();
+	printfDx("%d", listObject.size());
+#endif // _DEBUG
+
 
 }
 

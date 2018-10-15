@@ -16,8 +16,6 @@ public:
 #pragma endregion
 
 #pragma region GameScene
-class ObjectManager;
-
 class GameScene : public BaseScene{
 
 public:
@@ -26,9 +24,6 @@ public:
 	virtual ~GameScene();
 	virtual bool Update() override;
 	virtual void Draw() override;
-
-private:
-	ObjectManager* objManager;
 
 };
 #pragma endregion
