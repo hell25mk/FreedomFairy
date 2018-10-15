@@ -1,14 +1,21 @@
 #pragma once
 
-class FPS{
+#include "../DesignPattern/Singleton/Singleton.h"
+
+class FPS : public Singleton<FPS>{
 
 public:
-	FPS();
-	~FPS();
+	friend class Singleton<FPS>;
+	virtual void Create() override;
+	virtual void Destroy() override;
 	bool Update();
 	void Draw();
 	void Wait();
 
+protected:
+	FPS();
+	virtual ~FPS();
+	
 private:
 	static const int Sample_N;	//•½‹Ï‚ğæ‚éƒTƒ“ƒvƒ‹”
 	static const int Loop_FPS;	//İ’è‚µ‚½FPS

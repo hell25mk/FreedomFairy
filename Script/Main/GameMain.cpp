@@ -4,28 +4,27 @@
 
 void GameMain::Create(){
 
+	FPS::GetInstance().Create();
 	sceneManager = new SceneManager();
-	fpsManager = new FPS();
 
 }
 
 void GameMain::Destroy(){
 
-	delete fpsManager;
 	delete sceneManager;
+	FPS::GetInstance().Destroy();
 
 }
 
 bool GameMain::Update(){
 
-	fpsManager->Update();
+	FPS::GetInstance().Update();
 
 	if(!sceneManager->Update()){
 		return false;
 	}
-
-	fpsManager->Draw();
-	fpsManager->Wait();
+	
+	FPS::GetInstance().Wait();
 
 	return true;
 }
@@ -33,5 +32,6 @@ bool GameMain::Update(){
 void GameMain::Draw(){
 
 	sceneManager->Draw();
+	FPS::GetInstance().Draw();
 
 }

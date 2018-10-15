@@ -5,11 +5,15 @@
 const int FPS::Sample_N = 60;
 const int FPS::Loop_FPS = 60;
 
-FPS::FPS(){
+void FPS::Create(){
 
 	startTime = 0;
 	count = 0;
 	fps = 0;
+
+}
+
+void FPS::Destroy(){
 
 }
 
