@@ -15,15 +15,17 @@ Bullet::Bullet(Vector2D<float> vec, float speed){
 	vec2 = vec;
 	moveSpeed = speed;
 	
-	image = new int[Image_AllNum];
-	LoadDivGraph("Image/Bullet/danmaku.png", Image_AllNum, 16, 11, Image_Size, Image_Size, image);
+	//image = new int[Image_AllNum];
+	//LoadDivGraph("Image/Bullet/danmaku.png", Image_AllNum, 16, 11, Image_Size, Image_Size, image);
 	
+	radius = 5;
+	color = GetColor(255, 255, 0);
 
 }
 
 Bullet::~Bullet(){
 
-	delete[] image;
+	//delete[] image;
 
 }
 
@@ -52,6 +54,7 @@ bool Bullet::Update(){
 
 void Bullet::Draw(){
 
-	DrawRotaGraph(vec2.GetDx(), vec2.GetDy(), 1.0, 0.0, image[48], true);
+	DrawCircle(vec2.GetDx(), vec2.GetDy(),radius, color, true);		//‰¼•`‰æ
+	//DrawRotaGraph(vec2.GetDx(), vec2.GetDy(), 1.0, 0.0, image[48], true);
 
 }

@@ -12,7 +12,6 @@ public:
 	virtual void Draw() override;
 
 private:
-	static int* image;
 	float moveSpeed;
 
 };

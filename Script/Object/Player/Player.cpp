@@ -16,17 +16,20 @@ Player::Player(){
 Player::Player(float x, float y):BaseObject(x, y){
 
 	controller = new Controller();
-	image = new int[Image_AllNum];
-	LoadDivGraph("Image/Player/furan.png", Image_AllNum, 3, 4, Image_Size, Image_Size, image);
+	//image = new int[Image_AllNum];
+	//LoadDivGraph("Image/Player/furan.png", Image_AllNum, 3, 4, Image_Size, Image_Size, image);
 
 	moveSpeed = 3.0f;
+
+	radius = 25;
+	color = GetColor(255, 255, 255);
 
 }
 
 Player::~Player(){
 
-	delete[] image;
-	image = nullptr;
+	//delete[] image;
+	//image = nullptr;
 	delete controller;
 	controller = nullptr;
 
@@ -44,7 +47,8 @@ bool Player::Update(){
 
 void Player::Draw(){
 
-	DrawRotaGraph(vec2.GetDx(), vec2.GetDy(), 0.7, 0.0, image[10], true);
+	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);
+	//DrawRotaGraph(vec2.GetDx(), vec2.GetDy(), 0.7, 0.0, image[10], true);
 
 }
 
