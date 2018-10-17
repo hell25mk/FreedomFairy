@@ -20,6 +20,7 @@ Player::Player(float x, float y):BaseObject(x, y){
 	//LoadDivGraph("Image/Player/furan.png", Image_AllNum, 3, 4, Image_Size, Image_Size, image);
 
 	moveSpeed = 3.0f;
+	isAlive = true;
 
 	radius = 25;
 	color = GetColor(255, 255, 255);
@@ -42,7 +43,7 @@ bool Player::Update(){
 	Move();
 	Shot();
 
-	return true;
+	return isAlive;
 }
 
 void Player::Draw(){

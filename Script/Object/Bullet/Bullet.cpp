@@ -14,7 +14,7 @@ Bullet::Bullet(Vector2D<float> vec, float speed){
 
 	vec2 = vec;
 	moveSpeed = speed;
-	
+	isAlive = true;
 	//image = new int[Image_AllNum];
 	//LoadDivGraph("Image/Bullet/danmaku.png", Image_AllNum, 16, 11, Image_Size, Image_Size, image);
 	
@@ -49,7 +49,7 @@ bool Bullet::Update(){
 		return false;
 	}
 
-	return true;
+	return isAlive;
 }
 
 void Bullet::Draw(){

@@ -22,3 +22,9 @@ BaseObject::~BaseObject(){
 
 
 }
+
+void BaseObject::SetAlive(bool alive){
+
+	isAlive = alive;
+
+}
