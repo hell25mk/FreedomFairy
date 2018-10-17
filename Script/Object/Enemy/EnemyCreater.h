@@ -1,20 +1,24 @@
 #pragma once
 
-#include <list>
+#include "../../DesignPattern/Singleton/Singleton.h"
 
 class Enemy;
 
-class EnemyCreater{
+class EnemyCreater : public Singleton<EnemyCreater>{
 
 public:
-	EnemyCreater();
-	~EnemyCreater();
+	friend class Singleton<EnemyCreater>;
+	virtual void Create() override;
+	virtual void Destroy() override;
 	bool Update();
-	void Create();
+	void EnemyCreate();
+
+protected:
+	EnemyCreater(){ }
+	virtual ~EnemyCreater(){ }
 
 private:
 	int count;
-	std::list<Enemy*> listEnemy;
 
 };
 
