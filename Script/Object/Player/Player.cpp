@@ -22,7 +22,7 @@ Player::Player(float x, float y):BaseObject(x, y){
 	moveSpeed = 3.0f;
 	isAlive = true;
 
-	radius = 25;
+	radius = 20;
 	color = GetColor(255, 255, 255);
 
 }

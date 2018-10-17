@@ -25,6 +25,6 @@ bool Enemy::Update(){
 
 void Enemy::Draw(){
 
-	DrawCircle(vec2.GetDx(), vec2.GetDy, radius, color, true);
+	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);
 
 }
