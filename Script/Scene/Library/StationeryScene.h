@@ -16,6 +16,9 @@ public:
 #pragma endregion
 
 #pragma region GameScene
+
+class EnemyCreater;
+
 class GameScene : public BaseScene{
 
 public:
@@ -24,6 +27,9 @@ public:
 	virtual ~GameScene();
 	virtual bool Update() override;
 	virtual void Draw() override;
+
+private:
+	EnemyCreater* enemyCreater;
 
 };
 #pragma endregion

@@ -4,11 +4,13 @@
 Enemy::Enemy(){
 }
 
-Enemy::Enemy(float x, float y){
+Enemy::Enemy(float x, float y, float speed){
 
 	vec2.Set(x, y);
 	isAlive = true;
-	radius = 25;
+	moveSpeed = speed;
+
+	radius = 20;
 	color = GetColor(255, 0, 0);
 
 }
@@ -18,7 +20,11 @@ Enemy::~Enemy(){
 
 bool Enemy::Update(){
 
+	vec2.Add(0.0f, moveSpeed);
 
+	if(vec2.GetY() >= 480){
+		return false;
+	}
 
 	return isAlive;
 }
