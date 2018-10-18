@@ -3,6 +3,7 @@
 #include "../../DesignPattern/Singleton/Singleton.h"
 #include <list>
 
+class BaseObject;
 class BaseCollider;
 
 class ColliderManager : public Singleton<ColliderManager>{
@@ -13,15 +14,15 @@ public:
 	virtual void Destroy() override;
 	bool Update();
 	void ListPush(BaseCollider* collider,int tag);
+	void HitCheck(BaseObject* obj, int tag);
 
 protected:
 	ColliderManager(){ }
 	virtual ~ColliderManager(){ }
 
 private:
-	std::list<BaseCollider*> listPlayerCollider;
-	std::list<BaseCollider*> listEnemyCollider;
-	std::list<BaseCollider*> listBulletCollider;
+	std::list<BaseCollider*> listPlayerSideCollider;
+	std::list<BaseCollider*> listEnemySideCollider;
 
 };
 

@@ -1,6 +1,9 @@
 #include "BaseObject.h"
 
 BaseObject::BaseObject(){
+
+	objectTag = 0;
+
 }
 
 BaseObject::BaseObject(float x, float y){
@@ -20,6 +23,22 @@ BaseObject::BaseObject(float x, float y, int rad, unsigned int color){
 BaseObject::~BaseObject(){
 
 
+
+}
+
+Vector2D<float> BaseObject::GetVector(){
+
+	return vec2;
+}
+
+int BaseObject::GetRadius(){
+
+	return radius;
+}
+
+void BaseObject::SetObjectTag(int tag){
+
+	objectTag = tag;
 
 }
 

@@ -37,7 +37,7 @@ void Muzzle::Draw(){
 
 void Muzzle::Shot(){
 
-	Bullet* bullet = new Bullet(mvec2->GetX(), mvec2->GetY(), -5.0f);
-	ObjectManager::GetInstance().ListPush(bullet);
+	//Bullet* bullet = new Bullet(mvec2->GetX(), mvec2->GetY(), -5.0f);
+	//ObjectManager::GetInstance().ListPush(bullet);
 
 }

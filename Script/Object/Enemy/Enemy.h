@@ -12,7 +12,7 @@ public:
 	virtual void Draw() override;
 
 private:
-	float moveSpeed;
+	float moveVector;
 
 };
 

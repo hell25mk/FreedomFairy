@@ -8,7 +8,8 @@ Enemy::Enemy(float x, float y, float speed){
 
 	vec2.Set(x, y);
 	isAlive = true;
-	moveSpeed = speed;
+	moveVector = speed;
+	objectTag = eTag_Enemy;
 
 	radius = 20;
 	color = GetColor(255, 0, 0);
@@ -16,11 +17,13 @@ Enemy::Enemy(float x, float y, float speed){
 }
 
 Enemy::~Enemy(){
+
+
 }
 
 bool Enemy::Update(){
 
-	vec2.Add(0.0f, moveSpeed);
+	vec2.Add(0.0f, moveVector);
 
 	if(vec2.GetY() >= 480){
 		return false;

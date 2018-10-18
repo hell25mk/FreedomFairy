@@ -1,28 +1,24 @@
 #include "StationeryCollider.h"
+#include "DxLib.h"
 
 CircleCollider::CircleCollider(){
+}
 
-
-
+CircleCollider::CircleCollider(Vector2D<float> &vec, int rad, int tag):BaseCollider(vec,rad,tag){
 }
 
 CircleCollider::~CircleCollider(){
-
-
-
 }
 
-CircleCollider::CircleCollider(Vector2D<float> &vec, int rad){
+bool CircleCollider::Update(){
 
-	this->vec2 = &vec;
-	this->radius = rad;
 
+
+	return true;
 }
 
-CircleCollider::CircleCollider(Vector2D<float> &vec, int rad, int tag){
+void CircleCollider::Draw(){
 
-	this->vec2 = &vec;
-	this->radius = rad;
-	objectTag = tag;
+	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);
 
 }

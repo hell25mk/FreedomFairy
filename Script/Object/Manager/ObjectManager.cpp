@@ -51,12 +51,6 @@ void ObjectManager::Draw(){
 
 	}
 
-#ifdef _DEBUG
-	clsDx();
-	printfDx("%d", listObject.size());
-#endif // _DEBUG
-
-
 }
 
 void ObjectManager::ListPush(BaseObject* obj){

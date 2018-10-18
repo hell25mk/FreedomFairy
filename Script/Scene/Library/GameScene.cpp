@@ -10,15 +10,13 @@ GameScene::GameScene(SceneManager* sMgr):BaseScene(sMgr){
 
 	ObjectManager::GetInstance().Create();
 	ColliderManager::GetInstance().Create();
-	enemyCreater = new EnemyCreater();
+	EnemyCreater::GetInstance().Create();
 
 }
 
 GameScene::~GameScene(){
 
-	delete enemyCreater;
-	enemyCreater = nullptr;
-
+	EnemyCreater::GetInstance().Destroy();
 	ColliderManager::GetInstance().Destroy();
 	ObjectManager::GetInstance().Destroy();
 
@@ -28,7 +26,7 @@ bool GameScene::Update(){
 
 	ObjectManager::GetInstance().Update();
 	ColliderManager::GetInstance().Update();
-	enemyCreater->Update();
+	EnemyCreater::GetInstance().Update();
 
 	return true;
 }

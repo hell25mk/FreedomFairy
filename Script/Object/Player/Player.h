@@ -3,6 +3,7 @@
 #include "../Base/BaseObject.h"
 
 class Controller;
+class BaseCollider;
 
 class Player : public BaseObject{
 
@@ -17,8 +18,9 @@ public:
 
 private:
 	Controller* controller;
+	BaseCollider* collider;
 	int* image;
-	float moveSpeed;
+	float moveVector;
 
 };
 
