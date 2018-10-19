@@ -49,6 +49,8 @@ bool Player::Update(){
 	Move();
 	Shot();
 
+	collider->SetVector(vec2);
+
 	return isAlive;
 }
 
