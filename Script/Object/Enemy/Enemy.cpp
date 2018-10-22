@@ -1,23 +1,26 @@
 #include "Enemy.h"
 #include "DxLib.h"
+#include "../../Collider/Library/StationeryCollider.h"
 
 Enemy::Enemy(){
 }
 
-Enemy::Enemy(float x, float y, float speed){
+Enemy::Enemy(float x, float y, float speed):BaseObject(x, y){
 
-	vec2.Set(x, y);
 	isAlive = true;
 	moveVector = speed;
-	objectTag = eTag_Enemy;
 
 	radius = 20;
 	color = GetColor(255, 0, 0);
+
+	collider = new CircleCollider(vec2, 15, eTag_Enemy);
 
 }
 
 Enemy::~Enemy(){
 
+	delete collider;
+	collider = nullptr;
 
 }
 
@@ -29,11 +32,14 @@ bool Enemy::Update(){
 		return false;
 	}
 
+	collider->SetVector(vec2);
+
 	return isAlive;
 }
 
 void Enemy::Draw(){
 
 	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);
+	collider->Draw();
 
 }

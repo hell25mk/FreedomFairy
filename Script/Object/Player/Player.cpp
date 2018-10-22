@@ -19,7 +19,6 @@ Player::Player(float x, float y):BaseObject(x, y){
 
 	moveVector = 3.0f;
 	isAlive = true;
-	objectTag = eTag_Player;
 
 	radius = 20;
 	color = GetColor(255, 255, 255);
@@ -27,16 +26,11 @@ Player::Player(float x, float y):BaseObject(x, y){
 	controller = new Controller();
 	collider = new CircleCollider(vec2, 15, eTag_Player);
 
-	//image = new int[Image_AllNum];
-	//LoadDivGraph("Image/Player/furan.png", Image_AllNum, 3, 4, Image_Size, Image_Size, image);
-
 
 }
 
 Player::~Player(){
 
-	//delete[] image;
-	//image = nullptr;
 	SELF_DELETE(collider);
 	SELF_DELETE(controller);
 
@@ -57,7 +51,6 @@ bool Player::Update(){
 void Player::Draw(){
 
 	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);
-	//DrawRotaGraph(vec2.GetDx(), vec2.GetDy(), 0.7, 0.0, image[10], true);
 	collider->Draw();
 
 }

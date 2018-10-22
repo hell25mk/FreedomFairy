@@ -19,7 +19,6 @@ public:
 private:
 	Controller* controller;
 	BaseCollider* collider;
-	int* image;
 	float moveVector;
 
 };

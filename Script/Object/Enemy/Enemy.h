@@ -2,6 +2,8 @@
 
 #include "../Base/BaseObject.h"
 
+class BaseCollider;
+
 class Enemy : public BaseObject{
 
 public:
@@ -12,6 +14,7 @@ public:
 	virtual void Draw() override;
 
 private:
+	BaseCollider* collider;
 	float moveVector;
 
 };

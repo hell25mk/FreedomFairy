@@ -1,9 +1,6 @@
 #include "BaseObject.h"
 
 BaseObject::BaseObject(){
-
-	objectTag = 0;
-
 }
 
 BaseObject::BaseObject(float x, float y){
@@ -35,13 +32,6 @@ int BaseObject::GetRadius(){
 
 	return radius;
 }
-
-void BaseObject::SetObjectTag(int tag){
-
-	objectTag = tag;
-
-}
-
 void BaseObject::SetAlive(bool alive){
 
 	isAlive = alive;
