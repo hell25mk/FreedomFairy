@@ -12,6 +12,7 @@ BaseCollider::BaseCollider(){
 BaseCollider::BaseCollider(Vector2D<float> vec, int rad, int tag){
 
 	isHit = false;
+	isAlive = true;
 	color = Color_Green;
 	this->vec2 = vec;
 	this->radius = rad;
@@ -29,7 +30,7 @@ BaseCollider::~BaseCollider(){
 bool BaseCollider::Update(){
 
 
-	return true;
+	return isAlive;
 }
 
 void BaseCollider::SetVector(Vector2D<float> vec){
@@ -43,18 +44,29 @@ Vector2D<float> BaseCollider::GetVector(){
 	return vec2;
 }
 
-void BaseCollider::SetAlive(bool alive){
-
-	isHit = alive;
-
-}
-
 int BaseCollider::GetRadius(){
 
 	return radius;
 }
 
+void BaseCollider::SetHitFlag(bool hit){
+
+	isHit = hit;
+
+}
+
 bool BaseCollider::GetHitFlag(){
 
 	return isHit;
+}
+
+void BaseCollider::SetAliveFlag(bool alive){
+
+	isAlive = alive;
+
+}
+
+bool BaseCollider::GetAliveFlag(){
+
+	return isAlive;
 }

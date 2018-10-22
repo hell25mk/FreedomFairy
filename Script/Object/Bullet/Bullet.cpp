@@ -1,5 +1,6 @@
 #include "Bullet.h"
 #include "DxLib.h"
+#include "../../Collider/Library/StationeryCollider.h"
 
 const int Game_WidthSize = 420;
 const int Game_HeightSize = 480;
@@ -19,11 +20,13 @@ Bullet::Bullet(Vector2D<float> vec, int rad, float speed){
 	radius = rad;
 	color = GetColor(255, 255, 0);
 
+	collider = new CircleCollider(vec2, radius, eTag_Player);
+
 }
 
 Bullet::~Bullet(){
 
-
+	collider->SetAliveFlag(false);
 
 }
 
@@ -46,6 +49,8 @@ bool Bullet::Update(){
 	if(vec2.GetX() >= Game_WidthSize){
 		return false;
 	}
+
+	collider->SetVector(vec2);
 
 	return isAlive;
 }

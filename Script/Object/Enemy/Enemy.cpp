@@ -19,12 +19,15 @@ Enemy::Enemy(float x, float y, float speed):BaseObject(x, y){
 
 Enemy::~Enemy(){
 
-	delete collider;
-	collider = nullptr;
+	collider->SetAliveFlag(false);
 
 }
 
 bool Enemy::Update(){
+
+	if(collider->GetHitFlag()){
+		return false;
+	}
 
 	vec2.Add(0.0f, moveVector);
 

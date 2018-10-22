@@ -14,7 +14,8 @@ public:
 	virtual void Destroy() override;
 	bool Update();
 	void ListPush(BaseCollider* collider,int tag);
-	void HitCheck(BaseObject* obj, int tag);
+	void AliveCheck();
+	void HitCheck();
 
 protected:
 	ColliderManager(){ }

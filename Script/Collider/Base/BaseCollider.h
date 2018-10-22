@@ -13,12 +13,15 @@ public:
 
 	void SetVector(Vector2D<float> vec);
 	Vector2D<float> GetVector();
-	void SetAlive(bool alive);
-	int GetRadius();
+	void SetHitFlag(bool hit);
 	bool GetHitFlag();
+	void SetAliveFlag(bool alive);
+	bool GetAliveFlag();
+	int GetRadius();
 
 protected:
 	bool isHit;
+	bool isAlive;
 	Vector2D<float> vec2;
 	int radius;
 	int objectTag;

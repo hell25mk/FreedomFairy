@@ -31,7 +31,7 @@ Player::Player(float x, float y):BaseObject(x, y){
 
 Player::~Player(){
 
-	SELF_DELETE(collider);
+	collider->SetAliveFlag(false);
 	SELF_DELETE(controller);
 
 }
