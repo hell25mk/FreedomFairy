@@ -16,14 +16,15 @@ public:
 	void ListPush(BaseCollider* collider,int tag);
 	void AliveCheck();
 	void HitCheck();
+	bool Squea(BaseCollider* obj1, BaseCollider* obj2);
 
 protected:
 	ColliderManager(){ }
 	virtual ~ColliderManager(){ }
 
 private:
-	std::list<BaseCollider*> listPlayerSideCollider;
-	std::list<BaseCollider*> listEnemySideCollider;
+	std::list<BaseCollider*> listPlayerCollider;
+	std::list<BaseCollider*> listEnemyCollider;
 
 };
 

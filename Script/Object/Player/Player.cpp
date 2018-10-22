@@ -8,6 +8,7 @@
 
 const int Game_WidthSize = 420;
 const int Game_HeightSize = 480;
+const int Hit_Range = 3;
 
 const int Image_AllNum = 12;
 const int Image_Size = 48;
@@ -24,7 +25,7 @@ Player::Player(float x, float y):BaseObject(x, y){
 	color = GetColor(255, 255, 255);
 
 	controller = new Controller();
-	collider = new CircleCollider(vec2, 5, eTag_Player);
+	collider = new CircleCollider(vec2, 3, eTag_Player);
 
 
 }

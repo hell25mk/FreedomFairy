@@ -30,7 +30,7 @@ BaseCollider::~BaseCollider(){
 bool BaseCollider::Update(){
 
 
-	return isAlive;
+	return true;
 }
 
 void BaseCollider::SetVector(Vector2D<float> vec){

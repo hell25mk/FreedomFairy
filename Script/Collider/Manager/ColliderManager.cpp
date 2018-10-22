@@ -1,7 +1,6 @@
 #include "ColliderManager.h"
 #include "../Base/BaseCollider.h"
 #include "../../System/Vector2D.h"
-#include "DxLib.h"
 
 void ColliderManager::Create(){
 
@@ -21,9 +20,6 @@ bool ColliderManager::Update(){
 
 	HitCheck();
 
-	clsDx();
-	printfDx("p:%d , e:%d", listPlayerSideCollider.size(), listEnemySideCollider.size());
-
 	return true;
 }
 
@@ -31,10 +27,10 @@ void ColliderManager::ListPush(BaseCollider* collider, int tag){
 
 	switch(tag){
 		case 0:
-			listPlayerSideCollider.push_back(collider);
+			listPlayerCollider.push_back(collider);
 			break;
 		case 1:
-			listEnemySideCollider.push_back(collider);
+			listEnemyCollider.push_back(collider);
 			break;
 	}
 
@@ -42,29 +38,31 @@ void ColliderManager::ListPush(BaseCollider* collider, int tag){
 
 void ColliderManager::AliveCheck(){
 
-	for(auto pItr = listPlayerSideCollider.begin(); pItr != listPlayerSideCollider.end();){
+	//std::list<BaseCollider*> temp = listPlayerCollider;
 
-		if(!(*pItr)->GetAliveFlag()){
-			delete *pItr;
-			*pItr = nullptr;
-			pItr = listPlayerSideCollider.erase(pItr);
+	for(auto itr = listPlayerCollider.begin(), end = listPlayerCollider.end(); itr != end;){
+
+		if(!(*itr)->GetAliveFlag()){
+			delete *itr;
+			*itr = nullptr;
+			itr = listPlayerCollider.erase(itr);
 			continue;
 		}
 
-		pItr++;
+		itr++;
 
 	}
 
-	for(auto eItr = listEnemySideCollider.begin(); eItr != listEnemySideCollider.end();){
+	for(auto itr = listEnemyCollider.begin(), end = listEnemyCollider.end(); itr != end;){
 
-		if(!(*eItr)->GetAliveFlag()){
-			delete *eItr;
-			*eItr = nullptr;
-			eItr = listEnemySideCollider.erase(eItr);
+		if(!(*itr)->GetAliveFlag()){
+			delete *itr;
+			*itr = nullptr;
+			itr = listEnemyCollider.erase(itr);
 			continue;
 		}
 
-		eItr++;
+		itr++;
 
 	}
 
@@ -72,18 +70,10 @@ void ColliderManager::AliveCheck(){
 
 void ColliderManager::HitCheck(){
 
-	for(auto pItr = listPlayerSideCollider.begin(); pItr != listPlayerSideCollider.end();){
+	for(auto pItr = listPlayerCollider.begin(); pItr != listPlayerCollider.end();){
+		for(auto eItr = listEnemyCollider.begin(); eItr != listEnemyCollider.end();){
 
-		for(auto eItr = listEnemySideCollider.begin(); eItr != listEnemySideCollider.end();){
-
-			Vector2D<float> obj1 = (*pItr)->GetVector();
-			Vector2D<float> obj2 = (*eItr)->GetVector();
-
-			float px = (obj1.GetX() - obj2.GetX()) * (obj1.GetX() - obj2.GetX());
-			float py = (obj1.GetY() - obj2.GetY()) * (obj1.GetY() - obj2.GetY());
-			int rad = ((*pItr)->GetRadius() + (*eItr)->GetRadius() * (*pItr)->GetRadius() + (*eItr)->GetRadius());
-
-			if(rad >= (px + py)){
+			if(this->Squea(*pItr,*eItr)){
 				(*pItr)->SetHitFlag(true);
 				(*eItr)->SetHitFlag(true);
 			}
@@ -96,4 +86,20 @@ void ColliderManager::HitCheck(){
 
 	}
 
+}
+
+bool ColliderManager::Squea(BaseCollider* obj1,BaseCollider* obj2){
+
+	Vector2D<float> v1 = obj1->GetVector();
+	Vector2D<float> v2 = obj2->GetVector();
+
+	float px = (v1.GetX() - v2.GetX()) * (v1.GetX() - v2.GetX());
+	float py = (v1.GetY() - v2.GetY()) * (v1.GetY() - v2.GetY());
+	int rad = (obj1->GetRadius() + obj2->GetRadius()) * (obj1->GetRadius() + obj2->GetRadius());
+
+	if(rad >= (px + py)){
+		return true;
+	}
+
+	return false;
 }

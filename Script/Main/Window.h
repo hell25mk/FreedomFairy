@@ -18,7 +18,7 @@ protected:
 	virtual ~Window(){ }
 
 private:
-	static const unsigned int windowHeight;
-	static const unsigned int windowWidth;
+	static const unsigned int Window_Height;
+	static const unsigned int Window_Width;
 
 };

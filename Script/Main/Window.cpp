@@ -2,13 +2,14 @@
 #include "DxLib.h"
 #include "GameMain.h"
 
-const unsigned int Window::windowHeight = 480;
-const unsigned int Window::windowWidth = 640;
+const unsigned int Window::Window_Height = 480;
+const unsigned int Window::Window_Width = 640;
+const int Color_Bit = 16;
 
 void Window::Create(){
 
 	ChangeWindowMode(TRUE);			// ウィンドウモードに設定
-	SetGraphMode(windowWidth, windowHeight, 16);
+	SetGraphMode(Window_Width, Window_Height, Color_Bit);
 
 	DxLib_Init();					 // DXライブラリ初期化処理
 	SetDrawScreen(DX_SCREEN_BACK);	//描画先を裏画面に設定
@@ -56,10 +57,10 @@ bool Window::ProcessLoop(){
 
 int Window::GetWindowHeight(){
 
-	return windowHeight;
+	return Window_Height;
 }
 
 int Window::GetWindowWidth(){
 
-	return windowWidth;
+	return Window_Width;
 }
