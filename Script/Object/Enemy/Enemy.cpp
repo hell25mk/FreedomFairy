@@ -13,7 +13,7 @@ Enemy::Enemy(float x, float y, float speed):BaseObject(x, y){
 	radius = 20;
 	color = GetColor(255, 0, 0);
 
-	collider = new CircleCollider(vec2, 15, eTag_Enemy);
+	collider = new CircleCollider(vec2, radius, eTag_Enemy);
 
 }
 

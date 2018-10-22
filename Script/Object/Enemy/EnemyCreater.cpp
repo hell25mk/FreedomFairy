@@ -38,7 +38,7 @@ void EnemyCreater::EnemyCreate(){
 	std::uniform_int_distribution<> randWidth(0, 400);
 	std::uniform_int_distribution<> randHeight(50, 100);
 
-	Enemy* enemy = new Enemy((float)randWidth(mt), (float)-randHeight(mt), 3.0f);
+	Enemy* enemy = new Enemy((float)randWidth(mt), (float)-randHeight(mt), 2.0f);
 	ObjectManager::GetInstance().ListPush(enemy);
 
 }
