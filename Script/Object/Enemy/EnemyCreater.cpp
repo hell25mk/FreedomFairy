@@ -1,6 +1,9 @@
 #include "EnemyCreater.h"
 #include "Enemy.h"
 #include "../Manager/ObjectManager.h"
+#include <random>
+
+const int Create_TimeCount = 10;
 
 void EnemyCreater::Create(){
 
@@ -17,7 +20,7 @@ void EnemyCreater::Destroy(){
 bool EnemyCreater::Update(){
 
 	//60ƒtƒŒ[ƒ€–ˆ‚É¶¬
-	if(count % 60 == 0){
+	if(count % Create_TimeCount == 0){
 		this->EnemyCreate();
 		count = 0;
 	}
@@ -29,7 +32,13 @@ bool EnemyCreater::Update(){
 
 void EnemyCreater::EnemyCreate(){
 
-	Enemy* enemy = new Enemy(100.0f, -50.0f, 5.0f);
+	std::random_device rand;
+	std::mt19937 mt(rand());
+
+	std::uniform_int_distribution<> randWidth(0, 400);
+	std::uniform_int_distribution<> randHeight(50, 100);
+
+	Enemy* enemy = new Enemy((float)randWidth(mt), (float)-randHeight(mt), 3.0f);
 	ObjectManager::GetInstance().ListPush(enemy);
 
 }

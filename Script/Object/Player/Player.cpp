@@ -24,7 +24,7 @@ Player::Player(float x, float y):BaseObject(x, y){
 	color = GetColor(255, 255, 255);
 
 	controller = new Controller();
-	collider = new CircleCollider(vec2, 15, eTag_Player);
+	collider = new CircleCollider(vec2, 5, eTag_Player);
 
 
 }

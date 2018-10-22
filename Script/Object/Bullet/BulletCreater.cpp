@@ -24,7 +24,6 @@ bool BulletCreater::Update(){
 void BulletCreater::BulletCreate(Vector2D<float> vec, int rad, float moveVector, int tag){
 
 	Bullet* bullet = new Bullet(vec, rad, moveVector);
-	bullet->SetObjectTag(tag);
 	ObjectManager::GetInstance().ListPush(bullet);
 
 }
