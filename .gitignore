@@ -45,3 +45,5 @@
 *.log
 *.ilk
 Log.txt
+*.iobj
+*.ipdb
