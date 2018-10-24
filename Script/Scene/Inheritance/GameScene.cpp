@@ -1,9 +1,9 @@
 #include "StationeryScene.h"
+#include "../../MyLibrary/MyLibrary.h"
 #include "../../Object/Manager/ObjectManager.h"
 #include "../../Collider/Manager/ColliderManager.h"
-#include "../../Object/Player/PlayerCreater.h"
-#include "../../Object/Enemy/EnemyCreater.h"
 #include "../../System/Score/Manager/ScoreManager.h"
+#include "../../Object/Creater/ObjectCreater.h"
 #include "../../UI/Manager/UIManager.h"
 
 GameScene::GameScene(){
@@ -13,21 +13,19 @@ GameScene::GameScene(SceneManager* sMgr):BaseScene(sMgr){
 
 	ObjectManager::GetInstance().Create();
 	ColliderManager::GetInstance().Create();
-	PlayerCreater::GetInstance().Create();
-	EnemyCreater::GetInstance().Create();
 	ScoreManager::GetInstance().Create();
 	UIManager::GetInstance().Create();
 
-	PlayerCreater::GetInstance().PlayerCreate();
+	objectCreater = new ObjectCreater();
+	objectCreater->PlayerCreate();
 
 }
 
 GameScene::~GameScene(){
 
+	SELF_DELETE(objectCreater);
 	UIManager::GetInstance().Destroy();
 	ScoreManager::GetInstance().Destroy();
-	EnemyCreater::GetInstance().Destroy();
-	PlayerCreater::GetInstance().Destroy();
 	ColliderManager::GetInstance().Destroy();
 	ObjectManager::GetInstance().Destroy();
 
@@ -37,8 +35,8 @@ bool GameScene::Update(){
 
 	ObjectManager::GetInstance().Update();
 	ColliderManager::GetInstance().Update();
-	EnemyCreater::GetInstance().Update();
 	UIManager::GetInstance().Update();
+	objectCreater->Update();
 
 	return true;
 }

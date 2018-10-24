@@ -3,7 +3,7 @@
 #include "../../MyLibrary/MyLibrary.h"
 #include "../../Input/Controller.h"
 #include "../../Collider/Inheritance/StationeryCollider.h"
-#include "../Bullet/BulletCreater.h"
+#include "../Creater/ObjectCreater.h"
 
 const int Game_WidthSize = 420;
 const int Game_HeightSize = 480;
@@ -84,9 +84,9 @@ void Player::Move(){
 
 void Player::Shot(){
 
-	//ZƒL[“ü—Í
 	if(controller->Input(PAD_INPUT_1)){
-		BulletCreater::GetInstance().BulletCreate(vec2, 5, -15.0f, eTag_Player);
+		ObjectCreater objCreate;
+		objCreate.BulletCreate(vec2, 5, -15.0f, eTag_Player);
 	}
 
 }
