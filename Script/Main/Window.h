@@ -18,7 +18,8 @@ protected:
 	virtual ~Window(){ }
 
 private:
-	static const unsigned int Window_Height;
-	static const unsigned int Window_Width;
+	int windowHeight;
+	int windowWidth;
+	int colorBitDepth;
 
 };
