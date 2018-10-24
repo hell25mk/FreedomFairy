@@ -12,6 +12,8 @@ public:
 	virtual ~Bullet();
 	virtual bool Update() override;
 	virtual void Draw() override;
+	void Move();
+	void HitAction();
 
 private:
 	BaseCollider* collider;

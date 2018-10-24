@@ -3,6 +3,7 @@
 #include "../Base/BaseObject.h"
 
 class BaseCollider;
+class Score;
 
 class Enemy : public BaseObject{
 
@@ -12,10 +13,12 @@ public:
 	virtual ~Enemy();
 	virtual bool Update() override;
 	virtual void Draw() override;
+	void HitAction();
 
 private:
 	BaseCollider* collider;
 	float moveVector;
+	Score* score;
 
 };
 

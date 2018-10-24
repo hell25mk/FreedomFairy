@@ -1,10 +1,18 @@
 #pragma once
 
-class GameScore{
+class Score{
 
 public:
-	GameScore();
-	~GameScore();
+	Score();
+	Score(int s);
+	~Score();
+	void SetScore(int s);
+	int GetScore();
+	void AddScore(int s);
+	void Release();
+
+private:
+	int score;
 
 };
 

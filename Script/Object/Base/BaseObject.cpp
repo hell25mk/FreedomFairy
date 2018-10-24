@@ -1,4 +1,5 @@
 #include "BaseObject.h"
+#include "../Manager/ObjectManager.h"
 
 BaseObject::BaseObject(){
 }
@@ -20,6 +21,12 @@ BaseObject::BaseObject(float x, float y, int rad, unsigned int color){
 BaseObject::~BaseObject(){
 
 
+
+}
+
+void BaseObject::ListRegistration(BaseObject* obj){
+
+	ObjectManager::GetInstance().ListPush(obj);
 
 }
 

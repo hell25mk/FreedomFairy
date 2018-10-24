@@ -15,6 +15,7 @@ public:
 	virtual void Draw() override;
 	void Move();
 	void Shot();
+	void HitAction();
 
 private:
 	Controller* controller;

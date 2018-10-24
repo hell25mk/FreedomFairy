@@ -1,23 +1,22 @@
 #include "ObjectManager.h"
-#include "../Player/Player.h"
+#include "../Base/BaseObject.h"
 #include "DxLib.h"
 
 void ObjectManager::Create(){
 
-	listObject.push_back(new Player(10.0f, 10.0f));
 
-	listBegin = listObject.begin();
-	listEnd = listObject.end();
 
 }
 
 void ObjectManager::Destroy(){
 
 	//Šm•Û‚µ‚½ƒƒ‚ƒŠ‚Ì‰ð•ú
-	for(auto itr = listBegin; itr != listEnd; itr++){
+	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
 
 		delete *itr;
 		*itr = nullptr;
+
+		itr++;
 
 	}
 
@@ -26,7 +25,7 @@ void ObjectManager::Destroy(){
 bool ObjectManager::Update(){
 
 	//XV
-	for(auto itr = listBegin; itr != listEnd; ){
+	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
 
 		if(!(*itr)->Update()){
 			delete *itr;
@@ -45,9 +44,11 @@ bool ObjectManager::Update(){
 void ObjectManager::Draw(){
 
 	//•`‰æ
-	for(auto itr = listBegin; itr != listEnd; itr++){
+	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
 
 		(*itr)->Draw();
+
+		itr++;
 
 	}
 
@@ -56,8 +57,5 @@ void ObjectManager::Draw(){
 void ObjectManager::ListPush(BaseObject* obj){
 
 	listObject.push_back(obj);
-
-	listBegin = listObject.begin();
-	listEnd = listObject.end();
 
 }

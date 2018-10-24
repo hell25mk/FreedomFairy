@@ -2,8 +2,6 @@
 
 #include "../../DesignPattern/Singleton/Singleton.h"
 
-class Enemy;
-
 class EnemyCreater : public Singleton<EnemyCreater>{
 
 public:

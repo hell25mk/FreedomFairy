@@ -13,6 +13,7 @@ public:
 
 	void SetVector(Vector2D<float> vec);
 	Vector2D<float> GetVector();
+
 	void SetHitFlag(bool hit);
 	bool GetHitFlag();
 	void SetAliveFlag(bool alive);

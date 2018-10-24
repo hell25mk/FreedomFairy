@@ -1,10 +1,9 @@
 #include "Player.h"
 #include "DxLib.h"
+#include "../../MyLibrary/MyLibrary.h"
 #include "../../Input/Controller.h"
 #include "../../Collider/Inheritance/StationeryCollider.h"
 #include "../Bullet/BulletCreater.h"
-
-#define SELF_DELETE(p) delete p;p = nullptr;
 
 const int Game_WidthSize = 420;
 const int Game_HeightSize = 480;
@@ -18,15 +17,16 @@ Player::Player(){
 
 Player::Player(float x, float y):BaseObject(x, y){
 
-	moveVector = 3.0f;
+	moveVector = 5.0f;
 	isAlive = true;
 
 	radius = 20;
 	color = GetColor(255, 255, 255);
 
 	controller = new Controller();
-	collider = new CircleCollider(vec2, 3, eTag_Player);
+	collider = new CircleCollider(vec2, Hit_Range, eTag_Player);
 
+	ListRegistration(this);
 
 }
 
@@ -38,6 +38,10 @@ Player::~Player(){
 }
 
 bool Player::Update(){
+
+	if(collider->GetHitFlag()){
+		HitAction();
+	}
 
 	controller->Update();
 
@@ -84,5 +88,11 @@ void Player::Shot(){
 	if(controller->Input(PAD_INPUT_1)){
 		BulletCreater::GetInstance().BulletCreate(vec2, 5, -15.0f, eTag_Player);
 	}
+
+}
+
+void Player::HitAction(){
+
+	isAlive = false;
 
 }

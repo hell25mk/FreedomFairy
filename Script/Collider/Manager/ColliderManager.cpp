@@ -2,6 +2,11 @@
 #include "../Base/BaseCollider.h"
 #include "../../System/Vector2D.h"
 
+enum ObjectType{
+	eType_Player,
+	eType_Enemy,
+};
+
 void ColliderManager::Create(){
 
 
@@ -26,10 +31,10 @@ bool ColliderManager::Update(){
 void ColliderManager::ListPush(BaseCollider* collider, int tag){
 
 	switch(tag){
-		case 0:
+		case eType_Player:
 			listPlayerCollider.push_back(collider);
 			break;
-		case 1:
+		case eType_Enemy:
 			listEnemyCollider.push_back(collider);
 			break;
 	}

@@ -47,3 +47,4 @@
 Log.txt
 *.iobj
 *.ipdb
+.vs/config/applicationhost.config

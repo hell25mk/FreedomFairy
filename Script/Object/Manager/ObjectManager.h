@@ -26,7 +26,5 @@ protected:
 
 private:
 	std::list<BaseObject*> listObject;
-	std::list<BaseObject*>::iterator listBegin;
-	std::list<BaseObject*>::iterator listEnd;
 
 };
