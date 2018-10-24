@@ -1,5 +1,6 @@
 #include "SceneManager.h"
-#include "../Library/StationeryScene.h"
+#include "../Inheritance/StationeryScene.h"
+#include "../../MyLibrary/MyLibrary.h"
 
 SceneManager::SceneManager(){
 
@@ -11,8 +12,7 @@ SceneManager::~SceneManager(){
 
 	while(!stackScene.empty()){
 
-		delete stackScene.top();
-		stackScene.top() = nullptr;
+		SELF_DELETE(stackScene.top());
 		stackScene.pop();
 
 	}
