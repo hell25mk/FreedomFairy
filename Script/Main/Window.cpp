@@ -2,17 +2,22 @@
 #include "DxLib.h"
 #include "GameMain.h"
 
+const char* Game_Title = "STG";
+
 void Window::Create(){
 
 	windowHeight = 480;
 	windowWidth = 640;
 	colorBitDepth = 16;
 
-	ChangeWindowMode(true);			// ウィンドウモードに設定
+	ChangeWindowMode(true);													// ウィンドウモードに設定
 	SetGraphMode(windowWidth, windowHeight, colorBitDepth);
 
-	DxLib_Init();					 // DXライブラリ初期化処理
-	SetDrawScreen(DX_SCREEN_BACK);	//描画先を裏画面に設定
+	SetMainWindowText(Game_Title);											//タイトル設定
+	SetOutApplicationLogValidFlag(false);									//Log.txtの出力を停止
+
+	DxLib_Init();															// DXライブラリ初期化処理
+	SetDrawScreen(DX_SCREEN_BACK);											//描画先を裏画面に設定
 
 }
 
