@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Singleton.h"
+#include "../Singleton/Singleton.h"
 
 class Factory : public Singleton<Factory>{
 
