@@ -1,7 +1,6 @@
 #pragma once
 
 class SceneManager;
-class BaseUI;
 
 class BaseScene{
 
@@ -14,7 +13,6 @@ public:
 
 protected:
 	SceneManager* sceneManager;
-	BaseUI* sceneUI;
 
 };
 

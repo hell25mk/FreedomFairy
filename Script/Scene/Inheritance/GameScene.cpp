@@ -1,11 +1,10 @@
 #include "StationeryScene.h"
-#include "../../MyLibrary/MyLibrary.h"
 #include "../../Object/Manager/ObjectManager.h"
 #include "../../Collider/Manager/ColliderManager.h"
 #include "../../Object/Player/PlayerCreater.h"
 #include "../../Object/Enemy/EnemyCreater.h"
 #include "../../System/Score/Manager/ScoreManager.h"
-#include "../../UI/Inheritance/StationeryUI.h"
+#include "../../UI/Manager/UIManager.h"
 
 GameScene::GameScene(){
 }
@@ -17,15 +16,15 @@ GameScene::GameScene(SceneManager* sMgr):BaseScene(sMgr){
 	PlayerCreater::GetInstance().Create();
 	EnemyCreater::GetInstance().Create();
 	ScoreManager::GetInstance().Create();
+	UIManager::GetInstance().Create();
 
 	PlayerCreater::GetInstance().PlayerCreate();
-	sceneUI = new GameUI();
 
 }
 
 GameScene::~GameScene(){
 
-	SELF_DELETE(sceneUI);
+	UIManager::GetInstance().Destroy();
 	ScoreManager::GetInstance().Destroy();
 	EnemyCreater::GetInstance().Destroy();
 	PlayerCreater::GetInstance().Destroy();
@@ -39,8 +38,7 @@ bool GameScene::Update(){
 	ObjectManager::GetInstance().Update();
 	ColliderManager::GetInstance().Update();
 	EnemyCreater::GetInstance().Update();
-
-	sceneUI->Update();
+	UIManager::GetInstance().Update();
 
 	return true;
 }
@@ -48,6 +46,6 @@ bool GameScene::Update(){
 void GameScene::Draw(){
 
 	ObjectManager::GetInstance().Draw();
-	sceneUI->Draw();
+	UIManager::GetInstance().Draw();
 
 }
