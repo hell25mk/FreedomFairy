@@ -1,6 +1,6 @@
 #include "Enemy.h"
 #include "DxLib.h"
-#include "../../Collider/Library/StationeryCollider.h"
+#include "../../Collider/Inheritance/StationeryCollider.h"
 
 Enemy::Enemy(){
 }

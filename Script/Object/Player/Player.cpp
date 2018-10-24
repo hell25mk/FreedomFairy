@@ -1,7 +1,7 @@
 #include "Player.h"
 #include "DxLib.h"
 #include "../../Input/Controller.h"
-#include "../../Collider/Library/StationeryCollider.h"
+#include "../../Collider/Inheritance/StationeryCollider.h"
 #include "../Bullet/BulletCreater.h"
 
 #define SELF_DELETE(p) delete p;p = nullptr;
@@ -60,22 +60,18 @@ void Player::Move(){
 
 	int moveRange = Image_Size / 2;
 
-	//上キー入力
 	if(controller->Input(PAD_INPUT_UP) && vec2.GetDy() >= 0 + moveRange){
 		vec2.Add(0.0f, -moveVector);
 	}
 
-	//下キー入力
 	if(controller->Input(PAD_INPUT_DOWN) && vec2.GetDy() <= Game_HeightSize - moveRange){
 		vec2.Add(0.0f, moveVector);
 	}
 
-	//左キー入力
 	if(controller->Input(PAD_INPUT_LEFT) && vec2.GetDx() >= 0 + moveRange){
 		vec2.Add(-moveVector, 0.0f);
 	}
 
-	//右キー入力
 	if(controller->Input(PAD_INPUT_RIGHT) && vec2.GetDx() <= Game_WidthSize - moveRange){
 		vec2.Add(moveVector, 0.0f);
 	}
