@@ -9,8 +9,8 @@ public:
 	virtual void Create() override;
 	virtual void Destroy() override;
 	bool Update();
+	void Draw();
 	void Wait();
-	float GetFPSValue();
 
 protected:
 	FPS(){ }
