@@ -17,7 +17,7 @@ GamePad::GamePad(){
 	aryInputID[ePadType::eType_Left]  = 1;
 	aryInputID[ePadType::eType_Right] = 2;
 	aryInputID[ePadType::eType_Up]    = 3;
-	aryInputID[ePadType::eType_Shot] = 4;
+	aryInputID[ePadType::eType_Shot]  = 4;
 	aryInputID[ePadType::eType_Bomb]  = 5;
 	aryInputID[ePadType::eType_Slow]  = 11;
 
