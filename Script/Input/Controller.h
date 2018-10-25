@@ -1,15 +1,30 @@
 #pragma once
 
+#include <array>
+
+class Keyboard;
+class GamePad;
+
+enum eInputType{
+	eType_Left,
+	eType_Up,
+	eType_Right,
+	eType_Down,
+	eType_Shot,
+	eType_Bomb,
+	eType_Slow,
+};
+
 class Controller{
 
 public:
 	Controller();
-	Controller(int actionTypeNum);
 	~Controller();
 	bool Update();
-	int Input(int requestCode);
+	int Input(eInputType eID) const;
 	
 private:
-	int inputState;
+	Keyboard* gameKeyboard;
+	GamePad* gamePad;
 
 };

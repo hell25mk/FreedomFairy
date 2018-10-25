@@ -21,7 +21,7 @@ Player::Player(float x, float y):BaseObject(x, y){
 	isAlive = true;
 
 	radius = 20;
-	color = GetColor(255, 255, 255);
+	color = GetColor(255, 255, 255);		//‰æ‘œ‚É•ÏX‚·‚é‚Ì‚Åíœ—\’è
 
 	controller = new Controller();
 	collider = new CircleCollider(vec2, Hit_Range, eTag_Player);
@@ -55,28 +55,34 @@ bool Player::Update(){
 
 void Player::Draw(){
 
-	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);
+	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);	//‰æ‘œ‚É•ÏX‚·‚é‚Ì‚Åíœ—\’è
 	collider->Draw();
 
 }
 
 void Player::Move(){
 
+	if(controller->Input(eInputType::eType_Slow)){
+		moveVector = 2.5f;
+	} else{
+		moveVector = 5.0f;
+	}
+
 	int moveRange = Image_Size / 2;
 
-	if(controller->Input(PAD_INPUT_UP) && vec2.GetDy() >= 0 + moveRange){
+	if(controller->Input(eInputType::eType_Up) && vec2.GetDy() >= 0 + moveRange){
 		vec2.Add(0.0f, -moveVector);
 	}
 
-	if(controller->Input(PAD_INPUT_DOWN) && vec2.GetDy() <= Game_HeightSize - moveRange){
+	if(controller->Input(eInputType::eType_Down) && vec2.GetDy() <= Game_HeightSize - moveRange){
 		vec2.Add(0.0f, moveVector);
 	}
 
-	if(controller->Input(PAD_INPUT_LEFT) && vec2.GetDx() >= 0 + moveRange){
+	if(controller->Input(eInputType::eType_Left) && vec2.GetDx() >= 0 + moveRange){
 		vec2.Add(-moveVector, 0.0f);
 	}
 
-	if(controller->Input(PAD_INPUT_RIGHT) && vec2.GetDx() <= Game_WidthSize - moveRange){
+	if(controller->Input(eInputType::eType_Right) && vec2.GetDx() <= Game_WidthSize - moveRange){
 		vec2.Add(moveVector, 0.0f);
 	}
 
@@ -84,7 +90,7 @@ void Player::Move(){
 
 void Player::Shot(){
 
-	if(controller->Input(PAD_INPUT_1)){
+	if(controller->Input(eInputType::eType_Shot)){
 		ObjectCreater objCreate;
 		objCreate.BulletCreate(vec2, 5, -15.0f, eTag_Player);
 	}
