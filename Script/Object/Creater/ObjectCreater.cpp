@@ -17,7 +17,7 @@ ObjectCreater::~ObjectCreater(){
 
 bool ObjectCreater::Update(){
 
-	//60フレーム毎に生成
+	//60フレーム毎に敵を生成
 	if(enemyCreateCount % Create_TimeCount == 0){
 		this->EnemyCreate();
 		enemyCreateCount = 0;
@@ -39,7 +39,7 @@ void ObjectCreater::EnemyCreate(){
 	std::random_device rand;
 	std::mt19937 mt(rand());
 
-	std::uniform_int_distribution<> randWidth(0, 400);
+	std::uniform_int_distribution<> randWidth(20, 400);
 	std::uniform_int_distribution<> randHeight(50, 100);
 
 	Enemy* enemy = new Enemy((float)randWidth(mt), (float)-randHeight(mt), 2.0f);
