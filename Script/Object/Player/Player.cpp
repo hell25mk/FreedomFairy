@@ -63,7 +63,7 @@ void Player::Draw(){
 void Player::Move(){
 
 	if(controller->Input(eInputType::eType_Slow)){
-		moveVector = 2.5f;
+		moveVector = 2.0f;
 	} else{
 		moveVector = 5.0f;
 	}
@@ -90,10 +90,12 @@ void Player::Move(){
 
 void Player::Shot(){
 
-	if(controller->Input(eInputType::eType_Shot)){
-		ObjectCreater objCreate;
-		objCreate.BulletCreate(vec2, 5, -15.0f, eTag_Player);
+	if(!controller->Input(eInputType::eType_Shot)){
+		return;
 	}
+
+	ObjectCreater objCreate;
+	objCreate.BulletCreate(vec2, 5, -15.0f, eTag_Player);
 
 }
 

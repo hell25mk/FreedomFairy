@@ -3,6 +3,7 @@
 #include "../../MyLibrary/MyLibrary.h"
 #include "../../Collider/Inheritance/StationeryCollider.h"
 #include "../../System/Score/Score.h"
+#include "../../System/HitPoint/HitPoint.h"
 
 Enemy::Enemy(){
 }
@@ -16,6 +17,7 @@ Enemy::Enemy(float x, float y, float speed):BaseObject(x, y){
 	color = GetColor(255, 0, 0);
 
 	collider = new CircleCollider(vec2, radius, eTag_Enemy);
+	hp = new HitPoint(5);
 	score = new Score(100);
 
 	ListRegistration(this);
@@ -25,6 +27,7 @@ Enemy::Enemy(float x, float y, float speed):BaseObject(x, y){
 Enemy::~Enemy(){
 
 	SELF_DELETE(score);
+	SELF_DELETE(hp);
 	collider->SetAliveFlag(false);
 
 }
@@ -33,7 +36,6 @@ bool Enemy::Update(){
 
 	if(collider->GetHitFlag()){
 		HitAction();
-		return false;
 	}
 
 	vec2.Add(0.0f, moveVector);
@@ -56,6 +58,11 @@ void Enemy::Draw(){
 
 void Enemy::HitAction(){
 
-	score->Release();
+	hp->Sub(1);
+	
+	if(hp->Get() == 0){
+		score->Release();
+		isAlive = false;
+	}
 
 }
