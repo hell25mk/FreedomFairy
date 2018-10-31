@@ -17,7 +17,7 @@ Enemy::Enemy(float x, float y, float speed):BaseObject(x, y){
 	color = GetColor(255, 0, 0);
 
 	collider = new CircleCollider(vec2, radius, eTag_Enemy);
-	hp = new HitPoint(5);
+	hp = new HitPoint(10);
 	score = new Score(100);
 
 	ListRegistration(this);
