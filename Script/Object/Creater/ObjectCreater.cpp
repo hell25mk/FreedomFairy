@@ -6,7 +6,7 @@
 
 const float Spown_Width = 200.0f;
 const float Spown_Height = 400.0f;
-const int Create_TimeCount = 10;
+const int Create_TimeCount = 5;
 
 ObjectCreater::ObjectCreater():enemyCreateCount(0){
 }
@@ -41,8 +41,9 @@ void ObjectCreater::EnemyCreate(){
 
 	std::uniform_int_distribution<> randWidth(20, 400);
 	std::uniform_int_distribution<> randHeight(50, 100);
+	std::uniform_int_distribution<> randSpeed(2, 4);
 
-	Enemy* enemy = new Enemy((float)randWidth(mt), (float)-randHeight(mt), 2.0f);
+	Enemy* enemy = new Enemy((float)randWidth(mt), (float)-randHeight(mt), (float)randSpeed(mt));
 
 }
 
