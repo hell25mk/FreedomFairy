@@ -23,19 +23,17 @@ bool SystemMain::Init() const{
 
 bool SystemMain::Update() const{
 
-	GameMain::GetInstance().Create();
+	GameMain gameMain;
 
 	while(ProcessLoop()){
 
-		if(!GameMain::GetInstance().Update()){
+		if(!gameMain.Update()){
 			break;
 		}
 
-		GameMain::GetInstance().Draw();
+		gameMain.Draw();
 
 	}
-
-	GameMain::GetInstance().Destroy();
 
 	return false;
 }

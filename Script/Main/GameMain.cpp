@@ -5,14 +5,14 @@
 
 const int Color_White = GetColor(255, 255, 255);
 
-void GameMain::Create(){
+GameMain::GameMain(){
 
 	FPS::GetInstance().Create();
 	sceneManager = new SceneManager();
 
 }
 
-void GameMain::Destroy(){
+GameMain::~GameMain(){
 
 	delete sceneManager;
 	FPS::GetInstance().Destroy();
