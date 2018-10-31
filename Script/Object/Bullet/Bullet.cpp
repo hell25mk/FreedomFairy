@@ -1,6 +1,8 @@
 #include "Bullet.h"
 #include "DxLib.h"
+#include "../../MyLibrary/MyLibrary.h"
 #include "../../Collider/Inheritance/StationeryCollider.h"
+#include "../../System/HitPoint/HitPoint.h"
 
 const int Game_WidthSize = 420;
 const int Game_HeightSize = 480;
@@ -21,6 +23,7 @@ Bullet::Bullet(Vector2D<float> vec, int rad, float speed){
 	color = GetColor(240, 120, 220);
 
 	collider = new CircleCollider(vec2, radius, eTag_Player);
+	hp = new HitPoint(1);
 
 	ListRegistration(this);
 
@@ -28,13 +31,16 @@ Bullet::Bullet(Vector2D<float> vec, int rad, float speed){
 
 Bullet::~Bullet(){
 
+	SELF_DELETE(hp);
 	collider->SetAliveFlag(false);
 
 }
 
 bool Bullet::Update(){
 
-	this->HitAction();
+	if(collider->GetHitFlag()){
+		this->HitAction();
+	}
 
 	if(vec2.GetY() <= 0){
 		return false;
@@ -69,7 +75,9 @@ void Bullet::Move(){
 
 void Bullet::HitAction(){
 
-	if(collider->GetHitFlag()){
+	hp->Sub(1);
+
+	if(hp->Get() == 0){
 		isAlive = false;
 	}
 

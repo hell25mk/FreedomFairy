@@ -9,6 +9,8 @@ enum ScoreType{
 	eScore_Num,
 };
 
+const int Test_HighScore = 100000;
+
 void ScoreManager::Create(){
 
 	vectorScore.resize(eScore_Num);
@@ -19,6 +21,8 @@ void ScoreManager::Create(){
 		vectorScore[i] = new Score();
 
 	}
+
+	vectorScore[eScore_High]->SetScore(Test_HighScore);
 
 }
 

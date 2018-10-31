@@ -4,6 +4,7 @@
 #include "../../Input/Controller.h"
 #include "../../Collider/Inheritance/StationeryCollider.h"
 #include "../Creater/ObjectCreater.h"
+#include "../../System/HitPoint/HitPoint.h"
 
 const int Game_WidthSize = 420;
 const int Game_HeightSize = 480;
@@ -25,6 +26,7 @@ Player::Player(float x, float y):BaseObject(x, y){
 
 	controller = new Controller();
 	collider = new CircleCollider(vec2, Hit_Range, eTag_Player);
+	hp = new HitPoint(1);
 
 	ListRegistration(this);
 
@@ -32,6 +34,7 @@ Player::Player(float x, float y):BaseObject(x, y){
 
 Player::~Player(){
 
+	SELF_DELETE(hp);
 	collider->SetAliveFlag(false);
 	SELF_DELETE(controller);
 
@@ -101,6 +104,10 @@ void Player::Shot(){
 
 void Player::HitAction(){
 
-	isAlive = false;
+	hp->Sub(1);
+
+	if(hp->Get() == 0){
+		isAlive = false;
+	}
 
 }

@@ -3,6 +3,7 @@
 #include "../Base/BaseObject.h"
 
 class BaseCollider;
+class HitPoint;
 
 class Bullet : public BaseObject{
 
@@ -17,6 +18,7 @@ public:
 
 private:
 	BaseCollider* collider;
+	HitPoint* hp;
 	float moveVector;
 
 };

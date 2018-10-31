@@ -4,6 +4,7 @@
 
 class Controller;
 class BaseCollider;
+class HitPoint;
 
 class Player : public BaseObject{
 
@@ -20,6 +21,7 @@ public:
 private:
 	Controller* controller;
 	BaseCollider* collider;
+	HitPoint* hp;
 	float moveVector;
 
 };

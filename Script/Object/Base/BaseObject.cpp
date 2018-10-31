@@ -19,9 +19,6 @@ BaseObject::BaseObject(float x, float y, int rad, unsigned int color){
 }
 
 BaseObject::~BaseObject(){
-
-
-
 }
 
 void BaseObject::ListRegistration(BaseObject* obj){
@@ -39,6 +36,7 @@ int BaseObject::GetRadius(){
 
 	return radius;
 }
+
 void BaseObject::SetAlive(bool alive){
 
 	isAlive = alive;
