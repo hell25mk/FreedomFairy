@@ -1,11 +1,13 @@
 #include <Windows.h>
-#include "Window.h"
+#include "SystemMain.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int){
 
-	Window::GetInstance().Create();
-	Window::GetInstance().Update();
-	Window::GetInstance().Destroy();
+	SystemMain systemMain;
+	if(systemMain.Init()){
+		systemMain.Update();
+	}
+	systemMain.Final();
 
 	return 0;
 }
