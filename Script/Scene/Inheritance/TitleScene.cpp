@@ -1,9 +1,6 @@
 #include "StationeryScene.h"
 
-TitleScene::TitleScene(){
-}
-
-TitleScene::TitleScene(SceneManager* sMgr):BaseScene(sMgr){
+TitleScene::TitleScene(SceneChanger* scene, const Parameter& parameter):BaseScene(scene,parameter){
 }
 
 TitleScene::~TitleScene(){

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stack>
+#include <memory>
 
 class BaseScene;
 
@@ -16,7 +17,7 @@ private:
 	SceneManager(const SceneManager &sMgr);
 
 private:
-	std::stack<BaseScene*> stackScene;
+	std::stack<std::shared_ptr<BaseScene>> stackScene;
 
 };
 

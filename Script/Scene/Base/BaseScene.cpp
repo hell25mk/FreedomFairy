@@ -1,11 +1,9 @@
 #include "BaseScene.h"
+#include "../SceneChanger.h"
 
-BaseScene::BaseScene(){
-}
+BaseScene::BaseScene(SceneChanger* scene, const Parameter& parameter){
 
-BaseScene::BaseScene(SceneManager* sMgr){
-
-	sceneManager = sMgr;
+	sceneChanger = scene;
 
 }
 

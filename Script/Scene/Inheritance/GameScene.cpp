@@ -6,10 +6,7 @@
 #include "../../Object/Creater/ObjectCreater.h"
 #include "../../UI/Manager/UIManager.h"
 
-GameScene::GameScene(){
-}
-
-GameScene::GameScene(SceneManager* sMgr):BaseScene(sMgr){
+GameScene::GameScene(SceneChanger* scene, const Parameter& parameter):BaseScene(scene,parameter){
 
 	ObjectManager::GetInstance().Create();
 	ColliderManager::GetInstance().Create();

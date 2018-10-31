@@ -6,9 +6,8 @@
 class TitleScene : public BaseScene{
 
 public:
-	TitleScene();
-	TitleScene(SceneManager* sMgr);
-	virtual ~TitleScene();
+	TitleScene(SceneChanger* scene, const Parameter& parameter);
+	virtual ~TitleScene() = default;
 	virtual bool Update() override;
 	virtual void Draw() override;
 
@@ -21,9 +20,8 @@ class ObjectCreater;
 class GameScene : public BaseScene{
 
 public:
-	GameScene();
-	GameScene(SceneManager* sMgr);
-	virtual ~GameScene();
+	GameScene(SceneChanger* scene, const Parameter& parameter);
+	virtual ~GameScene() = default;
 	virtual bool Update() override;
 	virtual void Draw() override;
 

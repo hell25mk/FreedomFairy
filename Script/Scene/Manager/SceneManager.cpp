@@ -4,7 +4,7 @@
 
 SceneManager::SceneManager(){
 
-	stackScene.push(new GameScene(this));
+	stackScene.push(std::make_shared<GameScene>(this));
 
 }
 
@@ -12,7 +12,6 @@ SceneManager::~SceneManager(){
 
 	while(!stackScene.empty()){
 
-		SELF_DELETE(stackScene.top());
 		stackScene.pop();
 
 	}
