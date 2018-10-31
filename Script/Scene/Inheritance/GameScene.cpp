@@ -33,9 +33,9 @@ GameScene::~GameScene(){
 
 bool GameScene::Update(){
 
+	UIManager::GetInstance().Update();
 	ObjectManager::GetInstance().Update();
 	ColliderManager::GetInstance().Update();
-	UIManager::GetInstance().Update();
 	objectCreater->Update();
 
 	return true;
@@ -43,7 +43,7 @@ bool GameScene::Update(){
 
 void GameScene::Draw(){
 
-	ObjectManager::GetInstance().Draw();
 	UIManager::GetInstance().Draw();
+	ObjectManager::GetInstance().Draw();
 
 }
