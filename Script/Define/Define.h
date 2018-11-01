@@ -6,7 +6,7 @@ public:
 	const static int Window_Width;
 	const static int Window_Height;
 
-	const static float Df_PAI;
+	const static float Defi_Pai;
 
 };
 
