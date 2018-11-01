@@ -2,9 +2,9 @@
 #include "../Score.h"
 #include "../../../MyLibrary/MyLibrary.h"
 
-enum ScoreType{
-	eScore_High,
-	eScore_Now,
+enum eScoreType{
+	High,
+	Now,
 
 	eScore_Num,
 };
@@ -22,7 +22,7 @@ void ScoreManager::Create(){
 
 	}
 
-	vectorScore[eScore_High]->SetScore(Test_HighScore);
+	vectorScore[High]->SetScore(Test_HighScore);
 
 }
 
@@ -39,10 +39,10 @@ void ScoreManager::Destroy(){
 
 void ScoreManager::SetScore(Score* s){
 
-	vectorScore[eScore_Now]->AddScore(s->GetScore());
+	vectorScore[Now]->AddScore(s->GetScore());
 
-	if(vectorScore[eScore_Now]->GetScore() >= vectorScore[eScore_High]->GetScore()){
-		vectorScore[eScore_High]->SetScore(vectorScore[eScore_Now]->GetScore());
+	if(vectorScore[Now]->GetScore() >= vectorScore[High]->GetScore()){
+		vectorScore[High]->SetScore(vectorScore[Now]->GetScore());
 	}
 
 }

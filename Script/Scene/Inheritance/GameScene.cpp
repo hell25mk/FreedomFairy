@@ -6,7 +6,7 @@
 #include "../../Object/Creater/ObjectCreater.h"
 #include "../../UI/Manager/UIManager.h"
 
-GameScene::GameScene(SceneChanger* scene, const Parameter& parameter):BaseScene(scene,parameter){
+GameScene::GameScene(SceneChanger* scene, const Parameter& parameter):BaseScene(scene, parameter){
 
 	ObjectManager::GetInstance().Create();
 	ColliderManager::GetInstance().Create();
@@ -38,7 +38,7 @@ bool GameScene::Update(){
 	return true;
 }
 
-void GameScene::Draw(){
+void GameScene::Draw() const{
 
 	UIManager::GetInstance().Draw();
 	ObjectManager::GetInstance().Draw();

@@ -1,9 +1,6 @@
 #include "StationeryScene.h"
 
-TitleScene::TitleScene(SceneChanger* scene, const Parameter& parameter):BaseScene(scene,parameter){
-}
-
-TitleScene::~TitleScene(){
+TitleScene::TitleScene(SceneChanger* scene, const Parameter& parameter):BaseScene(scene, parameter){
 }
 
 bool TitleScene::Update(){
@@ -12,7 +9,7 @@ bool TitleScene::Update(){
 	return true;
 }
 
-void TitleScene::Draw(){
+void TitleScene::Draw() const{
 
 
 

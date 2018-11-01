@@ -1,14 +1,15 @@
 #include "SceneManager.h"
 #include "../Inheritance/StationeryScene.h"
-#include "../../MyLibrary/MyLibrary.h"
+#include "../../System/Parameter/Parameter.h"
 
 SceneManager::SceneManager(){
 
-	stackScene.push(std::make_shared<GameScene>(this));
+	Parameter parameter;
+	stackScene.push(std::make_shared<GameScene>(this, parameter));
 
 }
 
-SceneManager::~SceneManager(){
+/*SceneManager::~SceneManager(){
 
 	while(!stackScene.empty()){
 
@@ -16,7 +17,7 @@ SceneManager::~SceneManager(){
 
 	}
 
-}
+}*/
 
 bool SceneManager::Update(){
 
@@ -29,4 +30,7 @@ void SceneManager::Draw(){
 
 	stackScene.top()->Draw();
 
+}
+
+void SceneManager::SceneChange(const eSceneType scene, const Parameter& parameter, const bool stackClear){
 }

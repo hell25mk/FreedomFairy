@@ -6,6 +6,3 @@ BaseScene::BaseScene(SceneChanger* scene, const Parameter& parameter){
 	sceneChanger = scene;
 
 }
-
-BaseScene::~BaseScene(){
-}

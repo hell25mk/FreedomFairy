@@ -19,7 +19,7 @@ GameMain::~GameMain(){
 
 }
 
-bool GameMain::Update(){
+bool GameMain::GameLoop(){
 
 	FPS::GetInstance().Update();
 
@@ -28,16 +28,8 @@ bool GameMain::Update(){
 	}
 	
 	FPS::GetInstance().Wait();
+	sceneManager->Draw();
+	FPS::GetInstance().Draw();
 
 	return true;
-}
-
-void GameMain::Draw(){
-
-	sceneManager->Draw();
-
-	SetFontSize(18);
-	DrawFormatString(530, 460, Color_White, "%.2ffps", FPS::GetInstance().GetFPSValue());
-	SetFontSize(DEFAULT_FONT_SIZE);
-
 }

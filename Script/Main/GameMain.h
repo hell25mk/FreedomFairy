@@ -7,8 +7,7 @@ class GameMain{
 public:
 	GameMain();
 	~GameMain();
-	bool Update();
-	void Draw();
+	bool GameLoop();
 
 private:
 	SceneManager* sceneManager;

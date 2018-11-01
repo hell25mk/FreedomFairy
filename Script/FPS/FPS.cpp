@@ -4,6 +4,7 @@
 
 const int FPS::Sample_N = 60;
 const int FPS::Loop_FPS = 60;
+const int Color_White = GetColor(255, 255, 255);
 
 void FPS::Create(){
 
@@ -46,7 +47,10 @@ void FPS::Wait(){
 
 }
 
-float FPS::GetFPSValue(){
+void FPS::Draw() const{
 
-	return fps;
+	SetFontSize(18);
+	DrawFormatString(530, 460, Color_White, "%.2ffps", fps);
+	SetFontSize(DEFAULT_FONT_SIZE);
+
 }

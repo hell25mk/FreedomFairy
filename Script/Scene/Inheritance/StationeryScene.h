@@ -9,7 +9,7 @@ public:
 	TitleScene(SceneChanger* scene, const Parameter& parameter);
 	virtual ~TitleScene() = default;
 	virtual bool Update() override;
-	virtual void Draw() override;
+	virtual void Draw() const override;
 
 };
 #pragma endregion
@@ -21,9 +21,9 @@ class GameScene : public BaseScene{
 
 public:
 	GameScene(SceneChanger* scene, const Parameter& parameter);
-	virtual ~GameScene() = default;
+	virtual ~GameScene();
 	virtual bool Update() override;
-	virtual void Draw() override;
+	virtual void Draw() const override;
 
 private:
 	ObjectCreater* objectCreater;

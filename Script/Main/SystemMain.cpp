@@ -27,11 +27,9 @@ bool SystemMain::Update() const{
 
 	while(ProcessLoop()){
 
-		if(!gameMain.Update()){
+		if(!gameMain.GameLoop()){
 			break;
 		}
-
-		gameMain.Draw();
 
 	}
 

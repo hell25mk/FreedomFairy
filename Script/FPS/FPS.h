@@ -10,7 +10,7 @@ public:
 	virtual void Destroy() override;
 	bool Update();
 	void Wait();
-	float GetFPSValue();
+	void Draw() const;
 
 protected:
 	FPS(){ }
