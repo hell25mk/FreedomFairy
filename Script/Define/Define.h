@@ -1,6 +1,6 @@
 #pragma once
 
-class Define final{
+class Window final{
 
 public:
 	const static int Window_Width;
@@ -10,3 +10,9 @@ public:
 
 };
 
+class Color final{
+
+public:
+	const static int Color_White;
+
+};
