@@ -2,17 +2,21 @@
 #include "DxLib.h"
 
 Keyboard::Keyboard(){
-}
 
-Keyboard::~Keyboard(){
+	for(int i = 0; i < Input::Key_Num; i++){
+
+		aryPressCount[i] = 0;
+
+	}
+
 }
 
 bool Keyboard::Update(){
 
-	char nowKeyStatus[InputKey_Num];
+	char nowKeyStatus[Input::Key_Num];
 	GetHitKeyStateAll(nowKeyStatus);
 
-	for(int i = 0; i < InputKey_Num; i++){
+	for(int i = 0; i < Input::Key_Num; i++){
 
 		if(nowKeyStatus[i] != 0){
 			if(aryReleasCount[i] > 0){
@@ -31,7 +35,7 @@ bool Keyboard::Update(){
 	return true;
 }
 
-int Keyboard::GetPressCount(int keyCode){
+int Keyboard::GetPressCount(int keyCode) const{
 
 	if(!IsAvailableCode(keyCode)){
 		return -1;
@@ -40,7 +44,7 @@ int Keyboard::GetPressCount(int keyCode){
 	return aryPressCount[keyCode];
 }
 
-int Keyboard::GetReleasCount(int keyCode){
+int Keyboard::GetReleasCount(int keyCode) const{
 
 	if(!IsAvailableCode(keyCode)){
 		return -1;
@@ -49,9 +53,9 @@ int Keyboard::GetReleasCount(int keyCode){
 	return aryReleasCount[keyCode];
 }
 
-bool Keyboard::IsAvailableCode(int keyCode){
+bool Keyboard::IsAvailableCode(int keyCode) const{
 
-	if(!(0 <= keyCode && keyCode < InputKey_Num)){
+	if(!(0 <= keyCode && keyCode < Input::Key_Num)){
 		return false;
 	}
 

@@ -3,18 +3,20 @@
 namespace Define{
 
 	/// <summary>
-	/// ウィンドウ関連の定数群
+	/// @brief ウィンドウ関連の定数群
 	/// </summary>
 	class Window final{
 
 	public:
 		const static int Window_Width;
 		const static int Window_Height;
+		const static int GameRange_Width;
+		const static int GameRange_Height;
 
 	};
 
 	/// <summary>
-	/// 色関連の定数群
+	/// @brief 色関連の定数群
 	/// </summary>
 	class Color final{
 
@@ -27,17 +29,17 @@ namespace Define{
 	};
 
 	/// <summary>
-	/// 計算関連の定数群
+	/// @brief 計算関連の定数群
 	/// </summary>
 	class Mach final{
 
 	public:
-		const static float Defi_Pai;
+		const static float Math_Pai;
 
 	};
 
 	/// <summary>
-	/// ゲーム難易度関連の定数群
+	/// @brief ゲーム難易度関連の定数群
 	/// </summary>
 	enum eGameLevel{
 		Easy,

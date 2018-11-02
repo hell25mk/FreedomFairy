@@ -10,7 +10,7 @@ class SceneManager final : public SceneChanger{
 
 public:
 	SceneManager();
-	~SceneManager() = default;
+	~SceneManager();
 	bool Update();
 	void Draw() const;
 	virtual void SceneChange(const eSceneType scene, const Parameter& parameter, const bool stackClear) override;

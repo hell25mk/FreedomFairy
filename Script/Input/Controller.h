@@ -1,30 +1,33 @@
 #pragma once
 
+#include "../DesignPattern/Singleton/Singleton.h"
 #include <array>
+#include <memory>
+#include "DefineController.h"
 
 class Keyboard;
 class GamePad;
 
-enum eInputType{
-	eType_Left,
-	eType_Up,
-	eType_Right,
-	eType_Down,
-	eType_Shot,
-	eType_Bomb,
-	eType_Slow,
-};
-
-class Controller{
+class Controller : public Singleton<Controller>{
 
 public:
-	Controller();
-	~Controller();
+	friend class Singleton<Controller>;
+	virtual void Create() override;
+	virtual void Destroy() override;
 	bool Update();
-	int Input(eInputType eID) const;
+	int Get(Input::eInputType eID) const;
 	
+protected:
+	Controller() = default;
+	virtual ~Controller() = default;
+
 private:
-	Keyboard* gameKeyboard;
-	GamePad* gamePad;
+	void Merge();
+
+private:
+	std::array<int, Input::Pad_Num> aryInputID;
+	std::array<int, Input::Pad_Num> aryInputState;
+	std::shared_ptr<Keyboard> gameKeyboard;
+	std::shared_ptr<GamePad> gamePad;
 
 };

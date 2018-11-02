@@ -19,7 +19,6 @@ public:
 	void HitAction();
 
 private:
-	Controller* controller;
 	BaseCollider* collider;
 	HitPoint* hp;
 	float moveVector;

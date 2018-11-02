@@ -3,6 +3,7 @@
 #include "../../MyLibrary/MyLibrary.h"
 #include "../../Define/Define.h"
 #include "../../System/Parameter/Parameter.h"
+#include "../../Input/Controller.h"
 
 TitleScene::TitleScene(SceneChanger* scene, const Parameter& parameter):BaseScene(scene, parameter){
 }
@@ -22,7 +23,7 @@ void TitleScene::Draw() const{
 
 void TitleScene::SceneChange(){
 
-	if(CheckHitKey(keycode::KeyCode_Z)){
+	if(Controller::GetInstance().Get(Input::eInputType::Shot)){
 		Parameter parameter;
 		parameter.Set(GameScene::ParameterTag_Level, Define::eGameLevel::Easy);
 		sceneChanger->SceneChange(eSceneType::Game, parameter, false);

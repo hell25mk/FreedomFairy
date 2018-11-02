@@ -1,15 +1,18 @@
 #include "SceneManager.h"
 #include "../Inheritance/StationeryScene.h"
 #include "../../System/Parameter/Parameter.h"
+#include "../../Input/Controller.h"
 #include "../../System/Error/ErrorMacro.h"
+
 SceneManager::SceneManager(){
 
+	Controller::GetInstance().Create();
 	Parameter parameter;
 	stackScene.push(std::make_shared<TitleScene>(this, parameter));
 
 }
 
-/*SceneManager::~SceneManager(){
+SceneManager::~SceneManager(){
 
 	while(!stackScene.empty()){
 
@@ -17,10 +20,13 @@ SceneManager::SceneManager(){
 
 	}
 
-}*/
+	Controller::GetInstance().Destroy();
+
+}
 
 bool SceneManager::Update(){
 
+	Controller::GetInstance().Update();
 	stackScene.top()->Update();
 
 	return true;
