@@ -50,7 +50,7 @@ void SceneManager::SceneChange(const eSceneType scene, const Parameter& paramete
 			stackScene.push(std::make_shared<GameScene>(this, parameter));
 			break;
 		default:
-			DEFI_ERROR("存在しないシーンが呼ばれました");
+			ERROR_REPORT("存在しないシーンが呼ばれました");
 			break;
 	}
 
