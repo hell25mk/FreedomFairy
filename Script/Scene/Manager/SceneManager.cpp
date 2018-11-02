@@ -1,7 +1,7 @@
 #include "SceneManager.h"
 #include "../Inheritance/StationeryScene.h"
 #include "../../System/Parameter/Parameter.h"
-
+#include "../../System/Error/ErrorMacro.h"
 SceneManager::SceneManager(){
 
 	Parameter parameter;
@@ -50,6 +50,7 @@ void SceneManager::SceneChange(const eSceneType scene, const Parameter& paramete
 			stackScene.push(std::make_shared<GameScene>(this, parameter));
 			break;
 		default:
+			DEFI_ERROR("‘¶İ‚µ‚È‚¢ƒV[ƒ“‚ªŒÄ‚Î‚ê‚Ü‚µ‚½");
 			break;
 	}
 
