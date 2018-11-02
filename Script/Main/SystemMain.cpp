@@ -9,7 +9,7 @@ const int Color_Bit = 32;
 bool SystemMain::Init() const{
 
 	ChangeWindowMode(true);
-	SetGraphMode(Window::Window_Width, Window::Window_Height, Color_Bit);
+	SetGraphMode(Define::Window::Window_Width, Define::Window::Window_Height, Color_Bit);
 	SetMainWindowText(Game_Title);
 	SetOutApplicationLogValidFlag(false);		//Log.txtÇÃèoóÕÇí‚é~
 

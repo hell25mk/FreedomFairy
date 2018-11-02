@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../SceneChanger.h"
+
 class SceneChanger;
 class Parameter;
 
@@ -10,6 +12,9 @@ public:
 	virtual ~BaseScene() = default;
 	virtual bool Update() = 0;
 	virtual void Draw() const  = 0;
+
+protected:
+	virtual void SceneChange() = 0;
 
 protected:
 	SceneChanger* sceneChanger;

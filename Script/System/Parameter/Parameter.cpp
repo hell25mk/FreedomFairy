@@ -8,7 +8,7 @@ void Parameter::Set(std::string key, int value){
 
 }
 
-int Parameter::Get(std::string key, int value) const{
+int Parameter::Get(std::string key) const{
 
 	auto itr = mapParameter.find(key);
 

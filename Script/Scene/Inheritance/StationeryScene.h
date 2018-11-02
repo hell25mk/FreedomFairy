@@ -11,6 +11,9 @@ public:
 	virtual bool Update() override;
 	virtual void Draw() const override;
 
+protected:
+	virtual void SceneChange() override;
+
 };
 #pragma endregion
 
@@ -25,7 +28,15 @@ public:
 	virtual bool Update() override;
 	virtual void Draw() const override;
 
+public:
+	const static char* ParameterTag_Stage;
+	const static char* ParameterTag_Level;
+
+protected:
+	virtual void SceneChange() override;
+
 private:
+	int gameLevel;
 	ObjectCreater* objectCreater;
 
 };

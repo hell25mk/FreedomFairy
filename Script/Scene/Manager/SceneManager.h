@@ -12,7 +12,7 @@ public:
 	SceneManager();
 	~SceneManager() = default;
 	bool Update();
-	void Draw();
+	void Draw() const;
 	virtual void SceneChange(const eSceneType scene, const Parameter& parameter, const bool stackClear) override;
 
 private:

@@ -5,7 +5,7 @@
 SceneManager::SceneManager(){
 
 	Parameter parameter;
-	stackScene.push(std::make_shared<GameScene>(this, parameter));
+	stackScene.push(std::make_shared<TitleScene>(this, parameter));
 
 }
 
@@ -26,11 +26,31 @@ bool SceneManager::Update(){
 	return true;
 }
 
-void SceneManager::Draw(){
+void SceneManager::Draw() const{
 
 	stackScene.top()->Draw();
 
 }
 
 void SceneManager::SceneChange(const eSceneType scene, const Parameter& parameter, const bool stackClear){
+
+	if(stackClear){
+		while(!stackScene.empty()){
+
+			stackScene.pop();
+
+		}
+	}
+
+	switch(scene){
+		case Title:
+			stackScene.push(std::make_shared<TitleScene>(this, parameter));
+			break;
+		case Game:
+			stackScene.push(std::make_shared<GameScene>(this, parameter));
+			break;
+		default:
+			break;
+	}
+
 }
