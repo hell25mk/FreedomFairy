@@ -15,10 +15,10 @@ GameScene::GameScene(SceneChanger* scene, const Parameter& parameter):BaseScene(
 
 	gameLevel = parameter.Get(ParameterTag_Level);
 
-	ObjectManager::GetInstance().Create();
-	ColliderManager::GetInstance().Create();
-	ScoreManager::GetInstance().Create();
-	UIManager::GetInstance().Create();
+	ObjectManager::Instance().Create();
+	ColliderManager::Instance().Create();
+	ScoreManager::Instance().Create();
+	UIManager::Instance().Create();
 
 	objectCreater = new ObjectCreater();
 	objectCreater->PlayerCreate();
@@ -28,10 +28,10 @@ GameScene::GameScene(SceneChanger* scene, const Parameter& parameter):BaseScene(
 GameScene::~GameScene(){
 
 	SELF_DELETE(objectCreater);
-	UIManager::GetInstance().Destroy();
-	ScoreManager::GetInstance().Destroy();
-	ColliderManager::GetInstance().Destroy();
-	ObjectManager::GetInstance().Destroy();
+	UIManager::Instance().Destroy();
+	ScoreManager::Instance().Destroy();
+	ColliderManager::Instance().Destroy();
+	ObjectManager::Instance().Destroy();
 
 }
 
@@ -39,9 +39,9 @@ bool GameScene::Update(){
 
 	SceneChange();
 
-	UIManager::GetInstance().Update();
-	ObjectManager::GetInstance().Update();
-	ColliderManager::GetInstance().Update();
+	UIManager::Instance().Update();
+	ObjectManager::Instance().Update();
+	ColliderManager::Instance().Update();
 	objectCreater->Update();
 
 	return true;
@@ -49,8 +49,8 @@ bool GameScene::Update(){
 
 void GameScene::Draw() const{
 
-	UIManager::GetInstance().Draw();
-	ObjectManager::GetInstance().Draw();
+	UIManager::Instance().Draw();
+	ObjectManager::Instance().Draw();
 
 }
 

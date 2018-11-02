@@ -23,7 +23,7 @@ void TitleScene::Draw() const{
 
 void TitleScene::SceneChange(){
 
-	if(Controller::GetInstance().Get(Input::eInputType::Shot)){
+	if(Controller::Instance().Get(Input::eInputType::Shot)){
 		Parameter parameter;
 		parameter.Set(GameScene::ParameterTag_Level, Define::eGameLevel::Easy);
 		sceneChanger->SceneChange(eSceneType::Game, parameter, false);

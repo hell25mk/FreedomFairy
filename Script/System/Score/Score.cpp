@@ -32,6 +32,6 @@ void Score::AddScore(int s){
 
 void Score::Release(){
 
-	ScoreManager::GetInstance().SetScore(this);
+	ScoreManager::Instance().SetScore(this);
 
 }

@@ -23,7 +23,7 @@ BaseObject::~BaseObject(){
 
 void BaseObject::ListRegistration(BaseObject* obj){
 
-	ObjectManager::GetInstance().ListPush(obj);
+	ObjectManager::Instance().ListPush(obj);
 
 }
 

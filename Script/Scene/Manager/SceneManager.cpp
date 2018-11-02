@@ -6,7 +6,7 @@
 
 SceneManager::SceneManager(){
 
-	Controller::GetInstance().Create();
+	Controller::Instance().Create();
 	Parameter parameter;
 	stackScene.push(std::make_shared<TitleScene>(this, parameter));
 
@@ -20,13 +20,13 @@ SceneManager::~SceneManager(){
 
 	}
 
-	Controller::GetInstance().Destroy();
+	Controller::Instance().Destroy();
 
 }
 
 bool SceneManager::Update(){
 
-	Controller::GetInstance().Update();
+	Controller::Instance().Update();
 	stackScene.top()->Update();
 
 	return true;

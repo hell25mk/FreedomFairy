@@ -17,7 +17,7 @@ BaseCollider::BaseCollider(Vector2D<float> vec, int rad, int tag){
 	this->vec2 = vec;
 	this->radius = rad;
 	objectTag = tag;
-	ColliderManager::GetInstance().ListPush(this, tag);
+	ColliderManager::Instance().ListPush(this, tag);
 
 }
 

@@ -7,7 +7,7 @@ const int Color_White = GetColor(255, 255, 255);
 
 GameMain::GameMain(){
 
-	FPS::GetInstance().Create();
+	FPS::Instance().Create();
 	sceneManager = new SceneManager();
 
 }
@@ -15,21 +15,21 @@ GameMain::GameMain(){
 GameMain::~GameMain(){
 
 	delete sceneManager;
-	FPS::GetInstance().Destroy();
+	FPS::Instance().Destroy();
 
 }
 
 bool GameMain::GameLoop(){
 
-	FPS::GetInstance().Update();
+	FPS::Instance().Update();
 
 	if(!sceneManager->Update()){
 		return false;
 	}
 	
-	FPS::GetInstance().Wait();
+	FPS::Instance().Wait();
 	sceneManager->Draw();
-	FPS::GetInstance().Draw();
+	FPS::Instance().Draw();
 
 	return true;
 }

@@ -61,7 +61,7 @@ void Player::Draw(){
 
 void Player::Move(){
 
-	if(Controller::GetInstance().Get(Input::eInputType::Slow)){
+	if(Controller::Instance().Get(Input::eInputType::Slow)){
 		moveVector = 2.0f;
 	} else{
 		moveVector = 5.0f;
@@ -69,19 +69,19 @@ void Player::Move(){
 
 	int moveRange = Image_Size / 2;
 
-	if(Controller::GetInstance().Get(Input::eInputType::Up) && vec2.GetDy() >= 0 + moveRange){
+	if(Controller::Instance().Get(Input::eInputType::Up) && vec2.GetDy() >= 0 + moveRange){
 		vec2.Add(0.0f, -moveVector);
 	}
 
-	if(Controller::GetInstance().Get(Input::eInputType::Down) && vec2.GetDy() <= Game_HeightSize - moveRange){
+	if(Controller::Instance().Get(Input::eInputType::Down) && vec2.GetDy() <= Game_HeightSize - moveRange){
 		vec2.Add(0.0f, moveVector);
 	}
 
-	if(Controller::GetInstance().Get(Input::eInputType::Left) && vec2.GetDx() >= 0 + moveRange){
+	if(Controller::Instance().Get(Input::eInputType::Left) && vec2.GetDx() >= 0 + moveRange){
 		vec2.Add(-moveVector, 0.0f);
 	}
 
-	if(Controller::GetInstance().Get(Input::eInputType::Right) && vec2.GetDx() <= Game_WidthSize - moveRange){
+	if(Controller::Instance().Get(Input::eInputType::Right) && vec2.GetDx() <= Game_WidthSize - moveRange){
 		vec2.Add(moveVector, 0.0f);
 	}
 
@@ -89,7 +89,7 @@ void Player::Move(){
 
 void Player::Shot(){
 
-	if(!Controller::GetInstance().Get(Input::eInputType::Shot)){
+	if(!Controller::Instance().Get(Input::eInputType::Shot)){
 		return;
 	}
 

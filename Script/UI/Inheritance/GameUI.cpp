@@ -35,8 +35,8 @@ void GameUI::Draw(){
 	DrawBox(vec2.GetDx(), vec2.GetDy(), vec2.GetDx() + width, vec2.GetDy() + height, Color_Blue, true);
 
 	SetFontSize(Font_Size);
-	DrawFormatString(vec2.GetDx() + 10, vec2.GetDy() + 10, Color_Green, "HiScore %09d", ScoreManager::GetInstance().GetScore(eScoreType::High));
-	DrawFormatString(vec2.GetDx() + 10, vec2.GetDy() + 40, Color_Green, "  Score %09d", ScoreManager::GetInstance().GetScore(eScoreType::Now));
+	DrawFormatString(vec2.GetDx() + 10, vec2.GetDy() + 10, Color_Green, "HiScore %09d", ScoreManager::Instance().GetScore(eScoreType::High));
+	DrawFormatString(vec2.GetDx() + 10, vec2.GetDy() + 40, Color_Green, "  Score %09d", ScoreManager::Instance().GetScore(eScoreType::Now));
 	SetFontSize(DEFAULT_FONT_SIZE);
 
 }
