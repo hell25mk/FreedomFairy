@@ -41,7 +41,7 @@ bool ObjectManager::Update(){
 	return true;
 }
 
-void ObjectManager::Draw(){
+void ObjectManager::Draw() const{
 
 	//•`‰æ
 	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){

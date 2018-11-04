@@ -49,7 +49,7 @@ bool Enemy::Update(){
 	return isAlive;
 }
 
-void Enemy::Draw(){
+void Enemy::Draw() const{
 
 	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);
 	//collider->Draw();

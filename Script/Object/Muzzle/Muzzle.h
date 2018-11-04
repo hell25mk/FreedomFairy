@@ -10,7 +10,7 @@ public:
 	Muzzle(Vector2D<float> *vec);
 	virtual ~Muzzle();
 	virtual bool Update() override;
-	virtual void Draw() override;
+	virtual void Draw() const override;
 	void Shot();
 
 private:

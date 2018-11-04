@@ -52,7 +52,7 @@ bool Player::Update(){
 	return isAlive;
 }
 
-void Player::Draw(){
+void Player::Draw() const{
 
 	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);	//‰æ‘œ‚É•ÏX‚·‚é‚Ì‚Åíœ—\’è
 	collider->Draw();

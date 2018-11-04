@@ -10,7 +10,7 @@ public:
 	CircleCollider(Vector2D<float> &vec, int rad, int tag);
 	virtual ~CircleCollider();
 	virtual bool Update() override;
-	virtual void Draw() override;
+	virtual void Draw() const override;
 
 };
 #pragma endregion

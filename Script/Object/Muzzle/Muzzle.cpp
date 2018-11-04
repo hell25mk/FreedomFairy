@@ -29,7 +29,7 @@ bool Muzzle::Update(){
 	return true;
 }
 
-void Muzzle::Draw(){
+void Muzzle::Draw() const{
 
 	DrawCircle(mvec2->GetDx(), mvec2->GetDy(), radius, color, true);
 

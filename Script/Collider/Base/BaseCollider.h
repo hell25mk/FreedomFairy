@@ -9,7 +9,7 @@ public:
 	BaseCollider(Vector2D<float> vec, int rad, int tag);
 	virtual ~BaseCollider();
 	virtual bool Update();
-	virtual void Draw() = 0;
+	virtual void Draw() const = 0;
 
 	void SetVector(Vector2D<float> vec);
 	Vector2D<float> GetVector();

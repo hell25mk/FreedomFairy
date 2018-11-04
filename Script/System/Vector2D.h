@@ -10,26 +10,26 @@ public:
 	Vector2D(Type argx, Type argy):x(argx), y(argy){ }
 	~Vector2D(){ }
 
-	void Set(Type argx, Type argy){
+	void Set(const Type argx, const Type argy){
 
 		this->x = argx;
 		this->y = argy;
 
 	}
-	void Add(Type argx, Type argy){
+	void Add(const Type argx, const Type argy){
 
 		this->x += argx;
 		this->y += argy;
 
 	}
-	void Sub(Type argx, Type argy){
+	void Sub(const Type argx, const Type argy){
 
 		this->x -= argx;
 		this->y -= argy;
 
 	}
 
-#pragma region 演算子オーバーロード
+/*#pragma region 演算子オーバーロード
 	//加算
 	void operator+=(Vector2D pos){
 
@@ -118,19 +118,19 @@ public:
 
 		return temp;
 	}
-#pragma endregion
+#pragma endregion*/
 	
 #pragma region アクセサー
-	Type GetX(){
+	Type GetX() const{
 		return this->x;
 	}
-	Type GetY(){
+	Type GetY() const{
 		return this->y;
 	}
-	int GetDx(){
+	int GetDx() const{
 		return (int)this->x;
 	}
-	int GetDy(){
+	int GetDy() const{
 		return (int)this->y;
 	}
 #pragma endregion

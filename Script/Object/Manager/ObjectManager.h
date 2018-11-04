@@ -17,7 +17,7 @@ public:
 	virtual void Create() override;
 	virtual void Destroy() override;
 	bool Update();
-	void Draw();
+	void Draw() const;
 	void ListPush(BaseObject* obj);
 
 protected:

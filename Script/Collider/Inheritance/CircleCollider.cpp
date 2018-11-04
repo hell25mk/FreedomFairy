@@ -17,7 +17,7 @@ bool CircleCollider::Update(){
 	return true;
 }
 
-void CircleCollider::Draw(){
+void CircleCollider::Draw() const{
 
 	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);
 

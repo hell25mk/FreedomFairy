@@ -13,7 +13,7 @@ public:
 	Enemy(float x, float y, float speed);
 	virtual ~Enemy();
 	virtual bool Update() override;
-	virtual void Draw() override;
+	virtual void Draw() const override;
 	void HitAction();
 
 private:

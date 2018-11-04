@@ -15,7 +15,7 @@ public:
 	BaseObject(float x, float y, int rad, unsigned int color);
 	virtual ~BaseObject();
 	virtual bool Update() = 0;
-	virtual void Draw() = 0;
+	virtual void Draw() const = 0;
 
 	void ListRegistration(BaseObject* obj);
 	Vector2D<float> GetVector();
