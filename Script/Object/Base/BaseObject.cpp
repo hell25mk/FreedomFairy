@@ -18,9 +18,6 @@ BaseObject::BaseObject(float x, float y, int rad, unsigned int color){
 
 }
 
-BaseObject::~BaseObject(){
-}
-
 void BaseObject::ListRegistration(BaseObject* obj){
 
 	ObjectManager::Instance().ListPush(obj);

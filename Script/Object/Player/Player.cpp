@@ -6,6 +6,8 @@
 #include "../Creater/ObjectCreater.h"
 #include "../../System/HitPoint/HitPoint.h"
 
+using key = Input::eInputType;
+
 const int Game_WidthSize = 420;
 const int Game_HeightSize = 480;
 const int Hit_Range = 3;
@@ -18,7 +20,7 @@ Player::Player(){
 
 Player::Player(float x, float y):BaseObject(x, y){
 
-	moveVector = 5.0f;
+	moveSpeed = 9.0f;
 	isAlive = true;
 
 	radius = 20;
@@ -45,7 +47,10 @@ bool Player::Update(){
 	}
 
 	Move();
-	Shot();
+
+	if(Controller::Instance().Get(key::Shot)){
+		Shot();
+	}
 
 	collider->SetVector(vec2);
 
@@ -61,37 +66,42 @@ void Player::Draw() const{
 
 void Player::Move(){
 
-	if(Controller::Instance().Get(Input::eInputType::Slow)){
-		moveVector = 2.0f;
-	} else{
-		moveVector = 5.0f;
-	}
+	
 
+	float moveX = 0, moveY = 0;
 	int moveRange = Image_Size / 2;
 
-	if(Controller::Instance().Get(Input::eInputType::Up) && vec2.GetDy() >= 0 + moveRange){
-		vec2.Add(0.0f, -moveVector);
+	if(Controller::Instance().Get(key::Up) && vec2.GetDy() >= 0 + moveRange){
+		moveY -= moveSpeed;
 	}
 
-	if(Controller::Instance().Get(Input::eInputType::Down) && vec2.GetDy() <= Game_HeightSize - moveRange){
-		vec2.Add(0.0f, moveVector);
+	if(Controller::Instance().Get(key::Down) && vec2.GetDy() <= Game_HeightSize - moveRange){
+		moveY += moveSpeed;
 	}
 
-	if(Controller::Instance().Get(Input::eInputType::Left) && vec2.GetDx() >= 0 + moveRange){
-		vec2.Add(-moveVector, 0.0f);
+	if(Controller::Instance().Get(key::Left) && vec2.GetDx() >= 0 + moveRange){
+		moveX -= moveSpeed;
 	}
 
-	if(Controller::Instance().Get(Input::eInputType::Right) && vec2.GetDx() <= Game_WidthSize - moveRange){
-		vec2.Add(moveVector, 0.0f);
+	if(Controller::Instance().Get(key::Right) && vec2.GetDx() <= Game_WidthSize - moveRange){
+		moveX += moveSpeed;
 	}
+
+	if(moveX && moveY){
+		moveX /= (float)std::sqrt(2.0);
+		moveY /= (float)std::sqrt(2.0);
+	}
+
+	if(Controller::Instance().Get(key::Slow)){
+		moveX /= 2;
+		moveY /= 2;
+	}
+
+	vec2.Add(moveX, moveY);
 
 }
 
 void Player::Shot(){
-
-	if(!Controller::Instance().Get(Input::eInputType::Shot)){
-		return;
-	}
 
 	ObjectCreater objCreate;
 	objCreate.BulletCreate(vec2, 5, -15.0f, eTag_Player);

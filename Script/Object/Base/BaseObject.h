@@ -13,7 +13,7 @@ public:
 	BaseObject();
 	BaseObject(float x, float y);
 	BaseObject(float x, float y, int rad, unsigned int color);
-	virtual ~BaseObject();
+	virtual ~BaseObject() = default;
 	virtual bool Update() = 0;
 	virtual void Draw() const = 0;
 
