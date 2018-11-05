@@ -8,10 +8,19 @@ namespace Define{
 	class Window final{
 
 	public:
+		//ウィンドウサイズ
 		const static int Window_Width;
 		const static int Window_Height;
-		const static int GameRange_Width;
-		const static int GameRange_Height;
+
+		//ゲーム内のサイズ
+		const static int Out_Width;			//外枠
+		const static int Out_Height;
+		const static int In_Width;			//内枠
+		const static int In_Height;
+		const static int Center_Px;			//動ける範囲の中央座標
+		const static int Center_Py;
+		const static int In_Px;				//内枠座標
+		const static int In_Py;
 
 	};
 
@@ -38,6 +47,16 @@ namespace Define{
 
 	};
 
+	enum eStage{
+		Stage1,
+		Stage2,
+		Stage3,
+		Stage4,
+		Stage5,
+
+		StageNum,
+	};
+
 	/// <summary>
 	/// @brief ゲーム難易度関連の定数群
 	/// </summary>
@@ -46,6 +65,8 @@ namespace Define{
 		Normal,
 		Hard,
 		Lunatic,
+
+		LevelNum,
 	};
 
 }
