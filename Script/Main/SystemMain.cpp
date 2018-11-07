@@ -3,14 +3,14 @@
 #include "../Define/Define.h"
 #include "GameMain.h"
 
-const char* Game_Title = "STG";
+const char* Window_Title = "STG ver 1.0.0a";
 const int Color_Bit = 32;
 
 bool SystemMain::Init() const{
 
 	ChangeWindowMode(true);
 	SetGraphMode(Define::Window::Window_Width, Define::Window::Window_Height, Color_Bit);
-	SetMainWindowText(Game_Title);
+	SetMainWindowText(Window_Title);
 	SetOutApplicationLogValidFlag(false);		//Log.txtÇÃèoóÕÇí‚é~
 
 	if(DxLib_Init()){
