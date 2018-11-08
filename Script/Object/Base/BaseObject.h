@@ -10,7 +10,7 @@ enum ObjectTags{
 class BaseObject{
 
 public:
-	BaseObject();
+	BaseObject() = default;
 	BaseObject(float x, float y);
 	BaseObject(float x, float y, int rad, unsigned int color);
 	virtual ~BaseObject() = default;

@@ -17,7 +17,7 @@ Enemy::Enemy(float x, float y, float speed):BaseObject(x, y){
 	color = GetColor(255, 0, 0);
 
 	collider = new CircleCollider(vec2, radius, eTag_Enemy);
-	hp = new HitPoint(10);
+	hp = new HitPoint(5);
 	score = new Score(100);
 
 	ListRegistration(this);
@@ -59,10 +59,23 @@ void Enemy::Draw() const{
 void Enemy::HitAction(){
 
 	hp->Sub(1);
+
+	switch(hp->Get()){
+		case 3:
+			color = GetColor(0, 255, 0);
+			break;
+		case 1:
+			color = GetColor(0, 0, 255);
+			break;
+		default:
+			break;
+	};
 	
 	if(hp->Get() == 0){
 		score->Release();
 		isAlive = false;
 	}
+
+	collider->SetHitFlag(false);
 
 }

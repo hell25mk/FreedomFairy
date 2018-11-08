@@ -1,13 +1,17 @@
 #include "Define.h"
 
-const int Define::Window::Window_Width = 640;
-const int Define::Window::Window_Height = 480;
+using Win = Define::Window;
 
-const int Define::Window::Out_Width = 448;
-const int Define::Window::Out_Height = 480;
-const int Define::Window::In_Width = 385;
-const int Define::Window::In_Height = 440;
-const int Define::Window::Center_Px = (Out_Width / 2);
-const int Define::Window::Center_Py = (Out_Height / 2);
-const int Define::Window::In_Px = ((Out_Width - In_Width) / 2);
-const int Define::Window::In_Py = ((Out_Height - In_Height) / 2);
+//ウィンドウのサイズ
+const int Win::Window_Width	 = 640;
+const int Win::Window_Height = 480;
+
+//ゲーム画面サイズ
+const int Win::Out_Width	 = (int)(Window_Width * 0.7);
+const int Win::Out_Height	 =		 Window_Height;
+const int Win::In_Width		 = (int)(Window_Width * 0.6);
+const int Win::In_Height	 = (int)(Window_Height * 0.9);
+const int Win::Center_Px	 = (int)(Out_Width / 2);
+const int Win::Center_Py	 = (int)(Out_Height / 2);
+const int Win::In_Px		 = (int)((Out_Width - In_Width) / 2);
+const int Win::In_Py		 = (int)((Out_Height - In_Height) / 2);

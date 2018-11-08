@@ -3,7 +3,7 @@
 
 Image::Image(){
 
-
+	board = MyLoadGraph("Image/Board/Board192x480.png");
 
 }
 
@@ -32,7 +32,12 @@ int Image::GetPlayer() const{
 	return player;
 }
 
-int Image::MyLoadGraph(char* fileName){
+int Image::GetBoard() const{
+
+	return board;
+}
+
+int Image::MyLoadGraph(const char* fileName){
 
 	int ret = LoadGraph(fileName);
 	vectorImage.push_back(ret);
@@ -40,7 +45,7 @@ int Image::MyLoadGraph(char* fileName){
 	return ret;
 }
 
-int Image::MyLoadDivGraph(char* fileName, int n, int xn, int yn, int w, int h, int *buf){
+int Image::MyLoadDivGraph(const char* fileName, int n, int xn, int yn, int w, int h, int *buf){
 
 	int ret = LoadDivGraph(fileName, n, xn, yn, w, h, buf);
 

@@ -3,11 +3,14 @@
 #include "../../System/Parameter/Parameter.h"
 #include "../../Input/Controller.h"
 #include "../../System/Error/ErrorMacro.h"
+#include "../../System/Image/Image.h"
 
 SceneManager::SceneManager(){
 
 	Controller::Instance().Create();
 	Parameter parameter;
+	Image::Instance().Load();
+
 	stackScene.push(std::make_shared<TitleScene>(this, parameter));
 
 }

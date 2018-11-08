@@ -1,25 +1,22 @@
 #include "Player.h"
 #include "DxLib.h"
 #include "../../MyLibrary/MyLibrary.h"
+#include "../../Define/Define.h"
 #include "../../Input/Controller.h"
 #include "../../Collider/Inheritance/StationeryCollider.h"
 #include "../Creater/ObjectCreater.h"
 #include "../../System/HitPoint/HitPoint.h"
 
-using key = Input::eInputType;
+using Key = Input::eInputType;
+using Win = Define::Window;
 
-const int Game_WidthSize = 420;
-const int Game_HeightSize = 480;
 const int Hit_Range = 3;
-
 const int Image_AllNum = 12;
 const int Image_Size = 48;
 
 Player::Player(){
-}
 
-Player::Player(float x, float y):BaseObject(x, y){
-
+	vec2.Set((float)Win::Center_Px, (float)Win::Out_Height * 0.8f);
 	moveSpeed = 9.0f;
 	isAlive = true;
 
@@ -48,7 +45,7 @@ bool Player::Update(){
 
 	Move();
 
-	if(Controller::Instance().Get(key::Shot)){
+	if(Controller::Instance().Get(Key::Shot)){
 		Shot();
 	}
 
@@ -66,51 +63,64 @@ void Player::Draw() const{
 
 void Player::Move(){
 
-	
-
 	float moveX = 0, moveY = 0;
-	int moveRange = Image_Size / 2;
 
-	if(Controller::Instance().Get(key::Up) && vec2.GetDy() >= 0 + moveRange){
+	if(Controller::Instance().Get(Key::Up)){
 		moveY -= moveSpeed;
 	}
 
-	if(Controller::Instance().Get(key::Down) && vec2.GetDy() <= Game_HeightSize - moveRange){
+	if(Controller::Instance().Get(Key::Down)){
 		moveY += moveSpeed;
 	}
 
-	if(Controller::Instance().Get(key::Left) && vec2.GetDx() >= 0 + moveRange){
+	if(Controller::Instance().Get(Key::Left)){
 		moveX -= moveSpeed;
 	}
 
-	if(Controller::Instance().Get(key::Right) && vec2.GetDx() <= Game_WidthSize - moveRange){
+	if(Controller::Instance().Get(Key::Right)){
 		moveX += moveSpeed;
 	}
 
+	//ŽÎ‚ßˆÚ“®Žžã2‚ÅŠ„‚é
 	if(moveX && moveY){
 		moveX /= (float)std::sqrt(2.0);
 		moveY /= (float)std::sqrt(2.0);
 	}
 
-	if(Controller::Instance().Get(key::Slow)){
+	//Œ¸‘¬
+	if(Controller::Instance().Get(Key::Slow)){
 		moveX /= 2;
 		moveY /= 2;
 	}
 
-	vec2.Add(moveX, moveY);
+	//ˆÚ“®‰Â”\”ÍˆÍ‚ÌŠm”F
+	float px = vec2.GetX(), py = vec2.GetY();
+	if(px + moveX < Win::In_Px){
+		moveX = 0;
+	} else if(px + moveX > Win::In_Px + Win::In_Width){
+		moveX = 0;
+	}
+
+	if(py + moveY < Win::In_Py){
+		moveY = 0;
+	} else if(py + moveY > Win::In_Py + Win::In_Height){
+		moveY = 0;
+	} 
+
+	vec2.Add(moveX , moveY);
 
 }
 
 void Player::Shot(){
 
-	ObjectCreater objCreate;
-	objCreate.BulletCreate(vec2, 5, -15.0f, eTag_Player);
+	/*ObjectCreater objCreate;
+	objCreate.BulletCreate(vec2, 5, -15.0f, eTag_Player);*/
 
 }
 
 void Player::HitAction(){
 
-	//hp->Sub(1);
+	hp->Sub(1);
 
 	if(hp->Get() == 0){
 		isAlive = false;

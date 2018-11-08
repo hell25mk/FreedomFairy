@@ -6,11 +6,10 @@
 
 const float Spown_Width = 200.0f;
 const float Spown_Height = 400.0f;
-const int Create_TimeCount = 5;
+const int Create_TimeCount = 10;
 
 ObjectCreater::ObjectCreater():enemyCreateCount(0){
 }
-
 
 ObjectCreater::~ObjectCreater(){
 }
@@ -30,7 +29,7 @@ bool ObjectCreater::Update(){
 
 void ObjectCreater::PlayerCreate(){
 
-	Player* player = new Player(Spown_Width, Spown_Height);
+	//Player* player = new Player(Spown_Width, Spown_Height);
 
 }
 

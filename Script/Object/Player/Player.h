@@ -10,7 +10,6 @@ class Player : public BaseObject{
 
 public:
 	Player();
-	Player(float x, float y);
 	virtual ~Player();
 	virtual bool Update() override;
 	virtual void Draw() const override;

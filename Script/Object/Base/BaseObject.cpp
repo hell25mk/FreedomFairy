@@ -1,9 +1,6 @@
 #include "BaseObject.h"
 #include "../Manager/ObjectManager.h"
 
-BaseObject::BaseObject(){
-}
-
 BaseObject::BaseObject(float x, float y){
 
 	this->vec2.Set(x, y);

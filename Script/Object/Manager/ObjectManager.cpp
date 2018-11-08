@@ -11,14 +11,14 @@ void ObjectManager::Create(){
 void ObjectManager::Destroy(){
 
 	//確保したメモリの解放
-	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
+	/*for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
 
 		delete *itr;
 		*itr = nullptr;
 
 		itr++;
 
-	}
+	}*/
 
 }
 
@@ -51,6 +51,9 @@ void ObjectManager::Draw() const{
 		itr++;
 
 	}
+
+	clsDx();
+	printfDx("オブジェクト数 : %d", listObject.size());
 
 }
 
