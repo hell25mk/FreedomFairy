@@ -3,7 +3,7 @@
 #include "../Define/Define.h"
 #include "GameMain.h"
 
-const char* Window_Title = "STG ver 1.0.0a";
+const char* Window_Title = "STG ver a";
 const int Color_Bit = 32;
 
 bool SystemMain::Init() const{
