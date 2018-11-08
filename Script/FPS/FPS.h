@@ -1,28 +1,24 @@
 #pragma once
 
 #include "../DesignPattern/Singleton/Singleton.h"
+#include <list>
 
-class FPS : public Singleton<FPS>{
+class FPS{
 
 public:
-	friend class Singleton<FPS>;
-	virtual void Create() override;
-	virtual void Destroy() override;
-	bool Update();
+	FPS();
 	void Wait();
 	void Draw() const;
-
-protected:
-	FPS(){ }
-	virtual ~FPS(){ }
 	
 private:
-	static const int Sample_N;	//平均を取るサンプル数
-	static const int Loop_FPS;	//設定したFPS
+	void UpdateAverage();
+	void Regist();
+	unsigned int GetWaitTime() const;
+	float RoundPoint(float val, int point);
 
 private:
-	int startTime;		//測定開始時刻
-	int count;			//カウンタ
-	float fps;			//fps
+	std::list<int> list;
+	float fps;
+	unsigned int counter;
 
 };
