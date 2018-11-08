@@ -35,6 +35,7 @@ namespace Define{
 		const static int Color_Green;
 		const static int Color_Blue;
 		const static int Color_FBlue;
+		const static int Color_Black;
 
 	};
 
