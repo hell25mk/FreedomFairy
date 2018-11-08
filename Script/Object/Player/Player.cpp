@@ -17,7 +17,7 @@ const int Image_Size = 48;
 Player::Player(){
 
 	vec2.Set((float)Win::Center_Px, (float)Win::Out_Height * 0.8f);
-	moveSpeed = 9.0f;
+	moveSpeed = 4.0f;
 	isAlive = true;
 
 	radius = 20;
