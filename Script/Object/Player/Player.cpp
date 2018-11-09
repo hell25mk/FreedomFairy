@@ -10,7 +10,7 @@
 using Key = Input::eInputType;
 using Win = Define::Window;
 
-const int Hit_Range = 3;
+const int Hit_Range = 2;
 const int Image_AllNum = 12;
 const int Image_Size = 48;
 
@@ -20,7 +20,7 @@ Player::Player(){
 	moveSpeed = 4.0f;
 	isAlive = true;
 
-	radius = 20;
+	radius = 7;
 	color = GetColor(255, 255, 255);		//画像に変更するので削除予定
 
 	collider = new CircleCollider(vec2, Hit_Range, eTag_Player);
@@ -95,15 +95,15 @@ void Player::Move(){
 
 	//移動可能範囲の確認
 	float px = vec2.GetX(), py = vec2.GetY();
-	if(px + moveX < Win::In_Px){
+	if(px + moveX - radius < Win::In_Px){
 		moveX = 0;
-	} else if(px + moveX > Win::In_Px + Win::In_Width){
+	} else if(px + moveX + radius > Win::In_Px + Win::In_Width){
 		moveX = 0;
 	}
 
-	if(py + moveY < Win::In_Py){
+	if(py + moveY - radius < Win::In_Py){
 		moveY = 0;
-	} else if(py + moveY > Win::In_Py + Win::In_Height){
+	} else if(py + moveY + radius > Win::In_Py + Win::In_Height){
 		moveY = 0;
 	} 
 
