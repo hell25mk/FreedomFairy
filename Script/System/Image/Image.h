@@ -11,6 +11,7 @@ public:
 	void Release();
 	int GetPlayer() const;
 	int GetBoard() const;
+	int GetBackGround01() const;
 
 protected:
 	Image();
@@ -24,6 +25,7 @@ private:
 	std::vector<int> vectorImage;
 	int player;
 	int board;
+	int background01;
 
 };
 

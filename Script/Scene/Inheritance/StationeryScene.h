@@ -21,6 +21,7 @@ protected:
 #pragma region GameScene
 class Player;
 class Board;
+class BaseBackGround;
 
 class GameScene : public BaseScene{
 
@@ -40,6 +41,8 @@ protected:
 private:
 	std::shared_ptr<Player> player;
 	std::shared_ptr<Board> board;
+	std::shared_ptr<BaseBackGround> background;
+	std::shared_ptr<BaseBackGround> backgroundSpell;
 	int gameLevel;
 
 };

@@ -3,7 +3,8 @@
 
 Image::Image(){
 
-	board = MyLoadGraph("Image/Board/Board192x480.png");
+	board = MyLoadGraph("Image/Board/Board02.png");
+	background01 = MyLoadGraph("Image/BackGround/Stage01.png");
 
 }
 
@@ -35,6 +36,11 @@ int Image::GetPlayer() const{
 int Image::GetBoard() const{
 
 	return board;
+}
+
+int Image::GetBackGround01() const{
+
+	return background01;
 }
 
 int Image::MyLoadGraph(const char* fileName){

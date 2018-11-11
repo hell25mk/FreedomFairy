@@ -15,6 +15,7 @@ GameScene::GameScene(SceneChanger* scene, const Parameter& parameter):BaseScene(
 	ColliderManager::Instance().Create();
 	ScoreManager::Instance().Create();
 
+	background = std::make_shared<BackGround01>();
 	player = std::make_shared<Player>();
 	board = std::make_shared<Board>();
 
@@ -33,6 +34,7 @@ bool GameScene::Update(){
 
 	ColliderManager::Instance().Update();
 
+	background->Update();
 	player->Update();
 	board->Update();
 
@@ -41,8 +43,9 @@ bool GameScene::Update(){
 
 void GameScene::Draw() const{
 
-	player->Draw();
 	board->Draw();
+	background->Draw();
+	player->Draw();
 
 }
 

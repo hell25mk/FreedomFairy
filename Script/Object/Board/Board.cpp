@@ -20,8 +20,8 @@ bool Board::Update(){
 
 void Board::Draw() const{
 
-	//DrawBox(vec2.GetDx(), vec2.GetDy(), Win::Window_Width, Win::Window_Height, Color::Color_Blue, true);
-	DrawGraphF(vec2.GetX(), vec2.GetY(),Image::Instance().GetBoard(), true);
+	//DrawGraphF(vec2.GetX(), vec2.GetY(),Image::Instance().GetBoard(), true);
+	DrawGraphF(0, 0, Image::Instance().GetBoard(), true);
 #ifdef _DEBUG
 	GameFrame();
 #endif
