@@ -22,8 +22,6 @@ Enemy::Enemy(float x, float y):BaseObject(x, y){
 	hp = new HitPoint(5);
 	score = new Score(100);
 
-	ListRegistration(this);
-
 }
 
 Enemy::~Enemy(){

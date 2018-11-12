@@ -17,7 +17,6 @@ public:
 	virtual bool Update() = 0;
 	virtual void Draw() const = 0;
 
-	void ListRegistration(BaseObject* obj);
 	Vector2D<float> GetVector();
 	int GetRadius();
 	void SetAlive(bool alive);

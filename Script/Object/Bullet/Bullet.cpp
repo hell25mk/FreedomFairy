@@ -25,8 +25,6 @@ Bullet::Bullet(Vector2D<float> vec, int rad, float speed){
 	collider = new CircleCollider(vec2, radius, eTag_Player);
 	hp = new HitPoint(1);
 
-	ListRegistration(this);
-
 }
 
 Bullet::~Bullet(){

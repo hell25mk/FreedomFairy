@@ -4,7 +4,6 @@
 #include "../../Define/Define.h"
 #include "../../Input/Controller.h"
 #include "../../Collider/Inheritance/StationeryCollider.h"
-#include "../Creater/ObjectCreater.h"
 #include "../../System/HitPoint/HitPoint.h"
 
 using Key = Input::eInputType;
@@ -25,8 +24,6 @@ Player::Player(){
 
 	collider = new CircleCollider(vec2, Hit_Range, eTag_Player);
 	hp = new HitPoint(1);
-
-	ListRegistration(this);
 
 }
 
@@ -113,8 +110,7 @@ void Player::Move(){
 
 void Player::Shot(){
 
-	/*ObjectCreater objCreate;
-	objCreate.BulletCreate(vec2, 5, -15.0f, eTag_Player);*/
+	
 
 }
 
