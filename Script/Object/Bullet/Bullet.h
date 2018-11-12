@@ -19,7 +19,7 @@ public:
 private:
 	BaseCollider* collider;
 	HitPoint* hp;
-	float moveVector;
+	float moveSpeed;
 
 };
 

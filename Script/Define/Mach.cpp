@@ -1,5 +1,5 @@
 #include "Define.h"
 
-using Mach = Define::Mach;
+using Math = Define::Math;
 
-const float Mach::Math_Pai = 3.141592654f;
+const float Math::Math_Pai = 3.141592654f;

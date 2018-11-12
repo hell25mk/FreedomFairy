@@ -7,7 +7,7 @@ const float Wid_Z = 256.0f;
 const float Scroll_Speed = 0.1f;
 const float Space = 5;
 const float Speed = 0.01f;
-const float CsDefRotaX = (-Define::Mach::Math_Pai / 5.0f);
+const float CsDefRotaX = (-Define::Math::Math_Pai / 5.0f);
 const VECTOR vMove = { 0.5,-50 };
 const VECTOR GvPos[Surface::DataNum][4] = {
 	{ {0,Wid_Y,0},{0,Wid_Y,Wid_Z},{0,0,Wid_Z},{0,0,0} },

@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include "DxLib.h"
-#include "../../MyLibrary/MyLibrary.h"
+#include "../../Define/Define.h"
+#include <math.h>
 #include "../../Collider/Inheritance/StationeryCollider.h"
 #include "../../System/Score/Score.h"
 #include "../../System/HitPoint/HitPoint.h"
@@ -8,10 +9,11 @@
 Enemy::Enemy(){
 }
 
-Enemy::Enemy(float x, float y, float speed):BaseObject(x, y){
+Enemy::Enemy(float x, float y):BaseObject(x, y){
 
 	isAlive = true;
-	moveVector = speed;
+	moveSpeed = 2.0f;
+	moveAngle = Define::Math::Math_Pai / 2;
 
 	radius = 20;
 	color = GetColor(255, 0, 0);
@@ -26,8 +28,8 @@ Enemy::Enemy(float x, float y, float speed):BaseObject(x, y){
 
 Enemy::~Enemy(){
 
-	SELF_DELETE(score);
-	SELF_DELETE(hp);
+	delete score;
+	delete hp;
 	collider->SetAliveFlag(false);
 
 }
@@ -38,7 +40,12 @@ bool Enemy::Update(){
 		HitAction();
 	}
 
-	vec2.Add(0.0f, moveVector);
+	float x, y;
+
+	x = (float)cos(moveAngle) * moveSpeed;
+	y = (float)sin(moveAngle) * moveSpeed;
+	
+	vec2.Add(x, y);
 
 	if(vec2.GetY() >= 520){
 		return false;

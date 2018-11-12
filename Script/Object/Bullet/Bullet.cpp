@@ -16,7 +16,7 @@ Bullet::Bullet(){
 Bullet::Bullet(Vector2D<float> vec, int rad, float speed){
 
 	vec2 = vec;
-	moveVector = speed;
+	moveSpeed = speed;
 	isAlive = true;
 	
 	radius = rad;
@@ -69,7 +69,7 @@ void Bullet::Draw() const{
 
 void Bullet::Move(){
 
-	vec2.Add(0.0f, moveVector);
+	vec2.Add(0.0f, moveSpeed);
 
 }
 

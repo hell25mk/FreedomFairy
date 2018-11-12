@@ -10,7 +10,7 @@ class Enemy : public BaseObject{
 
 public:
 	Enemy();
-	Enemy(float x, float y, float speed);
+	Enemy(float x, float y);
 	virtual ~Enemy();
 	virtual bool Update() override;
 	virtual void Draw() const override;
@@ -19,7 +19,8 @@ public:
 private:
 	BaseCollider* collider;
 	HitPoint* hp;
-	float moveVector;
+	float moveSpeed;
+	float moveAngle;
 	Score* score;
 
 };

@@ -40,14 +40,13 @@ void ObjectCreater::EnemyCreate(){
 
 	std::uniform_int_distribution<> randWidth(20, 400);
 	std::uniform_int_distribution<> randHeight(50, 100);
-	std::uniform_int_distribution<> randSpeed(2, 4);
 
-	Enemy* enemy = new Enemy((float)randWidth(mt), (float)-randHeight(mt), (float)randSpeed(mt));
+	Enemy* enemy = new Enemy((float)randWidth(mt), (float)-randHeight(mt));
 
 }
 
-void ObjectCreater::BulletCreate(Vector2D<float> &vec, int rad, float moveVector, int tag){
+void ObjectCreater::BulletCreate(Vector2D<float> &vec, int rad, float moveSpeed, int tag){
 
-	Bullet* bullet = new Bullet(vec, rad, moveVector);
+	Bullet* bullet = new Bullet(vec, rad, moveSpeed);
 
 }

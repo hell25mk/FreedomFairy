@@ -2,6 +2,7 @@
 #include "../../MyLibrary/MyLibrary.h"
 #include "../../System/Parameter/Parameter.h"
 #include "../../Object/ObjectIncluder.h"
+#include "../../Object/Enemy/Manager/EnemyManager.h"
 #include "../../Collider/Manager/ColliderManager.h"
 #include "../../System/Score/Manager/ScoreManager.h"
 
@@ -18,6 +19,7 @@ GameScene::GameScene(SceneChanger* scene, const Parameter& parameter):BaseScene(
 	background = std::make_shared<BackGround01>();
 	player = std::make_shared<Player>();
 	board = std::make_shared<Board>();
+	enemyManager = std::make_shared<EnemyManager>();
 
 }
 
@@ -37,6 +39,7 @@ bool GameScene::Update(){
 	background->Update();
 	player->Update();
 	board->Update();
+	enemyManager->Update();
 
 	return true;
 }
@@ -46,6 +49,7 @@ void GameScene::Draw() const{
 	board->Draw();
 	background->Draw();
 	player->Draw();
+	enemyManager->Draw();
 
 }
 

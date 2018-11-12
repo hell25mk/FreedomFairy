@@ -42,7 +42,7 @@ namespace Define{
 	/// <summary>
 	/// @brief ŒvZŠÖ˜A‚Ì’è”ŒQ
 	/// </summary>
-	class Mach final{
+	class Math final{
 
 	public:
 		const static float Math_Pai;
