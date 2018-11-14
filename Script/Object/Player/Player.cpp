@@ -5,6 +5,7 @@
 #include "../../Input/Controller.h"
 #include "../../Collider/Inheritance/StationeryCollider.h"
 #include "../../System/HitPoint/HitPoint.h"
+#include "../../System/Debug/Debug.h"
 
 using Key = Input::eInputType;
 using Win = Define::Window;
@@ -24,6 +25,8 @@ Player::Player(){
 
 	collider = new CircleCollider(vec2, Hit_Range, eTag_Player);
 	hp = new HitPoint(1);
+
+	Debug::playerNum = 1;
 
 }
 

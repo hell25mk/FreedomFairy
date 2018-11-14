@@ -2,6 +2,8 @@
 #include "../../../Define/Define.h"
 #include <math.h>
 
+using Win = Define::Window;
+
 BaseEnemy::BaseEnemy(float x, float y):BaseObject(x,y){
 
 	moveSpeed = 0;
@@ -20,12 +22,70 @@ void BaseEnemy::Init(){
 
 bool BaseEnemy::Update(){
 
+	enemyMove.Move(this);
 	counter++;
 
-	float x = (float)cos(moveAngle) * moveSpeed;
-	float y = (float)sin(moveAngle) * moveSpeed;
-
-	vec2.Add(x, y);
-
-	return  true;
+	return  IsInside();
 }
+
+bool BaseEnemy::IsInside() const{
+
+	//ç≈èâ1ïbÇÕîªíËñ≥Çµ
+	if(counter < 60){
+		return true;
+	}
+
+	float x = vec2.GetX();
+	float y = vec2.GetY();
+
+	//îÕàÕÇÃämîF
+	if(x < Win::In_Px - width * 2){
+		return false;
+	}
+	if(x > Win::In_Width + width * 2){
+		return false;
+	}
+	if(y < Win::In_Py - height * 2){
+		return false;
+	}
+	if(y > Win::In_Height + height * 2 ){
+		return false;
+	}
+
+	return true;
+}
+
+#pragma region Accessor
+float BaseEnemy::GetSpeed() const{
+
+	return moveSpeed;
+}
+
+void BaseEnemy::SetSpeed(const float spd){
+
+	moveSpeed = spd;
+
+}
+
+float BaseEnemy::GetAngle() const{
+
+	return moveAngle;
+}
+
+void BaseEnemy::SetAngle(const float ang){
+
+	moveAngle = ang;
+
+}
+
+int BaseEnemy::GetCount() const{
+
+	return counter;
+}
+
+int BaseEnemy::GetMovePatternID() const{
+
+	return movePatternID;
+}
+#pragma endregion
+

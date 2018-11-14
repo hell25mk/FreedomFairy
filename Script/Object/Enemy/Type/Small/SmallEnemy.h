@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Base/BaseEnemy.h"
+#include "../../Base/BaseEnemy.h"
 
 class SmallEnemy : public BaseEnemy{
 

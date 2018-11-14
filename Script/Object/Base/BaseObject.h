@@ -17,7 +17,7 @@ public:
 	virtual bool Update() = 0;
 	virtual void Draw() const = 0;
 
-	Vector2D<float> GetVector();
+	Vector2D<float>& GetVector();
 	int GetRadius();
 	void SetAlive(bool alive);
 

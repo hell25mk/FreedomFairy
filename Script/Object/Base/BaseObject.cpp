@@ -14,7 +14,7 @@ BaseObject::BaseObject(float x, float y, int rad, unsigned int color){
 
 }
 
-Vector2D<float> BaseObject::GetVector(){
+Vector2D<float>& BaseObject::GetVector(){
 
 	return vec2;
 }

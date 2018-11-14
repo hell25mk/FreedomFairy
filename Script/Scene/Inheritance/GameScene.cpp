@@ -5,6 +5,7 @@
 #include "../../Object/Enemy/Manager/EnemyManager.h"
 #include "../../Collider/Manager/ColliderManager.h"
 #include "../../System/Score/Manager/ScoreManager.h"
+#include "../../System/Debug/Debug.h"
 
 const char* GameScene::ParameterTag_Stage = "ParameterTagStage";
 const char* GameScene::ParameterTag_Level = "ParameterTagLevel";
@@ -50,6 +51,8 @@ void GameScene::Draw() const{
 	background->Draw();
 	player->Draw();
 	enemyManager->Draw();
+
+	Debug::Draw();
 
 }
 
