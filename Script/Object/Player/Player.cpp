@@ -19,6 +19,7 @@ Player::Player(){
 	vec2.Set((float)Win::Center_Px, (float)Win::Out_Height * 0.8f);
 	moveSpeed = 4.0f;
 	isAlive = true;
+	isDrawHitRange = false;
 
 	radius = 7;
 	color = GetColor(255, 255, 255);		//画像に変更するので削除予定
@@ -57,7 +58,9 @@ bool Player::Update(){
 void Player::Draw() const{
 
 	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);	//画像に変更するので削除予定
-	collider->Draw();
+	if(isDrawHitRange){
+		collider->Draw();
+	}
 
 }
 
@@ -91,6 +94,9 @@ void Player::Move(){
 	if(Controller::Instance().Get(Key::Slow)){
 		moveX /= 2;
 		moveY /= 2;
+		isDrawHitRange = true;
+	} else{
+		isDrawHitRange = false;
 	}
 
 	//移動可能範囲の確認

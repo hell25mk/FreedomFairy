@@ -21,6 +21,7 @@ private:
 	BaseCollider* collider;
 	HitPoint* hp;
 	float moveSpeed;
+	bool isDrawHitRange;
 
 };
 
