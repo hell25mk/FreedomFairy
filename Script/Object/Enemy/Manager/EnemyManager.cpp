@@ -5,11 +5,11 @@
 #include "../../../System/Debug/Debug.h"
 
 EnemyManager::EnemyManager(){
-
-	listEnemy.emplace_back(std::make_shared<SmallEnemy>(Define::Window::Center_Px + 200, -80.0f));
-	listEnemy.emplace_back(std::make_shared<NormalEnemy>(Define::Window::Center_Px - 200, -80.0f));
-	listEnemy.emplace_back(std::make_shared<BigEnemy>(Define::Window::Center_Px - 20, -80.0f));
-	listEnemy.emplace_back(std::make_shared<BigEnemy>(Define::Window::Center_Px + 20, -80.0f));
+	
+	listEnemy.emplace_back(std::make_shared<SmallEnemy>(Define::Window::Center_Px + 200, -60.0f));
+	listEnemy.emplace_back(std::make_shared<NormalEnemy>(Define::Window::Center_Px - 200, -60.0f));
+	listEnemy.emplace_back(std::make_shared<BigEnemy>(Define::Window::Center_Px - 20, -60.0f));
+	listEnemy.emplace_back(std::make_shared<BigEnemy>(Define::Window::Center_Px + 20, -60.0f));
 
 	for(auto enemy : listEnemy){
 
