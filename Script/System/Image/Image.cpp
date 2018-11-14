@@ -3,8 +3,9 @@
 
 Image::Image(){
 
-	board = MyLoadGraph("Image/Board/Board02.png");
-	background01 = MyLoadGraph("Image/BackGround/Stage01.png");
+	mapImage["Player"] = MyLoadGraph("Image/Player/Player.png");
+	mapImage["Board"] = MyLoadGraph("Image/Board/Board02.png");
+	mapImage["BackGround01"] = MyLoadGraph("Image/BackGround/Stage01.png");
 
 }
 
@@ -28,19 +29,9 @@ void Image::Release(){
 
 }
 
-int Image::GetPlayer() const{
+int Image::GetImage(std::string key) const{
 
-	return player;
-}
-
-int Image::GetBoard() const{
-
-	return board;
-}
-
-int Image::GetBackGround01() const{
-
-	return background01;
+	return mapImage.at(key);
 }
 
 int Image::MyLoadGraph(const char* fileName){

@@ -61,7 +61,7 @@ bool BackGround01::Update(){
 
 void BackGround01::Draw() const{
 
-	DrawGraph(Define::Window::In_Px, Define::Window::In_Py, Image::Instance().GetBackGround01(), true);
+	DrawGraph(Define::Window::In_Px, Define::Window::In_Py, Image::Instance().GetImage("BackGround01"), true);
 
 	/*VECTOR offset;
 

@@ -3,6 +3,7 @@
 #include "../../MyLibrary/MyLibrary.h"
 #include "../../Define/Define.h"
 #include "../../Input/Controller.h"
+#include "../../System/Image/Image.h"
 #include "../../Collider/Inheritance/StationeryCollider.h"
 #include "../../System/HitPoint/HitPoint.h"
 #include "../../System/Debug/Debug.h"
@@ -11,8 +12,6 @@ using Key = Input::eInputType;
 using Win = Define::Window;
 
 const int Hit_Range = 2;
-const int Image_AllNum = 12;
-const int Image_Size = 48;
 
 Player::Player(){
 
@@ -21,8 +20,7 @@ Player::Player(){
 	isAlive = true;
 	isDrawHitRange = false;
 
-	radius = 7;
-	color = GetColor(255, 255, 255);		//‰æ‘œ‚É•ÏX‚·‚é‚Ì‚Åíœ—\’è
+	radius = 15;
 
 	collider = new CircleCollider(vec2, Hit_Range, eTag_Player);
 	hp = new HitPoint(1);
@@ -57,7 +55,7 @@ bool Player::Update(){
 
 void Player::Draw() const{
 
-	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);	//‰æ‘œ‚É•ÏX‚·‚é‚Ì‚Åíœ—\’è
+	DrawRotaGraphF(vec2.GetX(), vec2.GetY(), 1.0, 0.0, Image::Instance().GetImage("Player"), true);
 	if(isDrawHitRange){
 		collider->Draw();
 	}

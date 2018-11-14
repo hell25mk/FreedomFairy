@@ -21,7 +21,7 @@ bool Board::Update(){
 void Board::Draw() const{
 
 	//DrawGraphF(vec2.GetX(), vec2.GetY(),Image::Instance().GetBoard(), true);
-	DrawGraphF(0, 0, Image::Instance().GetBoard(), true);
+	DrawGraphF(0, 0, Image::Instance().GetImage("Board"), true);
 #ifdef _DEBUG
 	GameFrame();
 #endif
