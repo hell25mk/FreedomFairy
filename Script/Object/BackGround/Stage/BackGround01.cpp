@@ -8,8 +8,8 @@ const int End_N = 7;
 
 BackGround01::BackGround01(){
 
-	arrayHandle[0] = Image::Instance().GetBackGround01();
-	arrayHandle[1] = Image::Instance().GetBackGround01();
+	arrayHandle[0] = Image::Instance().GetImage("BackGround01");
+	arrayHandle[1] = Image::Instance().GetImage("BackGround01");
 	arrayHandle[2] = arrayHandle[0];
 	arrayHandle[3] = 0;
 

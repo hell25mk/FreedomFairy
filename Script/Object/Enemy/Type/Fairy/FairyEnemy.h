@@ -2,11 +2,11 @@
 
 #include "../../Base/BaseEnemy.h"
 
-class NormalEnemy : public BaseEnemy{
+class FairyEnemy : public BaseEnemy{
 
 public:
-	NormalEnemy(float x, float y);
-	virtual ~NormalEnemy() = default;
+	FairyEnemy(float x, float y);
+	virtual ~FairyEnemy() = default;
 	virtual void Draw() const override;
 
 protected:

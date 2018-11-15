@@ -4,6 +4,10 @@
 #include <vector>
 #include <map>
 
+namespace{
+	const int Fairy_ImageNum = 9;
+}
+
 class Image : public Singleton<Image>{
 
 public:
@@ -11,9 +15,7 @@ public:
 	void Load();
 	void Release();
 	int GetImage(std::string) const;
-	int GetPlayer() const;
-	int GetBoard() const;
-	int GetBackGround01() const;
+	int* GetDivImage(std::string) const;
 
 protected:
 	Image();
@@ -25,10 +27,10 @@ private:
 
 private:
 	std::map<std::string, int> mapImage;
+	std::map<std::string, int*> mapDivImage;
 	std::vector<int> vectorImage;
-	int player;
-	int board;
-	int background01;
+
+	int fairyEnemyImage[Fairy_ImageNum];
 
 };
 

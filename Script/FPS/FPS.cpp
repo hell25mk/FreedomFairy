@@ -8,7 +8,6 @@ const int FPS = 60;
 const int Up_Interval = 60;
 
 FPS::FPS():counter(0), fps(0){
-
 }
 
 void FPS::Wait(){

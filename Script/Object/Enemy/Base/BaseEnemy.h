@@ -33,6 +33,7 @@ protected:
 	int width;
 	int height;
 
+	int* imageHandle;
 	int movePatternID;
 
 };

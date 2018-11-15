@@ -7,6 +7,9 @@ Image::Image(){
 	mapImage["Board"] = MyLoadGraph("Image/Board/Board02.png");
 	mapImage["BackGround01"] = MyLoadGraph("Image/BackGround/Stage01.png");
 
+	MyLoadDivGraph("Image/Enemy/Fairy.png",9,3,3,54,54, fairyEnemyImage);
+	mapDivImage["Fairy"] = fairyEnemyImage;
+
 }
 
 void Image::Load(){
@@ -32,6 +35,11 @@ void Image::Release(){
 int Image::GetImage(std::string key) const{
 
 	return mapImage.at(key);
+}
+
+int* Image::GetDivImage(std::string key) const{
+
+	return mapDivImage.at(key);
 }
 
 int Image::MyLoadGraph(const char* fileName){

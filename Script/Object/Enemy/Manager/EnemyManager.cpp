@@ -4,12 +4,17 @@
 #include "../EnemyIncluder.h"
 #include "../../../System/Debug/Debug.h"
 
+using Win = Define::Window;
+
+const float Center_Px = (float)Win::Center_Px;
+
 EnemyManager::EnemyManager(){
 	
-	listEnemy.emplace_back(std::make_shared<SmallEnemy>(Define::Window::Center_Px + 200, -60.0f));
-	listEnemy.emplace_back(std::make_shared<NormalEnemy>(Define::Window::Center_Px - 200, -60.0f));
-	listEnemy.emplace_back(std::make_shared<BigEnemy>(Define::Window::Center_Px - 20, -60.0f));
-	listEnemy.emplace_back(std::make_shared<BigEnemy>(Define::Window::Center_Px + 20, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 200.0f, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 200.0f, -30.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 200.0f, -00.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 200.0f, 80.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 200.0f, 40.0f));
 
 	for(auto enemy : listEnemy){
 
