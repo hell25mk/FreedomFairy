@@ -10,11 +10,11 @@ const float Center_Px = (float)Win::Center_Px;
 
 EnemyManager::EnemyManager(){
 	
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 200.0f, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 200.0f, -30.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 200.0f, -00.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 200.0f, 80.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 200.0f, 40.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 150.0f	, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 75.0f	, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px			, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px + 75.0f	, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px + 150.0f	, -60.0f));
 
 	for(auto enemy : listEnemy){
 

@@ -1,5 +1,5 @@
 #pragma once
 
-#include "Type/Small/SmallEnemy.h"
-#include "Type/Fairy/FairyEnemy.h"
-#include "Type/Big/BigEnemy.h"
+#include "Kind/Small/SmallEnemy.h"
+#include "Kind/Fairy/FairyEnemy.h"
+#include "Kind/Big/BigEnemy.h"

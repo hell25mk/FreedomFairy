@@ -19,6 +19,7 @@ private:
 	void MovePattern00(BaseEnemy* enemy);
 	void MovePattern01(BaseEnemy* enemy);
 	void MovePattern02(BaseEnemy* enemy);
+	void MovePattern03(BaseEnemy* enemy);
 
 private:
 	std::vector<Func> movePattern;

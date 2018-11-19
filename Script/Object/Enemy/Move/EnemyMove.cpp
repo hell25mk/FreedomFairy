@@ -34,5 +34,6 @@ void EnemyMove::SetFunction(){
 	movePattern.push_back(&EnemyMove::MovePattern00);
 	movePattern.push_back(&EnemyMove::MovePattern01);
 	movePattern.push_back(&EnemyMove::MovePattern02);
+	movePattern.push_back(&EnemyMove::MovePattern03);
 
 }
