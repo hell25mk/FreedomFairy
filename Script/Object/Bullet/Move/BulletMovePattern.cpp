@@ -50,7 +50,7 @@ void BulletMove::MovePattern03(BaseBullet* bullet){
 		return;
 	}
 	if(count == 80){
-		bullet->SetAngle(rand() % 360);
+		bullet->SetAngle((float)(rand() % 360));
 		bullet->SetSpeed(0.8f);
 		return;
 	}
