@@ -2,7 +2,7 @@
 #include "../../../Define/Define.h"
 #include <math.h>
 
-using Win = Define::Window;
+using Game = Define::GameSize;
 
 BaseEnemy::BaseEnemy(float x, float y):BaseObject(x,y){
 
@@ -39,16 +39,16 @@ bool BaseEnemy::IsInside() const{
 	float y = vec2.GetY();
 
 	//”ÍˆÍ‚ÌŠm”F
-	if(x < Win::In_Px - width * 2){
+	if(x < Game::In_Px - width * 2){
 		return false;
 	}
-	if(x > Win::In_Width + width * 2){
+	if(x > Game::In_Width + width * 2){
 		return false;
 	}
-	if(y < Win::In_Py - height * 2){
+	if(y < Game::In_Py - height * 2){
 		return false;
 	}
-	if(y > Win::In_Height + height * 2 ){
+	if(y > Game::In_Height + height * 2 ){
 		return false;
 	}
 

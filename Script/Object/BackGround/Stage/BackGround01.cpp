@@ -3,7 +3,7 @@
 #include "../../../System/Image/Image.h"
 #include "DxLib.h"
 
-using Win = Define::Window;
+using Game = Define::GameSize;
 
 BackGround01::BackGround01(){
 }
@@ -15,7 +15,7 @@ bool BackGround01::Update(){
 
 void BackGround01::Draw() const{
 
-	//DrawGraph(Win::In_Px, Win::In_Py, Image::Instance().GetImage("BackGround01"), true);
-	DrawBox(Win::In_Px, Win::In_Py, Win::In_Width + Win::In_Px, Win::In_Height + Win::In_Py, Define::Color::Color_SkyBlue, true);
+	//DrawGraph(Game::In_Px, Game::In_Py, Image::Instance().GetImage("BackGround01"), true);
+	DrawBox(Game::In_Px, Game::In_Py, Game::In_Width + Game::In_Px, Game::In_Height + Game::In_Py, Define::Color::Color_SkyBlue, true);
 
 }

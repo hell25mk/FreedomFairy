@@ -3,16 +3,17 @@
 namespace Define{
 
 	/// <summary>
-	/// @brief ウィンドウ関連の定数群
+	/// @brief ウィンドウサイズ
 	/// </summary>
-	class Window final{
+	constexpr int Window_Width = 640;
+	constexpr int Window_Height = 480;
+
+	/// <summary>
+	/// @brief ゲーム画面関連の定数群
+	/// </summary>
+	class GameSize final{
 
 	public:
-		//ウィンドウサイズ
-		const static int Window_Width;
-		const static int Window_Height;
-
-		//ゲーム内のサイズ
 		const static int Out_Width;			//外枠
 		const static int Out_Height;
 		const static int In_Width;			//内枠
@@ -43,12 +44,13 @@ namespace Define{
 	/// <summary>
 	/// @brief 計算関連の定数群
 	/// </summary>
-	class Math final{
+	constexpr float Math_Pai = 3.141592654f;
+	/*class Math final{
 
 	public:
 		const static float Math_Pai;
 
-	};
+	};*/
 
 	enum eStage{
 		Stage1,

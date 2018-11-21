@@ -4,12 +4,12 @@
 #include "DxLib.h"
 #include "../../System/Image/Image.h"
 
-using Win = Define::Window;
+using Game = Define::GameSize;
 using Color = Define::Color;
 
 Board::Board(){
 
-	vec2.Set((float)Win::Out_Width, 0);
+	vec2.Set((float)Game::Out_Width, 0);
 
 }
 
@@ -31,10 +31,10 @@ void Board::Draw() const{
 void Board::GameFrame() const{
 
 	int frameColor = Color::Color_FBlue;
-	const int x = Win::In_Px;
-	const int y = Win::In_Py;
-	const int w = Win::In_Width;
-	const int h = Win::In_Height;
+	const int x = Game::In_Px;
+	const int y = Game::In_Py;
+	const int w = Game::In_Width;
+	const int h = Game::In_Height;
 
 	DrawLine(x, y, x + w, y, frameColor);
 	DrawLine(x, y, x, y + h, frameColor);

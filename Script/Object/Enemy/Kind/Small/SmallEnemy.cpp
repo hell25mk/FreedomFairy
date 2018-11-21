@@ -5,7 +5,7 @@
 SmallEnemy::SmallEnemy(float x,float y):BaseEnemy(x,y){
 
 	moveSpeed = 2.0f;
-	moveAngle = Define::Math::Math_Pai / 2;
+	moveAngle = Define::Math_Pai / 2;
 	movePatternID = 1;
 	
 	radius = 5;

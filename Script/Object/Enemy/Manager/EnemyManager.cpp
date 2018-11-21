@@ -4,9 +4,9 @@
 #include "../EnemyIncluder.h"
 #include "../../../System/Debug/Debug.h"
 
-using Win = Define::Window;
+using Game = Define::GameSize;
 
-const float Center_Px = (float)Win::Center_Px;
+const float Center_Px = (float)Game::Center_Px;
 
 EnemyManager::EnemyManager(){
 	

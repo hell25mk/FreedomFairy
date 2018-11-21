@@ -8,7 +8,7 @@ static int count = 0;
 NormalBullet::NormalBullet(float x,float y):BaseBullet(x,y){
 
 	moveSpeed = 2.0f;
-	moveAngle = Define::Math::Math_Pai / 2 - Define::Math::Math_Pai / 5;
+	moveAngle = Define::Math_Pai / 2 - Define::Math_Pai / 5;
 	movePatternID = 0;
 
 	if(count > 360){

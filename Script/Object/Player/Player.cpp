@@ -9,13 +9,13 @@
 #include "../../System/Debug/Debug.h"
 
 using Key = Input::eInputType;
-using Win = Define::Window;
+using Game = Define::GameSize;
 
 const int Hit_Range = 2;
 
 Player::Player(){
 
-	vec2.Set((float)Win::Center_Px, (float)Win::Out_Height * 0.8f);
+	vec2.Set((float)Game::Center_Px, (float)Game::Out_Height * 0.8f);
 	moveSpeed = 4.0f;
 	isAlive = true;
 	isDrawHitRange = false;
@@ -99,15 +99,15 @@ void Player::Move(){
 
 	//ˆÚ“®‰Â”\”ÍˆÍ‚ÌŠm”F
 	float px = vec2.GetX(), py = vec2.GetY();
-	if(px + moveX - radius < Win::In_Px){
+	if(px + moveX - radius < Game::In_Px){
 		moveX = 0;
-	} else if(px + moveX + radius > Win::In_Px + Win::In_Width){
+	} else if(px + moveX + radius > Game::In_Px + Game::In_Width){
 		moveX = 0;
 	}
 
-	if(py + moveY - radius < Win::In_Py){
+	if(py + moveY - radius < Game::In_Py){
 		moveY = 0;
-	} else if(py + moveY + radius > Win::In_Py + Win::In_Height){
+	} else if(py + moveY + radius > Game::In_Py + Game::In_Height){
 		moveY = 0;
 	} 
 

@@ -1,7 +1,7 @@
 #include "BaseBullet.h"
 #include "../../../Define/Define.h"
 
-using Win = Define::Window;
+using Game = Define::GameSize;
 
 BaseBullet::BaseBullet(float x,float y):BaseObject(x,y){
 
@@ -38,16 +38,16 @@ bool BaseBullet::IsInside() const{
 	float y = vec2.GetY();
 
 	//”ÍˆÍ‚ÌŠm”F
-	if(x < Win::In_Px - width * 2){
+	if(x < Game::In_Px - width * 2){
 		return false;
 	}
-	if(x > Win::Out_Width + width * 2){
+	if(x > Game::Out_Width + width * 2){
 		return false;
 	}
-	if(y < Win::In_Py - height * 2){
+	if(y < Game::In_Py - height * 2){
 		return false;
 	}
-	if(y > Win::Out_Height + height * 2){
+	if(y > Game::Out_Height + height * 2){
 		return false;
 	}
 
