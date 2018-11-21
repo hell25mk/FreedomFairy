@@ -2,7 +2,6 @@
 #include "../../../Define/Define.h"
 #include "../../../System/Error/ErrorMacro.h"
 #include "../Base/BaseEnemy.h"
-#include <math.h>
 
 EnemyMove::EnemyMove(){
 

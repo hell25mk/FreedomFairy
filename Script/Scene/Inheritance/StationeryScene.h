@@ -23,6 +23,7 @@ class Player;
 class Board;
 class BaseBackGround;
 class EnemyManager;
+class BulletManager;
 
 class GameScene : public BaseScene{
 
@@ -45,6 +46,7 @@ private:
 	std::shared_ptr<BaseBackGround> background;
 	std::shared_ptr<BaseBackGround> backgroundSpell;
 	std::shared_ptr<EnemyManager> enemyManager;
+	std::shared_ptr<BulletManager> bulletManager;
 	int gameLevel;
 
 };
