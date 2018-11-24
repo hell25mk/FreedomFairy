@@ -3,18 +3,20 @@
 
 Image::Image(){
 
-	mapImage["Player"] = MyLoadGraph("Image/Player/Player.png");
-	mapImage["Board"] = MyLoadGraph("Image/Board/Board02.png");
-	mapImage["BackGround01"] = MyLoadGraph("Image/BackGround/Stage01.png");
-
-	MyLoadDivGraph("Image/Enemy/Fairy.png",9,3,3,54,54, fairyEnemyImage);
-	mapDivImage["Fairy"] = fairyEnemyImage;
+	Load();
 
 }
 
 void Image::Load(){
 
+	//àÍñáâÊëú
+	mapImage["Player"] = MyLoadGraph("Image/Player/Player.png");
+	mapImage["Board"] = MyLoadGraph("Image/Board/Board02.png");
+	mapImage["BackGround01"] = MyLoadGraph("Image/BackGround/Stage01.png");
 
+	//ï°êîâÊëú
+	MyLoadDivGraph("Image/Enemy/Fairy.png", 9, 3, 3, 54, 54, fairyEnemyImage);
+	mapDivImage["Fairy"] = fairyEnemyImage;
 
 }
 
@@ -50,11 +52,11 @@ int Image::MyLoadGraph(const char* fileName){
 	return ret;
 }
 
-int Image::MyLoadDivGraph(const char* fileName, int n, int xn, int yn, int w, int h, int *buf){
+int Image::MyLoadDivGraph(const char* fileName, int allNum, int xNum, int yNum, int width, int height, int *buf){
 
-	int ret = LoadDivGraph(fileName, n, xn, yn, w, h, buf);
+	int ret = LoadDivGraph(fileName, allNum, xNum, yNum, width, height, buf);
 
-	for(int i = 0; i < n; i++){
+	for(int i = 0; i < allNum; i++){
 
 		vectorImage.push_back(buf[i]);
 

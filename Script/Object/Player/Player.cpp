@@ -15,7 +15,7 @@ const int Hit_Range = 2;
 
 Player::Player(){
 
-	vec2.Set((float)Game::Center_Px, (float)Game::Out_Height * 0.8f);
+	vec2.Set((float)Game::Center_Px, (float)(Game::Out_Height * 0.8f));
 	moveSpeed = 4.0f;
 	isAlive = true;
 	isDrawHitRange = false;

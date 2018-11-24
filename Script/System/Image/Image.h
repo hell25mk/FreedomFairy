@@ -4,8 +4,13 @@
 #include <vector>
 #include <map>
 
-namespace{
-	const int Fairy_ImageNum = 9;
+namespace ImageAllNum{
+	namespace Enemy{
+		constexpr int Fairy_ImageNum = 9;
+	}
+	namespace Bullet{
+
+	}
 }
 
 class Image : public Singleton<Image>{
@@ -23,14 +28,13 @@ protected:
 
 private:
 	int MyLoadGraph(const char* fileName);
-	int MyLoadDivGraph(const char* fileName, int n, int xn, int yn, int w, int h, int *buf);
+	int MyLoadDivGraph(const char* fileName, int allNum, int xNum, int yNum, int width, int height, int *buf);
 
 private:
 	std::map<std::string, int> mapImage;
 	std::map<std::string, int*> mapDivImage;
 	std::vector<int> vectorImage;
-
-	int fairyEnemyImage[Fairy_ImageNum];
+	int fairyEnemyImage[ImageAllNum::Enemy::Fairy_ImageNum];
 
 };
 
