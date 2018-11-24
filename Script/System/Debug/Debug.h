@@ -3,8 +3,6 @@
 class Debug{
 
 public:
-	Debug() = default;
-	~Debug() = default;
 	static void Draw();
 
 public:
