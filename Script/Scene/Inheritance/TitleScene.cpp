@@ -17,7 +17,7 @@ bool TitleScene::Update(){
 
 void TitleScene::Draw() const{
 
-	DrawString(100, 100, "弾幕シューティング", Define::Color::Color_White);
+	DrawString(100, 100, "弾幕シューティング", Define::ColorCode::Color_White);
 
 }
 

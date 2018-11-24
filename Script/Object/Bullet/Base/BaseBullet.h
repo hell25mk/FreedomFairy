@@ -8,7 +8,6 @@ class BaseBullet : public BaseObject{
 public:
 	BaseBullet(float x,float y);
 	virtual ~BaseBullet() = default;
-	void Init();
 	virtual bool Update() override;
 
 #pragma region Accessor

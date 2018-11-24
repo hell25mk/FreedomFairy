@@ -25,7 +25,7 @@ void FPS::Wait(){
 
 void FPS::Draw() const{
 
-	DrawFormatString(530, 460, Define::Color::Color_White, "%.2ffps", fps);
+	DrawFormatString(530, 460, Define::ColorCode::Color_White, "%.2ffps", fps);
 
 }
 

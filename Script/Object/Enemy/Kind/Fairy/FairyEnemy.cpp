@@ -9,6 +9,8 @@ FairyEnemy::FairyEnemy(float x, float y):BaseEnemy(x, y){
 	moveAngle = Define::Math_Pai / 2 - Define::Math_Pai / 5;
 	movePatternID = 3;
 	
+	SetSize();
+
 	radius = 10;
 }
 

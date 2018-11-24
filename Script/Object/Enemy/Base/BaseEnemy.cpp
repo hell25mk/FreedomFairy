@@ -2,7 +2,7 @@
 #include "../../../Define/Define.h"
 #include <math.h>
 
-using Game = Define::GameSize;
+namespace Game = Define::GameSize;
 
 BaseEnemy::BaseEnemy(float x, float y):BaseObject(x,y){
 
@@ -48,7 +48,7 @@ bool BaseEnemy::IsInside() const{
 	if(y < Game::In_Py - height * 2){
 		return false;
 	}
-	if(y > Game::In_Height + height * 2 ){
+	if(y > Game::In_Height + height * 2){
 		return false;
 	}
 

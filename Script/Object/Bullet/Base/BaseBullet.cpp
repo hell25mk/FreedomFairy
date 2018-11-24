@@ -1,7 +1,7 @@
 #include "BaseBullet.h"
 #include "../../../Define/Define.h"
 
-using Game = Define::GameSize;
+namespace Game = Define::GameSize;
 
 BaseBullet::BaseBullet(float x,float y):BaseObject(x,y){
 
@@ -10,12 +10,6 @@ BaseBullet::BaseBullet(float x,float y):BaseObject(x,y){
 	counter = 0;
 	width = 0;
 	height = 0;
-
-}
-
-void BaseBullet::Init(){
-
-	SetSize();
 
 }
 

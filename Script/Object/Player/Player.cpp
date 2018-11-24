@@ -9,7 +9,7 @@
 #include "../../System/Debug/Debug.h"
 
 using Key = Input::eInputType;
-using Game = Define::GameSize;
+namespace Game = Define::GameSize;
 
 const int Hit_Range = 2;
 

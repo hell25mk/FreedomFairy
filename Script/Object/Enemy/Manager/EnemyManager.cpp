@@ -4,23 +4,15 @@
 #include "../EnemyIncluder.h"
 #include "../../../System/Debug/Debug.h"
 
-using Game = Define::GameSize;
-
-const float Center_Px = (float)Game::Center_Px;
+namespace Game = Define::GameSize;
 
 EnemyManager::EnemyManager(){
 	
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 150.0f	, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px - 75.0f	, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px			, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px + 75.0f	, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Center_Px + 150.0f	, -60.0f));
-
-	for(auto enemy : listEnemy){
-
-		enemy->Init();
-
-	}
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Game::Center_Px - 150.0f	, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Game::Center_Px - 75.0f	, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Game::Center_Px			, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Game::Center_Px + 75.0f	, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Game::Center_Px + 150.0f	, -60.0f));
 
 }
 

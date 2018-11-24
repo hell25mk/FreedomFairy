@@ -5,32 +5,17 @@
 #include "../BulletIncluder.h"
 #include <random>
 
-using Game = Define::GameSize;
-
-const float Center_Px = (float)Game::Center_Px;
-const float Center_Py = (float)Game::Center_Py;
+namespace Game = Define::GameSize;
 
 BulletManager::BulletManager(){
-
-	for(auto enemy : listBullet){
-
-		enemy->Init();
-
-	}
-
 }
 
 int count = 0;
 bool BulletManager::Update(){
-	/*if(count > 60){
-		for(int i = 0; i < 50; i++){
-			listBullet.emplace_back(std::make_shared<NormalBullet>(Center_Px, Center_Py - 150));
-		}
-		count = 0;
-	}*/
-	if(count > 1){
-		for(int i = 0; i < 3; i++){
-			listBullet.emplace_back(std::make_shared<NormalBullet>(Center_Px, Center_Py));
+
+	if(count > 10){
+		for(int i = 0; i < 1; i++){
+			listBullet.emplace_back(std::make_shared<NormalBullet>((float)Game::Center_Px, (float)Game::Center_Py));
 		}
 		count = 0;
 	}
@@ -59,5 +44,11 @@ void BulletManager::Draw() const{
 		bullet->Draw();
 
 	}
+
+}
+
+void BulletManager::Create(){
+
+
 
 }

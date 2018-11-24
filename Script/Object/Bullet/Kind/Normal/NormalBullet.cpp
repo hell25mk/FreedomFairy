@@ -17,12 +17,14 @@ NormalBullet::NormalBullet(float x,float y):BaseBullet(x,y){
 	moveAngle = (float)count;
 	count++;
 
+	SetSize();
+
 }
 
 
 void NormalBullet::Draw() const{
 
-	DrawCircle(vec2.GetDx(), vec2.GetDy(), 5, Define::Color::Color_Red, true);
+	DrawCircle(vec2.GetDx(), vec2.GetDy(), 5, Define::ColorCode::Color_Red, true);
 
 }
 
