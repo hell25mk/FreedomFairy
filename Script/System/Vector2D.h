@@ -1,4 +1,8 @@
-//雛形
+/****************************************************
+ * @file	Vector2D.h
+ ----------------------------------------------------
+ * @brief	座標を扱うテンプレートクラス
+ ****************************************************/
 
 #pragma once
 
@@ -6,130 +10,101 @@ template<class Type>
 class Vector2D{
 
 public:
-	Vector2D(){ }
-	Vector2D(Type argx, Type argy):x(argx), y(argy){ }
-	~Vector2D(){ }
+	Vector2D():x(0), y(0){ }
+	Vector2D(Type x, Type y):x(x), y(y){ }
+	~Vector2D() = default;
 
-	void Set(const Type argx, const Type argy){
+#pragma region setter
+	/// <summary>
+	/// @brief xとyに代入
+	/// </summary>
+	/// <param name="x">x値</param>
+	/// <param name="y">y値</param>
+	void Set(const Type x, const Type y){
 
-		this->x = argx;
-		this->y = argy;
-
-	}
-	void Add(const Type argx, const Type argy){
-
-		this->x += argx;
-		this->y += argy;
-
-	}
-	void Sub(const Type argx, const Type argy){
-
-		this->x -= argx;
-		this->y -= argy;
+		this->x = x;
+		this->y = y;
 
 	}
 
-/*#pragma region 演算子オーバーロード
-	//加算
-	void operator+=(Vector2D pos){
+	/// <summary>
+	/// @brief xとyを加算する
+	/// </summary>
+	/// <param name="x">x値</param>
+	/// <param name="y">y値</param>
+	void Add(const Type x, const Type y){
 
-		this->x += pos.x;
-		this->y += pos.y;
-
-	}
-	void operator+=(Type value){
-
-		this->x += value;
-		this->y += value;
+		this->x += x;
+		this->y += y;
 
 	}
 
-	//減算
-	void operator-=(Vector2D pos){
+	/// <summary>
+	/// @brief xとyを減算する
+	/// </summary>
+	/// <param name="x">x値</param>
+	/// <param name="y">y値</param>
+	void Sub(const Type x, const Type y){
 
-		this->x -= pos.x;
-		this->y -= pos.y;
-
-	}
-	void operator-=(Type value){
-
-		this->x -= value;
-		this->y -= value;
+		this->x -= x;
+		this->y -= y;
 
 	}
 
-	//乗算
-	void operator*=(Vector2D pos){
+	/// <summary>
+	/// @brief xとyを乗算する
+	/// </summary>
+	/// <param name="x">x値</param>
+	/// <param name="y">y値</param>
+	void Mul(const Type x, const Type y){
 
-		this->x *= pos.x;
-		this->y *= pos.y;
-
-	}
-	void operator*=(Type value){
-
-		this->x *= value;
-		this->y *= value;
+		this->x *= x;
+		this->y *= y;
 
 	}
 
-	//除算
-	void operator/=(Vector2D pos){
+	/// <summary>
+	/// @brief xとyを除算する
+	/// </summary>
+	/// <param name="x">x値</param>
+	/// <param name="y">y値</param>
+	void Div(const Type x, const Type y){
 
-		this->x /= pos.x;
-		this->y /= pos.y;
-
-	}
-	void operator/=(Type value){
-
-		this->x /= value;
-		this->y /= value;
+		this->x /= x;
+		this->y /= y;
 
 	}
+#pragma endregion
 
-	//剰余算
-	void operator%=(Vector2D pos){
-
-		this->x %= pos.x;
-		this->y %= pos.y;
-
-	}
-	void operator%=(Type value){
-
-		this->x %= value;
-		this->y %= value;
-
-	}
-
-	Vector2D operator+(Vector2D pos){
-
-		Vector2D temp;
-
-		temp.x = this->x + pos.x;
-		temp.y = this->y + pos.y;
-
-		return temp;
-	}
-	Vector2D operator-(Vector2D pos){
-
-		Vector2D temp;
-
-		temp.x = this->x - pos.x;
-		temp.y = this->y - pos.y;
-
-		return temp;
-	}
-#pragma endregion*/
-	
-#pragma region アクセサー
+#pragma region getter
+	/// <summary>
+	/// @brief x値を返す
+	/// </summary>
+	/// <returns>テンプレートの型通りのx値を返す</returns>
 	Type GetX() const{
 		return this->x;
 	}
+
+	/// <summary>
+	/// @brief y値を返す
+	/// </summary>
+	/// <returns>テンプレートの型通りのy値を返す</returns>
 	Type GetY() const{
 		return this->y;
 	}
+
+	/// <summary>
+	/// @brief x値を返す
+	/// </summary>
+	/// <returns>int型にキャストしたx値を返す</returns>
 	int GetDx() const{
 		return (int)this->x;
 	}
+
+	/// <summary>
+	/// @brief y値を返す
+	/// </summary>
+	/// <returns>int型にキャストしたy値を返す</returns>
 	int GetDy() const{
 		return (int)this->y;
 	}
