@@ -15,7 +15,7 @@ class BaseBullet;
 class BulletManager : public BaseObject{
 
 public:
-	BulletManager();
+	BulletManager() = default;
 	virtual ~BulletManager() = default;
 	virtual bool Update() override;
 	virtual void Draw() const override;

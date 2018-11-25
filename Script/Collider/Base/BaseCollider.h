@@ -5,9 +5,9 @@
 class BaseCollider{
 
 public:
-	BaseCollider();
+	BaseCollider() = default;
 	BaseCollider(Vector2D<float> vec, int rad, int tag);
-	virtual ~BaseCollider();
+	virtual ~BaseCollider() = default;
 	virtual bool Update();
 	virtual void Draw() const = 0;
 

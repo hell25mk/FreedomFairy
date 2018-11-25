@@ -6,9 +6,9 @@
 class CircleCollider : public BaseCollider{
 
 public:
-	CircleCollider();
+	CircleCollider() = default;
 	CircleCollider(Vector2D<float> &vec, int rad, int tag);
-	virtual ~CircleCollider();
+	virtual ~CircleCollider() = default;
 	virtual bool Update() override;
 	virtual void Draw() const override;
 

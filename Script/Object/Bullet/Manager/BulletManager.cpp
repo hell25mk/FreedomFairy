@@ -7,9 +7,6 @@
 
 namespace Game = Define::GameSize;
 
-BulletManager::BulletManager(){
-}
-
 int count = 0;
 bool BulletManager::Update(){
 

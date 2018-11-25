@@ -8,11 +8,11 @@ namespace Game = Define::GameSize;
 
 EnemyManager::EnemyManager(){
 	
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Game::Center_Px - 150.0f	, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Game::Center_Px - 75.0f	, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Game::Center_Px			, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Game::Center_Px + 75.0f	, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>(Game::Center_Px + 150.0f	, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>((float)(Game::Center_Px - 150.0f)	, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>((float)(Game::Center_Px - 75.0f)	, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>((float)(Game::Center_Px)			, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>((float)(Game::Center_Px + 75.0f)	, -60.0f));
+	listEnemy.emplace_back(std::make_shared<FairyEnemy>((float)(Game::Center_Px + 150.0f)	, -60.0f));
 
 }
 

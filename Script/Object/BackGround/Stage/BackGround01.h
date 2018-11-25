@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../Base/BaseBackGround.h"
+#include "../Base/BaseBackground.h"
 
-class BackGround01 final : public BaseBackGround{
+class Background01 final : public BaseBackground{
 
 public:
-	BackGround01();
-	virtual ~BackGround01() = default;
+	Background01();
+	virtual ~Background01() = default;
 	virtual bool Update() override;
 	virtual void Draw() const override;
 

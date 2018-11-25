@@ -2,8 +2,7 @@
 #include "../../MyLibrary/MyLibrary.h"
 #include "../../System/Parameter/Parameter.h"
 #include "../../Object/ObjectIncluder.h"
-#include "../../Object/Enemy/Manager/EnemyManager.h"
-#include "../../Object/Bullet/Manager/BulletManager.h"
+#include "../../Object/ManagerIncluder.h"
 #include "../../Collider/Manager/ColliderManager.h"
 #include "../../System/Score/Manager/ScoreManager.h"
 #include "../../System/Debug/Debug.h"
@@ -18,11 +17,11 @@ GameScene::GameScene(SceneChanger* scene, const Parameter& parameter):BaseScene(
 	ColliderManager::Instance().Create();
 	ScoreManager::Instance().Create();
 
-	background = std::make_shared<BackGround01>();
-	player = std::make_shared<Player>();
-	board = std::make_shared<Board>();
-	enemyManager = std::make_shared<EnemyManager>();
-	bulletManager = std::make_shared<BulletManager>();
+	listObject.push_back(std::make_shared<BackgroundManager>());
+	listObject.push_back(std::make_shared<Player>());
+	listObject.push_back(std::make_shared<Board>());
+	listObject.push_back(std::make_shared<EnemyManager>());
+	listObject.push_back(std::make_shared<BulletManager>());
 
 }
 
@@ -39,22 +38,26 @@ bool GameScene::Update(){
 
 	ColliderManager::Instance().Update();
 
-	background->Update();
-	player->Update();
-	board->Update();
-	enemyManager->Update();
-	bulletManager->Update();
+	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
+
+		(*itr)->Update();
+
+		itr++;
+
+	}
 
 	return true;
 }
 
 void GameScene::Draw() const{
 
-	board->Draw();
-	background->Draw();
-	player->Draw();
-	enemyManager->Draw();
-	bulletManager->Draw();
+	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
+
+		(*itr)->Draw();
+
+		itr++;
+
+	}
 
 	Debug::Draw();
 

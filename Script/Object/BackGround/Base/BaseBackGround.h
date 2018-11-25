@@ -2,11 +2,11 @@
 
 #include "../../Base/BaseObject.h"
 
-class BaseBackGround : public BaseObject{
+class BaseBackground : public BaseObject{
 
 public:
-	BaseBackGround() = default;
-	virtual ~BaseBackGround() = default;
+	BaseBackground() = default;
+	virtual ~BaseBackground() = default;
 
 };
 

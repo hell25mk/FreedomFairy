@@ -4,11 +4,6 @@
 
 const int Color_Green = GetColor(0, 255, 0);
 
-BaseCollider::BaseCollider(){
-
-	
-
-}
 BaseCollider::BaseCollider(Vector2D<float> vec, int rad, int tag){
 
 	isHit = false;
@@ -21,14 +16,7 @@ BaseCollider::BaseCollider(Vector2D<float> vec, int rad, int tag){
 
 }
 
-BaseCollider::~BaseCollider(){
-
-
-
-}
-
 bool BaseCollider::Update(){
-
 
 	return true;
 }

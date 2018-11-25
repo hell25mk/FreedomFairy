@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Base/BaseScene.h"
+#include <list>
 #include <memory>
 
 #pragma region TitleScene
@@ -19,11 +20,7 @@ protected:
 #pragma endregion
 
 #pragma region GameScene
-class Player;
-class Board;
-class BaseBackGround;
-class EnemyManager;
-class BulletManager;
+class BaseObject;
 
 class GameScene : public BaseScene{
 
@@ -41,12 +38,7 @@ protected:
 	virtual void SceneChange() override;
 
 private:
-	std::shared_ptr<Player> player;
-	std::shared_ptr<Board> board;
-	std::shared_ptr<BaseBackGround> background;
-	std::shared_ptr<BaseBackGround> backgroundSpell;
-	std::shared_ptr<EnemyManager> enemyManager;
-	std::shared_ptr<BulletManager> bulletManager;
+	std::list<std::shared_ptr<BaseObject>> listObject;
 	int gameLevel;
 
 };
