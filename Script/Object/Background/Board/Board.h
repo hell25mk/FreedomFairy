@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../Base/BaseObject.h"
+#include "../../Base/BaseGameObject.h"
 
-class Board : public BaseObject{
+class Board : public BaseGameObject{
 
 public:
 	Board();

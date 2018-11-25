@@ -1,21 +1,15 @@
 #pragma once
 
-#include "../../Base/BaseObject.h"
+#include "../../Base/BaseManager.h"
 #include <memory>
 #include <list>
 
-class BaseEnemy;
-
-class EnemyManager : public BaseObject{
+class EnemyManager : public BaseManager{
 
 public:
 	EnemyManager();
 	virtual ~EnemyManager() = default;
-	virtual bool Update() override;
-	virtual void Draw() const override;
-
-private:
-	std::list<std::shared_ptr<BaseEnemy>> listEnemy;
+	virtual void Create() override;
 
 };
 

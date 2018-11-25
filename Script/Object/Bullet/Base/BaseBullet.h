@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../Base/BaseObject.h"
+#include "../../Base/BaseGameObject.h"
 #include "../Move/BulletMove.h"
 
-class BaseBullet : public BaseObject{
+class BaseBullet : public BaseGameObject{
 
 public:
 	BaseBullet(float x,float y);
@@ -25,14 +25,8 @@ protected:
 
 protected:
 	BulletMove bulletMove;
-	float moveSpeed;
 	float moveAngle;
-
 	int counter;
-	int width;
-	int height;
-
-	int* imageHandle;
 	int movePatternID;
 
 };

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../Base/BaseObject.h"
+#include "../../Base/BaseGameObject.h"
 #include "../Move/EnemyMove.h"
 
-class BaseEnemy : public BaseObject{
+class BaseEnemy : public BaseGameObject{
 
 public:
 	BaseEnemy(float x, float y);
@@ -26,14 +26,8 @@ protected:
 
 protected:
 	EnemyMove enemyMove;
-	float moveSpeed;
 	float moveAngle;
-
 	int counter;
-	int width;
-	int height;
-
-	int* imageHandle;
 	int movePatternID;
 
 };

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../Base/BaseObject.h"
+#include "../../Base/BaseGameObject.h"
 
-class BaseBackground : public BaseObject{
+class BaseBackground : public BaseGameObject{
 
 public:
 	BaseBackground() = default;

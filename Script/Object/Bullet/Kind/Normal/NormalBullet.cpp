@@ -24,7 +24,7 @@ NormalBullet::NormalBullet(float x,float y):BaseBullet(x,y){
 
 void NormalBullet::Draw() const{
 
-	DrawCircle(vec2.GetDx(), vec2.GetDy(), 5, Define::ColorCode::Color_Red, true);
+	DrawCircle(vec2.GetDx(), vec2.GetDy(), (width + height) / 2, Define::ColorCode::Color_Red, true);
 
 }
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../Base/BaseObject.h"
+#include "../../Base/BaseManager.h"
 #include <memory>
 #include <list>
 
@@ -10,18 +10,12 @@ enum eBulletType{
 	Type_Num,
 };
 
-class BaseBullet;
-
-class BulletManager : public BaseObject{
+class BulletManager : public BaseManager{
 
 public:
 	BulletManager() = default;
 	virtual ~BulletManager() = default;
 	virtual bool Update() override;
-	virtual void Draw() const override;
-	void Create();
-
-private:
-	std::list<std::shared_ptr<BaseBullet>> listBullet;
+	virtual void Create() override;
 
 };

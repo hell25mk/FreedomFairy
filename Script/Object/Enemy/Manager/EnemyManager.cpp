@@ -8,38 +8,20 @@ namespace Game = Define::GameSize;
 
 EnemyManager::EnemyManager(){
 	
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>((float)(Game::Center_Px - 150.0f)	, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>((float)(Game::Center_Px - 75.0f)	, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>((float)(Game::Center_Px)			, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>((float)(Game::Center_Px + 75.0f)	, -60.0f));
-	listEnemy.emplace_back(std::make_shared<FairyEnemy>((float)(Game::Center_Px + 150.0f)	, -60.0f));
+	Create();
 
 }
 
-bool EnemyManager::Update(){
+void EnemyManager::Create(){
 
-	for(auto itr = listEnemy.begin(), end = listEnemy.end(); itr != end;){
+	float spawnPx = 150.0f;
 
-		if(!(*itr)->Update()){
-			itr = listEnemy.erase(itr);
-			continue;
-		}
+	for(int i = 0; i < 5; i++){
 
-		itr++;
+		listObject.emplace_back(std::make_shared<FairyEnemy>((float)(Game::Center_Px - (spawnPx - (75 * i))), -80.0f));
 
 	}
 
-	return true;
-}
-
-void EnemyManager::Draw() const{
-
-	Debug::enemyNum = listEnemy.size();
-
-	for(auto enemy : listEnemy){
-
-		enemy->Draw();
-
-	}
+	Debug::enemyNum = listObject.size();
 
 }

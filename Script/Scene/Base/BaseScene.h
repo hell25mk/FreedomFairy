@@ -1,11 +1,12 @@
 #pragma once
 
+#include "../../Base/BaseObject.h"
 #include "../SceneChanger.h"
 
 class SceneChanger;
 class Parameter;
 
-class BaseScene{
+class BaseScene : public BaseObject{
 
 public:
 	BaseScene(SceneChanger* scene, const Parameter& parameter);

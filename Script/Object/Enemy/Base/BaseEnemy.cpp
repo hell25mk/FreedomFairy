@@ -4,9 +4,8 @@
 
 namespace Game = Define::GameSize;
 
-BaseEnemy::BaseEnemy(float x, float y):BaseObject(x,y){
+BaseEnemy::BaseEnemy(float x, float y):BaseGameObject(x,y){
 
-	moveSpeed = 0;
 	moveAngle = 0;
 	counter = 0;
 	width = 0;

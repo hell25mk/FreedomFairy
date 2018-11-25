@@ -3,11 +3,13 @@
 #include "Keyboard/Keyboard.h"
 #include "GamePad/GamePad.h"
 
-#define MAX(left,right) (((left) > (right)) ? (left) : (right))
+template<typename Type>
+constexpr Type Max(Type left, Type right){
+
+	return (left > right) ? left : right;
+}
 
 using Type = Input::eInputType;
-
-const int Button_Num = 28;
 
 void Controller::Create(){
 
@@ -44,14 +46,14 @@ int Controller::Get(Input::eInputType eID) const{
 
 void Controller::Merge(){
 
-	aryInputState[aryInputID[Type::Left]]	= MAX(gamePad->Get((Type::Left)), gameKeyboard->GetPressCount(keycode::Code_Left));
-	aryInputState[aryInputID[Type::Up]]		= MAX(gamePad->Get((Type::Up)), gameKeyboard->GetPressCount(keycode::Code_Up));
-	aryInputState[aryInputID[Type::Right]]	= MAX(gamePad->Get((Type::Right)), gameKeyboard->GetPressCount(keycode::Code_Right));
-	aryInputState[aryInputID[Type::Down]]	= MAX(gamePad->Get((Type::Down)), gameKeyboard->GetPressCount(keycode::Code_Down));
+	aryInputState[aryInputID[Type::Left]]	= Max(gamePad->Get((Type::Left)), gameKeyboard->GetPressCount(KeyCode::Code_Left));
+	aryInputState[aryInputID[Type::Up]]		= Max(gamePad->Get((Type::Up)), gameKeyboard->GetPressCount(KeyCode::Code_Up));
+	aryInputState[aryInputID[Type::Right]]	= Max(gamePad->Get((Type::Right)), gameKeyboard->GetPressCount(KeyCode::Code_Right));
+	aryInputState[aryInputID[Type::Down]]	= Max(gamePad->Get((Type::Down)), gameKeyboard->GetPressCount(KeyCode::Code_Down));
 
-	aryInputState[aryInputID[Type::Shot]]	= MAX(gamePad->Get((Type::Shot)), gameKeyboard->GetPressCount(keycode::Code_Z));
-	aryInputState[aryInputID[Type::Shot]]	= MAX(gamePad->Get((Type::Shot)), gameKeyboard->GetPressCount(keycode::Code_Z));
-	aryInputState[aryInputID[Type::Bomb]]	= MAX(gamePad->Get((Type::Bomb)), gameKeyboard->GetPressCount(keycode::Code_X));
-	aryInputState[aryInputID[Type::Slow]]	= MAX(gamePad->Get((Type::Slow)), gameKeyboard->GetPressCount(keycode::Code_LShift));
+	aryInputState[aryInputID[Type::Shot]]	= Max(gamePad->Get((Type::Shot)), gameKeyboard->GetPressCount(KeyCode::Code_Z));
+	aryInputState[aryInputID[Type::Shot]]	= Max(gamePad->Get((Type::Shot)), gameKeyboard->GetPressCount(KeyCode::Code_Z));
+	aryInputState[aryInputID[Type::Bomb]]	= Max(gamePad->Get((Type::Bomb)), gameKeyboard->GetPressCount(KeyCode::Code_X));
+	aryInputState[aryInputID[Type::Slow]]	= Max(gamePad->Get((Type::Slow)), gameKeyboard->GetPressCount(KeyCode::Code_LShift));
 
 }

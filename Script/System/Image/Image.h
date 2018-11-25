@@ -23,7 +23,7 @@ public:
 	int* GetDivImage(std::string) const;
 
 protected:
-	Image();
+	Image() = default;
 	virtual ~Image() = default;
 
 private:

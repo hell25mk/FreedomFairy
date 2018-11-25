@@ -2,6 +2,8 @@
 #include "../../../../Define/Define.h"
 #include "DxLib.h"
 
+namespace Color = Define::ColorCode;
+
 BigEnemy::BigEnemy(float x, float y):BaseEnemy(x, y){
 
 	moveSpeed = 2.0f;
@@ -10,12 +12,11 @@ BigEnemy::BigEnemy(float x, float y):BaseEnemy(x, y){
 	
 	SetSize();
 
-	radius = 15;
 }
 
 void BigEnemy::Draw() const{
 
-	DrawCircle(vec2.GetDx(), vec2.GetDy(), radius, color, true);
+	DrawCircle(vec2.GetDx(), vec2.GetDy(), (width + height) / 2, Color::Color_Red, true);
 
 }
 

@@ -1,12 +1,6 @@
 #include "Image.h"
 #include "DxLib.h"
 
-Image::Image(){
-
-	Load();
-
-}
-
 void Image::Load(){
 
 	//ˆê–‡‰æ‘œ

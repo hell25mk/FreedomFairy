@@ -11,7 +11,6 @@ FairyEnemy::FairyEnemy(float x, float y):BaseEnemy(x, y){
 	
 	SetSize();
 
-	radius = 10;
 }
 
 void FairyEnemy::Draw() const{

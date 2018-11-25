@@ -1,15 +1,16 @@
 #pragma once
 
-#include "../Base/BaseObject.h"
+#include "../Base/BaseGameObject.h"
 
 class Controller;
 class BaseCollider;
 class HitPoint;
 
-class Player : public BaseObject{
+class Player : public BaseGameObject{
 
 public:
-	Player();
+	Player() = default;
+	Player(float x, float y);
 	virtual ~Player();
 	virtual bool Update() override;
 	virtual void Draw() const override;
@@ -20,7 +21,6 @@ public:
 private:
 	BaseCollider* collider;
 	HitPoint* hp;
-	float moveSpeed;
 	bool isDrawHitRange;
 
 };

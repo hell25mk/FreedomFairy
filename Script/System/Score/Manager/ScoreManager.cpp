@@ -31,7 +31,7 @@ void ScoreManager::Destroy(){
 	int size = vectorScore.size();
 	for(int i = 0; i < size; i++){
 
-		SELF_DELETE(vectorScore[i]);
+		Self_Delete(vectorScore[i]);
 
 	}
 

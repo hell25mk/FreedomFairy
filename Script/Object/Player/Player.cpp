@@ -13,14 +13,14 @@ namespace Game = Define::GameSize;
 
 const int Hit_Range = 2;
 
-Player::Player(){
+Player::Player(float x, float y):BaseGameObject(x,y){
 
-	vec2.Set((float)Game::Center_Px, (float)(Game::Out_Height * 0.8f));
+	vec2.Set(x, y);
 	moveSpeed = 4.0f;
-	isAlive = true;
 	isDrawHitRange = false;
 
-	radius = 15;
+	width = 15;
+	height = 15;
 
 	collider = new CircleCollider(vec2, Hit_Range, eTag_Player);
 	hp = new HitPoint(1);
@@ -31,7 +31,7 @@ Player::Player(){
 
 Player::~Player(){
 
-	SELF_DELETE(hp);
+	Self_Delete(hp);
 	collider->SetAliveFlag(false);
 
 }
@@ -99,15 +99,15 @@ void Player::Move(){
 
 	//ˆÚ“®‰Â”\”ÍˆÍ‚ÌŠm”F
 	float px = vec2.GetX(), py = vec2.GetY();
-	if(px + moveX - radius < Game::In_Px){
+	if(px + moveX - width < Game::In_Px){
 		moveX = 0;
-	} else if(px + moveX + radius > Game::In_Px + Game::In_Width){
+	} else if(px + moveX + width > Game::In_Px + Game::In_Width){
 		moveX = 0;
 	}
 
-	if(py + moveY - radius < Game::In_Py){
+	if(py + moveY - height < Game::In_Py){
 		moveY = 0;
-	} else if(py + moveY + radius > Game::In_Py + Game::In_Height){
+	} else if(py + moveY + height > Game::In_Py + Game::In_Height){
 		moveY = 0;
 	} 
 

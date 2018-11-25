@@ -3,7 +3,7 @@
 #include "../../DesignPattern/Singleton/Singleton.h"
 #include <list>
 
-class BaseObject;
+class BaseGameObject;
 class BaseCollider;
 
 class ColliderManager : public Singleton<ColliderManager>{

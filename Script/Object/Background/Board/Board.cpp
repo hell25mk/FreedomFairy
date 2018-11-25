@@ -1,15 +1,15 @@
 #include "Board.h"
-#include "../../Define/Define.h"
-#include "../../FPS/FPS.h"
+#include "../../../Define/Define.h"
+#include "../../../FPS/FPS.h"
 #include "DxLib.h"
-#include "../../System/Image/Image.h"
+#include "../../../System/Image/Image.h"
 
 using namespace Define;
 namespace Game = Define::GameSize;
 namespace Color = Define::ColorCode;
 
 Board::Board(){
-
+	
 	vec2.Set((float)Game::Out_Width, 0);
 
 }

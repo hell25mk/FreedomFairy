@@ -26,7 +26,7 @@ class GameScene : public BaseScene{
 
 public:
 	GameScene(SceneChanger* scene, const Parameter& parameter);
-	virtual ~GameScene();
+	virtual ~GameScene() = default;
 	virtual bool Update() override;
 	virtual void Draw() const override;
 

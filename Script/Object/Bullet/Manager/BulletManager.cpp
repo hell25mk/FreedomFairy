@@ -7,21 +7,14 @@
 
 namespace Game = Define::GameSize;
 
-int count = 0;
 bool BulletManager::Update(){
 
-	if(count > 10){
-		for(int i = 0; i < 1; i++){
-			listBullet.emplace_back(std::make_shared<NormalBullet>((float)Game::Center_Px, (float)Game::Center_Py));
-		}
-		count = 0;
-	}
-	count++;
+	Create();
 
-	for(auto itr = listBullet.begin(), end = listBullet.end(); itr != end;){
+	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
 
 		if(!(*itr)->Update()){
-			itr = listBullet.erase(itr);
+			itr = listObject.erase(itr);
 			continue;
 		}
 
@@ -32,20 +25,17 @@ bool BulletManager::Update(){
 	return true;
 }
 
-void BulletManager::Draw() const{
-
-	Debug::bulletNum = listBullet.size();
-
-	for(auto bullet : listBullet){
-
-		bullet->Draw();
-
-	}
-
-}
-
+int count = 0;
 void BulletManager::Create(){
 
+	if(count > 10){
+		for(int i = 0; i < 1; i++){
+			listObject.emplace_back(std::make_shared<NormalBullet>((float)Game::Center_Px, (float)Game::Center_Py));
+		}
+		count = 0;
+	}
+	count++;
 
+	Debug::bulletNum = listObject.size();
 
 }
