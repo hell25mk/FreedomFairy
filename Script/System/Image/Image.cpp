@@ -9,7 +9,7 @@ void Image::Load(){
 	mapImage["BackGround01"] = MyLoadGraph("Image/BackGround/Stage01.png");
 
 	//•¡”‰æ‘œ
-	MyLoadDivGraph("Image/Enemy/Fairy.png", 9, 3, 3, 54, 54, fairyEnemyImage);
+	MyLoadDivGraph("Image/Enemy/Fairy.png", 9, 3, 3, 43, 43, fairyEnemyImage);
 	mapDivImage["Fairy"] = fairyEnemyImage;
 
 }
