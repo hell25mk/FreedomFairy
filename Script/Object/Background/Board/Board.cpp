@@ -11,6 +11,7 @@ namespace Color = Define::ColorCode;
 Board::Board(){
 	
 	vec2.Set((float)Game::Out_Width, 0);
+	imageHandle = Image::Instance().GetImage("Board");
 
 }
 
@@ -21,8 +22,8 @@ bool Board::Update(){
 
 void Board::Draw() const{
 
-	//DrawGraphF(vec2.GetX(), vec2.GetY(),Image::Instance().GetBoard(), true);
-	//DrawGraphF(0, 0, Image::Instance().GetImage("Board"), true);
+	//DrawGraphF(vec2.GetX(), vec2.GetY(),imageHandle, true);
+	//DrawGraphF(0, 0, imageHandle, true);
 #ifdef _DEBUG
 	GameFrame();
 #endif

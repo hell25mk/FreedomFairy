@@ -26,13 +26,13 @@ void FairyEnemy::Draw() const{
 		addDire = 0;
 	}
 
-	DrawRotaGraphF(vec2.GetX(), vec2.GetY(), 0.8, 0.0, imageHandle[addDire + imageAnimeID[(counter / 8 % 4)]], true);
+	DrawRotaGraphF(vec2.GetX(), vec2.GetY(), 0.8, 0.0, imageDivHandle[addDire + imageAnimeID[(counter / 8 % 4)]], true);
 
 }
 
 void FairyEnemy::SetSize(){
 
-	imageHandle = Image::Instance().GetDivImage("Fairy");
-	GetGraphSize(*imageHandle, &height, &width);
+	imageDivHandle = Image::Instance().GetDivImage("Fairy");
+	GetGraphSize(*imageDivHandle, &height, &width);
 
 }

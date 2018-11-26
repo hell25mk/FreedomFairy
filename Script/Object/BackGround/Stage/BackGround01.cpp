@@ -6,6 +6,9 @@
 namespace Game = Define::GameSize;
 
 Background01::Background01(){
+
+	imageHandle = Image::Instance().GetImage("Background01");
+
 }
 
 bool Background01::Update(){
@@ -15,7 +18,7 @@ bool Background01::Update(){
 
 void Background01::Draw() const{
 
-	//DrawGraph(Game::In_Px, Game::In_Py, Image::Instance().GetImage("Background01"), true);
+	//DrawGraph(Game::In_Px, Game::In_Py, imageHandle, true);
 	DrawBox(Game::In_Px, Game::In_Py, Game::In_Width + Game::In_Px, Game::In_Height + Game::In_Py, Define::ColorCode::Color_SkyBlue, true);
 
 }

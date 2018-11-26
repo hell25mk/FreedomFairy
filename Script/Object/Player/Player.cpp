@@ -22,6 +22,8 @@ Player::Player(float x, float y):BaseGameObject(x,y){
 	width = 15;
 	height = 15;
 
+	imageHandle = Image::Instance().GetImage("Player");
+
 	collider = new CircleCollider(vec2, Hit_Range, eTag_Player);
 	hp = new HitPoint(1);
 
@@ -55,7 +57,7 @@ bool Player::Update(){
 
 void Player::Draw() const{
 
-	DrawRotaGraphF(vec2.GetX(), vec2.GetY(), 1.0, 0.0, Image::Instance().GetImage("Player"), true);
+	DrawRotaGraphF(vec2.GetX(), vec2.GetY(), 1.0, 0.0, imageHandle, true);
 	if(isDrawHitRange){
 		collider->Draw();
 	}

@@ -2,7 +2,7 @@
 
 #include "../../DesignPattern/Singleton/Singleton.h"
 #include <vector>
-#include <map>
+#include <unordered_map>
 
 namespace ImageAllNum{
 	namespace Enemy{
@@ -31,8 +31,8 @@ private:
 	int MyLoadDivGraph(const char* fileName, int allNum, int xNum, int yNum, int width, int height, int *buf);
 
 private:
-	std::map<std::string, int> mapImage;
-	std::map<std::string, int*> mapDivImage;
+	std::unordered_map<std::string, int> mapImage;
+	std::unordered_map<std::string, int*> mapDivImage;
 	std::vector<int> vectorImage;
 	int fairyEnemyImage[ImageAllNum::Enemy::Fairy_ImageNum];
 

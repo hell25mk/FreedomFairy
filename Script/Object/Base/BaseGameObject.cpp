@@ -8,7 +8,8 @@ BaseGameObject::BaseGameObject(float x, float y){
 	width = 0;
 	height = 0;
 
-	imageHandle = nullptr;
+	imageHandle = 0;
+	imageDivHandle = nullptr;
 
 }
 
