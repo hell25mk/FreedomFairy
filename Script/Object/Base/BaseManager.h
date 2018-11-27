@@ -13,7 +13,6 @@ public:
 	virtual ~BaseManager() = default;
 	virtual bool Update() override;
 	virtual void Draw() const override;
-	virtual void Create() = 0;
 
 protected:
 	std::list < std::shared_ptr<BaseGameObject>> listObject;

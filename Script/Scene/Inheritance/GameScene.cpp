@@ -23,8 +23,6 @@ bool GameScene::Update(){
 
 	SceneChange();
 
-	//ColliderManager::Instance().Update();
-
 	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
 
 		(*itr)->Update();

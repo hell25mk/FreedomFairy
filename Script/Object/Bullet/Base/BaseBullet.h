@@ -9,6 +9,7 @@ public:
 	BaseBullet(float x,float y);
 	virtual ~BaseBullet() = default;
 	virtual bool Update() override;
+	void Move();
 
 #pragma region Accessor
 	float GetSpeed() const;

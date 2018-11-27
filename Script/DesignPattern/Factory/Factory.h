@@ -1,14 +1,19 @@
 #pragma once
 
-#include "../Singleton/Singleton.h"
+#include "../../Base/BaseObject.h"
+#include <memory>
 
-class Factory : public Singleton<Factory>{
+class Factory{
 
 public:
-	friend class Singleton<Factory>;
+	virtual std::unique_ptr<BaseObject> Create();
 
-protected:
-	Factory(){ }
-	virtual ~Factory(){ }
+private:
+	//派生クラスから呼び出す必要がないのでprivateになっている
+	/// <summary>
+	/// @brief オブジェクトを生成する仮想関数
+	/// </summary>
+	/// <returns>生成したオブジェクト</returns>
+	virtual std::unique_ptr<BaseObject> CreateObject() = 0;
 
 };

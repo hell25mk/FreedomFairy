@@ -1,7 +1,6 @@
 #include "Error.h"
 #include <string>
 #include "DxLib.h"
-#include "../../Define/Define.h"
 
 void Error::Finish(const char* message, LPCTSTR lpszFuncName, int lineN){
 

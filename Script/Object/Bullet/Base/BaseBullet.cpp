@@ -14,7 +14,7 @@ BaseBullet::BaseBullet(float x,float y):BaseGameObject(x,y){
 
 bool BaseBullet::Update(){
 
-	bulletMove.Move(this);
+	Move();
 	counter++;
 
 	return IsInside();
@@ -45,6 +45,16 @@ bool BaseBullet::IsInside() const{
 	}
 
 	return true;
+}
+
+void BaseBullet::Move(){
+
+	float x, y;
+
+	x = cos(moveAngle) * moveSpeed;
+	y = sin(moveAngle) * moveSpeed;
+	vec2.Add(x, y);
+
 }
 
 #pragma region Accessor

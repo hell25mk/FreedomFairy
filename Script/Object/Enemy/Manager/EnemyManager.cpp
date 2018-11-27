@@ -8,12 +8,6 @@ namespace Game = Define::GameSize;
 
 EnemyManager::EnemyManager(){
 	
-	Create();
-
-}
-
-void EnemyManager::Create(){
-
 	float spawnPx = 150.0f;
 
 	for(int i = 0; i < 5; i++){

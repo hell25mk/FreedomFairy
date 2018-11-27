@@ -9,7 +9,6 @@ class BackgroundManager : public BaseManager{
 public:
 	BackgroundManager();
 	virtual ~BackgroundManager() = default;
-	virtual void Create() override;
 
 };
 

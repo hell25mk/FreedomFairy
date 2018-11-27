@@ -7,7 +7,6 @@ class PlayerManager : public BaseManager{
 public:
 	PlayerManager();
 	virtual ~PlayerManager() = default;
-	virtual void Create() override;
 
 };
 

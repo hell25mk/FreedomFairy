@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../../Base/BaseGameObject.h"
-#include "../Move/EnemyMove.h"
 
 class BaseEnemy : public BaseGameObject{
 
@@ -10,6 +9,7 @@ public:
 	virtual ~BaseEnemy() = default;
 	void Init();
 	virtual bool Update() override;
+	void Move();
 
 #pragma region Accessor
 	float GetSpeed() const;
@@ -25,7 +25,6 @@ protected:
 	bool IsInside() const;
 
 protected:
-	EnemyMove enemyMove;
 	float moveAngle;
 	int counter;
 	int movePatternID;

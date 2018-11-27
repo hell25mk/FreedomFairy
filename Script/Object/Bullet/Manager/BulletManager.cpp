@@ -28,8 +28,8 @@ bool BulletManager::Update(){
 int count = 0;
 void BulletManager::Create(){
 
-	if(count > 10){
-		for(int i = 0; i < 1; i++){
+	if(count > 5){
+		for(int i = 0; i < 50; i++){
 			listObject.emplace_back(std::make_shared<NormalBullet>((float)Game::Center_Px, (float)Game::Center_Py));
 		}
 		count = 0;

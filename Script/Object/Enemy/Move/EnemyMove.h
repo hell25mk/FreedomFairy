@@ -14,6 +14,7 @@ public:
 
 private:
 	typedef void(EnemyMove::*Func)(BaseEnemy* enemy);
+	//using Func = void(EnemyMove::*EnemyMove::*)(BaseEnemy* enemy);
 	void SetFunction();
 
 	void MovePattern00(BaseEnemy* enemy);

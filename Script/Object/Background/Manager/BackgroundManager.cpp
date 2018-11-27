@@ -8,6 +8,3 @@ BackgroundManager::BackgroundManager(){
 	listObject.push_back(std::make_shared<Background01>());
 
 }
-
-void BackgroundManager::Create(){
-}

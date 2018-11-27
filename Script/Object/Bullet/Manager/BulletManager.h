@@ -16,6 +16,6 @@ public:
 	BulletManager() = default;
 	virtual ~BulletManager() = default;
 	virtual bool Update() override;
-	virtual void Create() override;
+	void Create();
 
 };
