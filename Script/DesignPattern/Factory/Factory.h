@@ -17,3 +17,9 @@ private:
 	virtual std::unique_ptr<BaseObject> CreateObject() = 0;
 
 };
+
+class ObjectFactory{
+
+
+
+};
