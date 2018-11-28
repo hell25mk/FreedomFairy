@@ -8,7 +8,7 @@
 class TitleScene : public BaseScene{
 
 public:
-	TitleScene(SceneChanger* scene, const Parameter& parameter);
+	TitleScene(SceneManager* scene, const Parameter& param);
 	virtual ~TitleScene() = default;
 	virtual bool Update() override;
 	virtual void Draw() const override;
@@ -22,17 +22,18 @@ protected:
 #pragma region GameScene
 class BaseObject;
 
+namespace{
+	constexpr char* ParameterTag_Stage = (char*)"ParameterTagStage";
+	constexpr char* ParameterTag_Level = (char*)"ParameterTagLevel";
+}
+
 class GameScene : public BaseScene{
 
 public:
-	GameScene(SceneChanger* scene, const Parameter& parameter);
+	GameScene(SceneManager* scene, const Parameter& param);
 	virtual ~GameScene() = default;
 	virtual bool Update() override;
 	virtual void Draw() const override;
-
-public:
-	const static char* ParameterTag_Stage;
-	const static char* ParameterTag_Level;
 
 protected:
 	virtual void SceneChange() override;

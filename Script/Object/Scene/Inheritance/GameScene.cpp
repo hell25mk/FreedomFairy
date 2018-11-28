@@ -1,16 +1,14 @@
 #include "StationeryScene.h"
-#include "../../MyLibrary/MyLibrary.h"
-#include "../../System/Parameter/Parameter.h"
-#include "../../Object/ManagerIncluder.h"
-#include "../../System/Debug/Debug.h"
-#include "../../Input/Controller.h"
+#include "../../../MyLibrary/MyLibrary.h"
+#include "../Manager/SceneManager.h"
+#include "../../../System/Parameter/Parameter.h"
+#include "../../../Object/ManagerIncluder.h"
+#include "../../../System/Debug/Debug.h"
+#include "../../../Input/Controller.h"
 
-const char* GameScene::ParameterTag_Stage = "ParameterTagStage";
-const char* GameScene::ParameterTag_Level = "ParameterTagLevel";
+GameScene::GameScene(SceneManager* scene, const Parameter& param):BaseScene(scene, param){
 
-GameScene::GameScene(SceneChanger* scene, const Parameter& parameter):BaseScene(scene, parameter){
-
-	gameLevel = parameter.Get(ParameterTag_Level);
+	gameLevel = param.Get(ParameterTag_Level);
 
 	listObject.push_back(std::make_shared<BackgroundManager>());
 	listObject.push_back(std::make_shared<PlayerManager>());

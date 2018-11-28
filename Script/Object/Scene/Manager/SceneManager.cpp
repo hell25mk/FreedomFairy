@@ -1,17 +1,18 @@
 #include "SceneManager.h"
+#include "../Factory/SceneFactory.h"
 #include "../Inheritance/StationeryScene.h"
-#include "../../System/Parameter/Parameter.h"
-#include "../../Input/Controller.h"
-#include "../../System/Error/ErrorMacro.h"
-#include "../../System/Image/Image.h"
+#include "../../../System/Parameter/Parameter.h"
+#include "../../../Input/Controller.h"
+#include "../../../System/Error/ErrorMacro.h"
+#include "../../../System/Image/Image.h"
 
 SceneManager::SceneManager(){
 
 	Controller::Instance().Create();
 	Parameter parameter;
 	Image::Instance().Load();
-
-	stackScene.push(std::make_shared<TitleScene>(this, parameter));
+	
+	SceneChange(eSceneType::Title, parameter, false);
 
 }
 
@@ -51,16 +52,8 @@ void SceneManager::SceneChange(const eSceneType scene, const Parameter& paramete
 		}
 	}
 
-	switch(scene){
-		case Title:
-			stackScene.push(std::make_shared<TitleScene>(this, parameter));
-			break;
-		case Game:
-			stackScene.push(std::make_shared<GameScene>(this, parameter));
-			break;
-		default:
-			ERROR_REPORT("ë∂ç›ÇµÇ»Ç¢ÉVÅ[ÉìÇ™åƒÇŒÇÍÇ‹ÇµÇΩ");
-			break;
-	}
+	SceneFactory sceneFactory;
+
+	stackScene.push(sceneFactory.Create(this, scene, parameter));
 
 }
