@@ -58,8 +58,8 @@ void BaseEnemy::Move(){
 
 	float x, y;
 
-	x = cos(moveAngle) * moveSpeed;
-	y = sin(moveAngle) * moveSpeed;
+	x = (float)(cos(moveAngle) * moveSpeed);
+	y = (float)(sin(moveAngle) * moveSpeed);
 	vec2.Add(x, y);
 
 }

@@ -1,5 +1,4 @@
 #include "SceneFactory.h"
-#include "../Base/BaseScene.h"
 #include "../Inheritance/StationeryScene.h"
 #include "../../../System/Parameter/Parameter.h"
 #include "../../../System/Error/ErrorMacro.h"

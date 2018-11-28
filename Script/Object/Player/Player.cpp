@@ -15,7 +15,23 @@ const int Hit_Range = 2;
 
 Player::Player(float x, float y):BaseGameObject(x,y){
 
-	vec2.Set(x, y);
+	moveSpeed = 4.0f;
+	isDrawHitRange = false;
+
+	width = 15;
+	height = 15;
+
+	imageHandle = Image::Instance().GetImage("Player");
+
+	collider = new CircleCollider(vec2, Hit_Range, eTag_Player);
+	hp = new HitPoint(1);
+
+	Debug::playerNum = 1;
+
+}
+
+Player::Player(Vector2D<float>& vec):BaseGameObject(vec){
+
 	moveSpeed = 4.0f;
 	isDrawHitRange = false;
 

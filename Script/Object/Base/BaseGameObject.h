@@ -13,6 +13,7 @@ class BaseGameObject : public BaseObject{
 public:
 	BaseGameObject() = default;
 	BaseGameObject(float x, float y);
+	BaseGameObject(Vector2D<float>& vec);
 	virtual ~BaseGameObject() = default;
 	virtual bool Update() = 0;
 	virtual void Draw() const = 0;

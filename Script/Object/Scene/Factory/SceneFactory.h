@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../DesignPattern/Factory/Factory.h"
+#include <memory>
 #include "../SceneList.h"
 
 class SceneManager;

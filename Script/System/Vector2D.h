@@ -11,7 +11,7 @@ class Vector2D{
 
 public:
 	Vector2D():x(0), y(0){ }
-	Vector2D(Type x, Type y):x(x), y(y){ }
+	Vector2D(const Type x, const Type y):x(x), y(y){ }
 	~Vector2D() = default;
 
 #pragma region setter
