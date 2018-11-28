@@ -1,5 +1,10 @@
 #pragma once
 
+namespace{
+	constexpr char* Window_Title = (char*)"STG ver b";
+	constexpr int Color_Bit = 32;
+}
+
 class SystemMain final{
 
 public:

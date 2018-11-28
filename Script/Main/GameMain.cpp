@@ -13,6 +13,7 @@ bool GameMain::GameLoop(){
 	if(!sceneManager->Update()){
 		return false;
 	}
+
 	sceneManager->Draw();
 
 	fps.Draw();

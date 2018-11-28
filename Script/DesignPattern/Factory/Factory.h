@@ -6,7 +6,7 @@
 class Factory{
 
 public:
-	virtual std::unique_ptr<BaseObject> Create();
+	virtual std::shared_ptr<BaseObject> Create(){ }
 
 private:
 	//派生クラスから呼び出す必要がないのでprivateになっている
@@ -14,12 +14,6 @@ private:
 	/// @brief オブジェクトを生成する仮想関数
 	/// </summary>
 	/// <returns>生成したオブジェクト</returns>
-	virtual std::unique_ptr<BaseObject> CreateObject() = 0;
-
-};
-
-class ObjectFactory{
-
-
+	virtual std::shared_ptr<BaseObject> CreateObject() = 0;
 
 };

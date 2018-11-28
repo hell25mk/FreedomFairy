@@ -3,9 +3,6 @@
 #include "../Define/Define.h"
 #include "GameMain.h"
 
-const char* Window_Title = "STG ver b";
-const int Color_Bit = 32;
-
 bool SystemMain::Init() const{
 
 	ChangeWindowMode(true);
@@ -16,6 +13,7 @@ bool SystemMain::Init() const{
 	if(DxLib_Init()){
 		return false;
 	}
+
 	SetDrawScreen(DX_SCREEN_BACK);
 
 	return true;
