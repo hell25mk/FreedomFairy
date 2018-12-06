@@ -5,28 +5,25 @@
 #include "../../Input/Controller.h"
 #include "../../System/Image/Image.h"
 #include "../../System/Debug/Debug.h"
+#include "../Bullet/Factory/BulletFactory.h"
 
 using Key = Input::eInputType;
 namespace Game = Define::GameSize;
 
-const int Hit_Range = 2;
-
 Player::Player(float x, float y):BaseGameObject(x,y){
 
-	moveSpeed = 4.0f;
-	isDrawHitRange = false;
-
-	width = 15;
-	height = 15;
-
-	imageHandle = Image::Instance().GetImage("Player");
-
-	Debug::playerNum = 1;
+	Init();
 
 }
 
 Player::Player(Vector2D<float>& vec):BaseGameObject(vec){
 
+	Init();
+
+}
+
+void Player::Init(){
+
 	moveSpeed = 4.0f;
 	isDrawHitRange = false;
 
@@ -36,10 +33,8 @@ Player::Player(Vector2D<float>& vec):BaseGameObject(vec){
 	imageHandle = Image::Instance().GetImage("Player");
 
 	Debug::playerNum = 1;
+	shotDelayCount = 0;
 
-}
-
-Player::~Player(){
 }
 
 bool Player::Update(){
@@ -114,6 +109,13 @@ void Player::Move(){
 
 void Player::Shot(){
 
-	
+	const int ShotDelayTime = 5;
+
+	if(shotDelayCount > ShotDelayTime){
+		BulletFactory::Instance().BulletCreate(vec2);
+		shotDelayCount = 0;
+	}
+
+	shotDelayCount++;
 
 }

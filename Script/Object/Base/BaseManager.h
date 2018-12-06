@@ -16,7 +16,7 @@ public:
 	virtual void Draw() const override;
 
 protected:
-	std::list < std::shared_ptr<BaseGameObject>> listObject;
+	std::list<std::shared_ptr<BaseGameObject>> listObject;
 
 };
 

@@ -3,19 +3,19 @@
 #include "../../../Define/Define.h"
 #include "../../../System/Debug/Debug.h"
 #include "../BulletIncluder.h"
+#include "../Factory/BulletFactory.h"
+#include "../../../System/Vector2D.h"
 #include <random>
 
 namespace Game = Define::GameSize;
 
 void BulletManager::Init(){
 
-
+	BulletFactory::Instance().Init(this);
 
 }
 
 bool BulletManager::Update(){
-
-	Create();
 
 	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
 
@@ -28,19 +28,13 @@ bool BulletManager::Update(){
 
 	}
 
+	Debug::bulletNum = listObject.size();
+
 	return true;
 }
 
-int count = 0;
-void BulletManager::Create(){
+void BulletManager::Create(std::shared_ptr<BaseBullet> bullet){
 
-	if(count > 5){
-		listObject.emplace_back(std::make_shared<NormalBullet>((float)Game::Center_Px, (float)Game::Center_Py));
-		
-		count = 0;
-	}
-	count++;
-
-	Debug::bulletNum = listObject.size();
+	listObject.emplace_back(bullet);
 
 }

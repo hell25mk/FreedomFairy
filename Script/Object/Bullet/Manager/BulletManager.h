@@ -8,6 +8,10 @@ enum eBulletType{
 	Type_Num,
 };
 
+template<class Type>
+class Vector2D;
+class BaseBullet;
+
 class BulletManager : public BaseManager{
 
 public:
@@ -15,6 +19,6 @@ public:
 	virtual ~BulletManager() = default;
 	virtual void Init() override;
 	virtual bool Update() override;
-	void Create();
+	void Create(std::shared_ptr<BaseBullet> bullet);
 
 };

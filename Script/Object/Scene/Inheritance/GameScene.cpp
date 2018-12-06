@@ -15,6 +15,14 @@ GameScene::GameScene(SceneManager* scene, const Parameter& param):BaseScene(scen
 	listObject.push_back(std::make_shared<EnemyManager>());
 	listObject.push_back(std::make_shared<BulletManager>());
 
+	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
+
+		(*itr)->Init();
+
+		itr++;
+
+	}
+
 }
 
 bool GameScene::Update(){

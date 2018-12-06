@@ -10,7 +10,8 @@ public:
 	Player() = default;
 	Player(float x, float y);
 	Player(Vector2D<float>& vec);
-	virtual ~Player();
+	virtual ~Player() = default;
+	virtual void Init() override;
 	virtual bool Update() override;
 	virtual void Draw() const override;
 	void Move();
@@ -18,6 +19,7 @@ public:
 
 private:
 	bool isDrawHitRange;
+	int shotDelayCount;
 
 };
 
