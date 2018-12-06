@@ -8,11 +8,7 @@
 
 SceneManager::SceneManager(){
 
-	Controller::Instance().Create();
-	Parameter parameter;
-	Image::Instance().Load();
-	
-	SceneChange(eSceneType::Title, parameter, false);
+	Init();
 
 }
 
@@ -25,6 +21,16 @@ SceneManager::~SceneManager(){
 	}
 
 	Controller::Instance().Destroy();
+
+}
+
+void SceneManager::Init(){
+
+	Controller::Instance().Create();
+	Parameter parameter;
+	Image::Instance().Load();
+
+	SceneChange(eSceneType::Title, parameter, false);
 
 }
 
@@ -52,8 +58,6 @@ void SceneManager::SceneChange(const eSceneType scene, const Parameter& paramete
 		}
 	}
 
-	SceneFactory sceneFactory;
-
-	stackScene.push(sceneFactory.Create(this, scene, parameter));
+	stackScene.push(SceneFactory::Instance().Create(this, scene, parameter));
 
 }

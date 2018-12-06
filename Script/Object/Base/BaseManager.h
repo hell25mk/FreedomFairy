@@ -11,6 +11,7 @@ class BaseManager : public BaseObject{
 public:
 	BaseManager() = default;
 	virtual ~BaseManager() = default;
+	virtual void Init() { }
 	virtual bool Update() override;
 	virtual void Draw() const override;
 

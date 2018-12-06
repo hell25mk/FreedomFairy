@@ -3,6 +3,8 @@
 #include "../../Base/BaseObject.h"
 #include <memory>
 
+class BaseObject;
+
 class Factory{
 
 public:

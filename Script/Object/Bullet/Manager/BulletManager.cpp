@@ -7,6 +7,12 @@
 
 namespace Game = Define::GameSize;
 
+void BulletManager::Init(){
+
+
+
+}
+
 bool BulletManager::Update(){
 
 	Create();
@@ -29,9 +35,8 @@ int count = 0;
 void BulletManager::Create(){
 
 	if(count > 5){
-		for(int i = 0; i < 50; i++){
-			listObject.emplace_back(std::make_shared<NormalBullet>((float)Game::Center_Px, (float)Game::Center_Py));
-		}
+		listObject.emplace_back(std::make_shared<NormalBullet>((float)Game::Center_Px, (float)Game::Center_Py));
+		
 		count = 0;
 	}
 	count++;

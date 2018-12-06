@@ -13,6 +13,7 @@ class SceneManager : public BaseManager{
 public:
 	SceneManager();
 	virtual ~SceneManager();
+	virtual void Init() override;
 	virtual bool Update() override;
 	virtual void Draw() const override;
 	void SceneChange(const eSceneType scene, const Parameter& parameter, const bool stackClear);

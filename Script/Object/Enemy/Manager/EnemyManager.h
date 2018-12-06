@@ -7,6 +7,8 @@ class EnemyManager : public BaseManager{
 public:
 	EnemyManager();
 	virtual ~EnemyManager() = default;
+	virtual bool Update() override;
+	void Create();
 
 };
 

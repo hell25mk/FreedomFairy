@@ -5,6 +5,18 @@ namespace Game = Define::GameSize;
 
 BaseBullet::BaseBullet(float x,float y):BaseGameObject(x,y){
 
+	Init();
+
+}
+
+BaseBullet::BaseBullet(Vector2D<float> vec):BaseGameObject(vec){
+
+	Init();
+
+}
+
+void BaseBullet::Init(){
+
 	moveAngle = 0;
 	counter = 0;
 	width = 0;
@@ -49,11 +61,12 @@ bool BaseBullet::IsInside() const{
 
 void BaseBullet::Move(){
 
-	float x, y;
+	bulletMove.Move(this);
+	/*float x, y;
 
 	x = cos(moveAngle) * moveSpeed;
 	y = sin(moveAngle) * moveSpeed;
-	vec2.Add(x, y);
+	vec2.Add(x, y);*/
 
 }
 

@@ -5,7 +5,7 @@
 
 class SceneManager;
 
-class GameMain{
+class GameMain final{
 
 public:
 	GameMain();

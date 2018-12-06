@@ -3,10 +3,11 @@
 #include "../../../Define/Define.h"
 #include <random>
 
-//Šp“x‚ÌŒü‚«‚ÖˆÚ“®
+//^ã
 void BulletMove::MovePattern00(BaseBullet* bullet){
 
-	
+	bullet->SetAngle((Define::Math_Pai * 3 / 2));
+	bullet->SetSpeed(10.0f);
 
 	return;
 }
@@ -22,35 +23,8 @@ void BulletMove::MovePattern01(BaseBullet* bullet){
 	return;
 }
 
-//‚È‚ñ‚©‚·‚²‚¢‚â‚Â
+//Šp“x‚ÌŒü‚«‚Ö
 void BulletMove::MovePattern02(BaseBullet* bullet){
 
-	const int count = bullet->GetCount();
-
-	bullet->SetAngle((Define::Math_Pai + count) * 5);
-	bullet->SetSpeed(2.0f + (count * 0.1f));
-
 	return;
-}
-
-//^‰º‚ÖˆÚ“®‚µˆêŽž’âŽ~‚µ‚Äƒ‰ƒ“ƒ_ƒ€‚É”ò‚Ô
-void BulletMove::MovePattern03(BaseBullet* bullet){
-
-	const int count = bullet->GetCount();
-
-	if(count < 45){
-		bullet->SetAngle(Define::Math_Pai / 2);
-		bullet->SetSpeed(5.0f);
-		return;
-	}
-	if(count >= 45 && count < 100){
-		bullet->SetSpeed(0.0f);
-		return;
-	}
-	if(count == 100){
-		bullet->SetAngle((float)(rand() % 360));
-		bullet->SetSpeed(0.5f);
-		return;
-	}
-
 }

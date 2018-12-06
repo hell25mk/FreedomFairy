@@ -4,8 +4,6 @@
 #include "../../Define/Define.h"
 #include "../../Input/Controller.h"
 #include "../../System/Image/Image.h"
-#include "../../Collider/Inheritance/StationeryCollider.h"
-#include "../../System/HitPoint/HitPoint.h"
 #include "../../System/Debug/Debug.h"
 
 using Key = Input::eInputType;
@@ -23,9 +21,6 @@ Player::Player(float x, float y):BaseGameObject(x,y){
 
 	imageHandle = Image::Instance().GetImage("Player");
 
-	collider = new CircleCollider(vec2, Hit_Range, eTag_Player);
-	hp = new HitPoint(1);
-
 	Debug::playerNum = 1;
 
 }
@@ -40,25 +35,14 @@ Player::Player(Vector2D<float>& vec):BaseGameObject(vec){
 
 	imageHandle = Image::Instance().GetImage("Player");
 
-	collider = new CircleCollider(vec2, Hit_Range, eTag_Player);
-	hp = new HitPoint(1);
-
 	Debug::playerNum = 1;
 
 }
 
 Player::~Player(){
-
-	Self_Delete(hp);
-	collider->SetAliveFlag(false);
-
 }
 
 bool Player::Update(){
-
-	if(collider->GetHitFlag()){
-		HitAction();
-	}
 
 	Move();
 
@@ -66,17 +50,12 @@ bool Player::Update(){
 		Shot();
 	}
 
-	collider->SetVector(vec2);
-
 	return isAlive;
 }
 
 void Player::Draw() const{
 
 	DrawRotaGraphF(vec2.GetX(), vec2.GetY(), 1.0, 0.0, imageHandle, true);
-	if(isDrawHitRange){
-		collider->Draw();
-	}
 
 }
 
@@ -136,15 +115,5 @@ void Player::Move(){
 void Player::Shot(){
 
 	
-
-}
-
-void Player::HitAction(){
-
-	hp->Sub(1);
-
-	if(hp->Get() == 0){
-		isAlive = false;
-	}
 
 }

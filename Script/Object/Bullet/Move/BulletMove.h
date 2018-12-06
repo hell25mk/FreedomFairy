@@ -19,7 +19,6 @@ private:
 	void MovePattern00(BaseBullet* bullet);
 	void MovePattern01(BaseBullet* bullet);
 	void MovePattern02(BaseBullet* bullet);
-	void MovePattern03(BaseBullet* bullet);
 
 private:
 	std::vector<Func> movePattern;

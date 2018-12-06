@@ -2,9 +2,7 @@
 
 #include "../Base/BaseGameObject.h"
 
-class Controller;
 class BaseCollider;
-class HitPoint;
 
 class Player : public BaseGameObject{
 
@@ -17,11 +15,8 @@ public:
 	virtual void Draw() const override;
 	void Move();
 	void Shot();
-	void HitAction();
 
 private:
-	BaseCollider* collider;
-	HitPoint* hp;
 	bool isDrawHitRange;
 
 };

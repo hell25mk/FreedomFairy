@@ -79,6 +79,15 @@ namespace Define{
 	/// <summary>
 	/// @brief ステージ数
 	/// </summary>
+	enum class StageKind{
+		Stage1 = 0,
+		Stage2,
+		Stage3,
+		Stage4,
+		Stage5,
+
+		Stage_Num,
+	};
 	enum eStage{
 		Stage1,
 		Stage2,
@@ -92,6 +101,14 @@ namespace Define{
 	/// <summary>
 	/// @brief ゲーム難易度
 	/// </summary>
+	enum class GameLevel{
+		Easy = 0,
+		Normal,
+		Hard,
+		Lunatic,
+
+		Level_Num,
+	};
 	enum eGameLevel{
 		Easy,
 		Normal,

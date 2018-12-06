@@ -9,6 +9,7 @@ class Parameter;
 class BaseScene : public BaseObject{
 
 public:
+	BaseScene() = default;
 	BaseScene(SceneManager* scene, const Parameter& param);
 	virtual ~BaseScene() = default;
 	virtual bool Update() = 0;

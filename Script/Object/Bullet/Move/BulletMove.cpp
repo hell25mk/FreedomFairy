@@ -33,6 +33,5 @@ void BulletMove::SetFunction(){
 	movePattern.push_back(&BulletMove::MovePattern00);
 	movePattern.push_back(&BulletMove::MovePattern01);
 	movePattern.push_back(&BulletMove::MovePattern02);
-	movePattern.push_back(&BulletMove::MovePattern03);
 
 }

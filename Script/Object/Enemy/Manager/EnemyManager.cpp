@@ -19,3 +19,27 @@ EnemyManager::EnemyManager(){
 	Debug::enemyNum = listObject.size();
 
 }
+
+bool EnemyManager::Update(){
+
+	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
+
+		if(!(*itr)->Update()){
+			itr = listObject.erase(itr);
+			continue;
+		}
+
+		itr++;
+
+	}
+
+	Debug::enemyNum = listObject.size();
+
+	return true;
+}
+
+void EnemyManager::Create(){
+
+
+
+}

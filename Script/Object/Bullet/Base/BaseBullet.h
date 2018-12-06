@@ -7,7 +7,9 @@ class BaseBullet : public BaseGameObject{
 
 public:
 	BaseBullet(float x,float y);
+	BaseBullet(Vector2D<float> vec);
 	virtual ~BaseBullet() = default;
+	virtual void Init() override;
 	virtual bool Update() override;
 	void Move();
 
