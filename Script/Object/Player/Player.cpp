@@ -109,9 +109,9 @@ void Player::Move(){
 
 void Player::Shot(){
 
-	const int ShotDelayTime = 5;
+	const int Shot_DelayTime = 5;
 
-	if(shotDelayCount > ShotDelayTime){
+	if(shotDelayCount > Shot_DelayTime){
 		BulletFactory::Instance().BulletCreate(vec2);
 		shotDelayCount = 0;
 	}
