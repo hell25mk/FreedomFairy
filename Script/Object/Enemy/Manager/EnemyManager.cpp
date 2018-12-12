@@ -2,9 +2,10 @@
 #include "../Base/BaseEnemy.h"
 #include "../../../Define/Define.h"
 #include "../EnemyIncluder.h"
-#include "../../../System/Debug/Debug.h"
 
 namespace Game = Define::GameSize;
+
+using Base = BaseManager;
 
 EnemyManager::EnemyManager(){
 	
@@ -16,26 +17,11 @@ EnemyManager::EnemyManager(){
 
 	}
 
-	Debug::enemyNum = listObject.size();
-
 }
 
 bool EnemyManager::Update(){
 
-	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
-
-		if(!(*itr)->Update()){
-			itr = listObject.erase(itr);
-			continue;
-		}
-
-		itr++;
-
-	}
-
-	Debug::enemyNum = listObject.size();
-
-	return true;
+	return Base::Update();
 }
 
 void EnemyManager::Create(){

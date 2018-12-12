@@ -50,6 +50,7 @@ void EnemyMove::MovePattern02(BaseEnemy* enemy){
 
 }
 
+//‰º‚É‰º‚ª‚Á‚Ä‚»‚ÌˆÊ’u‚Å‘Ò‹@
 void EnemyMove::MovePattern03(BaseEnemy* enemy){
 
 	const int count = enemy->GetCount();

@@ -2,14 +2,20 @@
 #include "../Factory/PlayerFactory.h"
 #include "../Player.h"
 #include "../../../Define/Define.h"
-#include "../../../System/Debug/Debug.h"
 
 namespace Game = Define::GameSize;
+
+using Base = BaseManager;
 
 PlayerManager::PlayerManager(){
 
 	Create((float)Game::Center_Px, (float)(Game::Out_Height * 0.8f));
 
+}
+
+bool PlayerManager::Update(){
+
+	return Base::Update();
 }
 
 void PlayerManager::Create(const float x, const float y){

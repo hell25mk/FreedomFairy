@@ -20,7 +20,7 @@ void BaseEnemy::Init(){
 }
 
 bool BaseEnemy::Update(){
-
+	
 	Move();
 	counter++;
 

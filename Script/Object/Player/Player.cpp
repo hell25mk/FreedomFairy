@@ -4,7 +4,6 @@
 #include "../../Define/Define.h"
 #include "../../Input/Controller.h"
 #include "../../System/Image/Image.h"
-#include "../../System/Debug/Debug.h"
 #include "../Bullet/Factory/BulletFactory.h"
 
 using Key = Input::eInputType;
@@ -32,7 +31,6 @@ void Player::Init(){
 
 	imageHandle = Image::Instance().GetImage("Player");
 
-	Debug::playerNum = 1;
 	shotDelayCount = 0;
 
 }

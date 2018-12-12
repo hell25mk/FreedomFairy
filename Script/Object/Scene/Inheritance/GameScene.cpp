@@ -3,7 +3,6 @@
 #include "../Manager/SceneManager.h"
 #include "../../../System/Parameter/Parameter.h"
 #include "../../../Object/ManagerIncluder.h"
-#include "../../../System/Debug/Debug.h"
 #include "../../../Input/Controller.h"
 
 GameScene::GameScene(SceneManager* scene, const Parameter& param):BaseScene(scene, param){
@@ -49,8 +48,6 @@ void GameScene::Draw() const{
 		itr++;
 
 	}
-
-	Debug::Draw();
 
 }
 

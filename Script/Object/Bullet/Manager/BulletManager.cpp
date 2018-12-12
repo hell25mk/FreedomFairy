@@ -1,13 +1,14 @@
 #include "BulletManager.h"
 #include "../Base/BaseBullet.h"
 #include "../../../Define/Define.h"
-#include "../../../System/Debug/Debug.h"
 #include "../BulletIncluder.h"
 #include "../Factory/BulletFactory.h"
 #include "../../../System/Vector2D.h"
 #include <random>
 
 namespace Game = Define::GameSize;
+
+using Base = BaseManager;
 
 void BulletManager::Init(){
 
@@ -17,20 +18,7 @@ void BulletManager::Init(){
 
 bool BulletManager::Update(){
 
-	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
-
-		if(!(*itr)->Update()){
-			itr = listObject.erase(itr);
-			continue;
-		}
-
-		itr++;
-
-	}
-
-	Debug::bulletNum = listObject.size();
-
-	return true;
+	return Base::Update();
 }
 
 void BulletManager::Create(std::shared_ptr<BaseBullet> bullet){
