@@ -1,20 +1,20 @@
-#include "EnemyMove.h"
+#include "EnemyAction.h"
 #include "../../../Define/Define.h"
 #include "../../../System/Error/ErrorMacro.h"
 #include "../Base/BaseEnemy.h"
 
-EnemyMove::EnemyMove(){
+EnemyAction::EnemyAction(){
 
 	SetFunction();
 
 }
 
-void EnemyMove::Move(BaseEnemy* enemy){
+void EnemyAction::Move(BaseEnemy* enemy){
 
 	const unsigned int id = enemy->GetMovePatternID();
 
 	if(movePattern.size() <= id){
-		ERROR_REPORT("•s³‚ÈmoveID‚Å‚·");
+		ERROR_REPORT("‘¶Ý‚µ‚È‚¢movePatternID‚ðŽæ“¾‚µ‚Ü‚µ‚½");
 	}
 
 	(this->*movePattern[id])(enemy);
@@ -28,11 +28,11 @@ void EnemyMove::Move(BaseEnemy* enemy){
 
 }
 
-void EnemyMove::SetFunction(){
+void EnemyAction::SetFunction(){
 
-	movePattern.push_back(&EnemyMove::MovePattern00);
-	movePattern.push_back(&EnemyMove::MovePattern01);
-	movePattern.push_back(&EnemyMove::MovePattern02);
-	movePattern.push_back(&EnemyMove::MovePattern03);
+	movePattern.push_back(&EnemyAction::MovePattern00);
+	movePattern.push_back(&EnemyAction::MovePattern01);
+	movePattern.push_back(&EnemyAction::MovePattern02);
+	movePattern.push_back(&EnemyAction::MovePattern03);
 
 }

@@ -7,16 +7,16 @@ template<class Type>
 class Vector2D;
 class BulletManager;
 
-class BulletFactory final : public Singleton<BulletFactory>{
+class ShotFactory final : public Singleton<ShotFactory>{
 
 public:
-	friend class Singleton<BulletFactory>;
+	friend class Singleton<ShotFactory>;
 	void Init(BulletManager* bulletManager);
-	void BulletCreate(Vector2D<float>& vec);
+	void PlayerBulletCreate(Vector2D<float>& vec);
 
 protected:
-	BulletFactory() = default;
-	virtual ~BulletFactory() = default;
+	ShotFactory() = default;
+	virtual ~ShotFactory() = default;
 
 private:
 	BulletManager* bulletManager;

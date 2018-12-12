@@ -21,7 +21,7 @@ void BaseEnemy::Init(){
 
 bool BaseEnemy::Update(){
 	
-	Move();
+	enemyAction.Move(this);
 	counter++;
 
 	return  IsInside();
@@ -52,16 +52,6 @@ bool BaseEnemy::IsInside() const{
 	}
 
 	return true;
-}
-
-void BaseEnemy::Move(){
-
-	float x, y;
-
-	x = (float)(cos(moveAngle) * moveSpeed);
-	y = (float)(sin(moveAngle) * moveSpeed);
-	vec2.Add(x, y);
-
 }
 
 #pragma region Accessor

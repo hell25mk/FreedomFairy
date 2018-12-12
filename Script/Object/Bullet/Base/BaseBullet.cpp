@@ -26,7 +26,8 @@ void BaseBullet::Init(){
 
 bool BaseBullet::Update(){
 
-	Move();
+	bulletMove.Move(this);
+	//Move();
 	counter++;
 
 	return IsInside();

@@ -1,13 +1,13 @@
-#include "EnemyMove.h"
+#include "EnemyAction.h"
 #include "../Base/BaseEnemy.h"
 #include "../../../Define/Define.h"
 
 //下に下がって一時停止、その後再度下がる
-void EnemyMove::MovePattern00(BaseEnemy* enemy){
+void EnemyAction::MovePattern00(BaseEnemy* enemy){
 
 	const int count = enemy->GetCount();
 	const int wait = 180;
-
+	enemy = nullptr;
 	if(count == 0){
 		enemy->SetAngle(Define::Math_Pai / 2);
 		enemy->SetSpeed(3.0f);
@@ -25,7 +25,7 @@ void EnemyMove::MovePattern00(BaseEnemy* enemy){
 }
 
 //左下へ移動
-void EnemyMove::MovePattern01(BaseEnemy* enemy){
+void EnemyAction::MovePattern01(BaseEnemy* enemy){
 
 	const int count = enemy->GetCount();
 
@@ -38,7 +38,7 @@ void EnemyMove::MovePattern01(BaseEnemy* enemy){
 }
 
 //右下へ移動
-void EnemyMove::MovePattern02(BaseEnemy* enemy){
+void EnemyAction::MovePattern02(BaseEnemy* enemy){
 
 	const int count = enemy->GetCount();
 
@@ -51,7 +51,7 @@ void EnemyMove::MovePattern02(BaseEnemy* enemy){
 }
 
 //下に下がってその位置で待機
-void EnemyMove::MovePattern03(BaseEnemy* enemy){
+void EnemyAction::MovePattern03(BaseEnemy* enemy){
 
 	const int count = enemy->GetCount();
 	const int wait = 180;

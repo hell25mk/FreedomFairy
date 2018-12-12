@@ -4,7 +4,7 @@
 #include "../../Define/Define.h"
 #include "../../Input/Controller.h"
 #include "../../System/Image/Image.h"
-#include "../Bullet/Factory/BulletFactory.h"
+#include "../Bullet/Factory/ShotFactory.h"
 
 using Key = Input::eInputType;
 namespace Game = Define::GameSize;
@@ -110,7 +110,7 @@ void Player::Shot(){
 	const int Shot_DelayTime = 5;
 
 	if(shotDelayCount > Shot_DelayTime){
-		BulletFactory::Instance().BulletCreate(vec2);
+		ShotFactory::Instance().PlayerBulletCreate(vec2);
 		shotDelayCount = 0;
 	}
 

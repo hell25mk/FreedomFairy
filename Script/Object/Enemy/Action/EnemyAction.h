@@ -5,16 +5,16 @@
 
 class BaseEnemy;
 
-class EnemyMove{
+class EnemyAction{
 
 public:
-	EnemyMove();
-	virtual ~EnemyMove() = default;
+	EnemyAction();
+	virtual ~EnemyAction() = default;
 	void Move(BaseEnemy* enemy);
 
 private:
-	typedef void(EnemyMove::*Func)(BaseEnemy* enemy);
-	//using Func = void(EnemyMove::*EnemyMove::*)(BaseEnemy* enemy);
+	typedef void(EnemyAction::*Func)(BaseEnemy* enemy);
+	//using Func = void(EnemyAction::*EnemyAction::*)(BaseEnemy* enemy);
 	void SetFunction();
 
 	void MovePattern00(BaseEnemy* enemy);
