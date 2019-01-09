@@ -7,7 +7,7 @@ void EnemyAction::MovePattern00(BaseEnemy* enemy){
 
 	const int count = enemy->GetCount();
 	const int wait = 180;
-	enemy = nullptr;
+
 	if(count == 0){
 		enemy->SetAngle(Define::Math_Pai / 2);
 		enemy->SetSpeed(3.0f);

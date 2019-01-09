@@ -11,14 +11,13 @@ public:
 	virtual bool Update();
 	virtual void Draw() const = 0;
 
-	void SetVector(Vector2D<float> vec);
-	Vector2D<float> GetVector();
-
-	void SetHitFlag(bool hit);
-	bool GetHitFlag();
-	void SetAliveFlag(bool alive);
-	bool GetAliveFlag();
-	int GetRadius();
+	void SetVector(const Vector2D<float> vec);
+	Vector2D<float> GetVector() const;
+	void SetHitFlag(const bool hit);
+	bool GetHitFlag() const;
+	void SetAliveFlag(const bool alive);
+	bool GetAliveFlag() const;
+	int GetRadius() const;
 
 protected:
 	bool isHit;

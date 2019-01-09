@@ -3,6 +3,7 @@
 #include "../../../Define/Define.h"
 #include "../BulletIncluder.h"
 #include "../Factory/ShotFactory.h"
+#include "../Factory/BarrageFactory.h"
 
 namespace Game = Define::GameSize;
 
@@ -10,6 +11,7 @@ using Base = BaseManager;
 
 void BulletManager::Init(){
 
+	BarrageFactory::Instance().Init(this);
 	ShotFactory::Instance().Init(this);
 
 }
@@ -43,6 +45,7 @@ void BulletManager::Draw() const{
 	}
 
 	Base::Draw();
+	
 
 }
 

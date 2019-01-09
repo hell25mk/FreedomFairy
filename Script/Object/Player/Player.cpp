@@ -5,6 +5,7 @@
 #include "../../Input/Controller.h"
 #include "../../System/Image/Image.h"
 #include "../Bullet/Factory/ShotFactory.h"
+#include "../../Collider/Inheritance/StationeryCollider.h"
 
 using Key = Input::eInputType;
 namespace Game = Define::GameSize;

@@ -3,11 +3,11 @@
 #include "DxLib.h"
 #include "../../../../System/Image/Image.h"
 
-NormalBullet::NormalBullet(float x,float y):BaseBullet(x,y){
+NormalBullet::NormalBullet(const float x, const float y, const float spd, const float ang):BaseBullet(x, y){
 
-	moveSpeed = 1.3f;
-	moveAngle = Define::Math_Pai / 2 - Define::Math_Pai / 5;
-	movePatternID = 0;
+	moveSpeed = spd;
+	moveAngle = ang;
+	movePatternID = 2;
 
 	SetSize();
 

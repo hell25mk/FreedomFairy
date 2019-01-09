@@ -2,15 +2,25 @@
 #include "../../../../Define/Define.h"
 #include "DxLib.h"
 #include "../../../../System/Image/Image.h"
+#include "../../../Bullet/Factory/BarrageFactory.h"
 
 FairyEnemy::FairyEnemy(float x, float y):BaseEnemy(x, y){
 
 	moveSpeed = 2.0f;
 	moveAngle = Define::Math_Pai / 2 - Define::Math_Pai / 5;
-	movePatternID = 3;
+	movePatternID = 0;
 	
 	SetSize();
 
+}
+
+bool FairyEnemy::Update(){
+
+	if(counter == 60){
+		BarrageFactory::Instance().BarrageCreate(vec2);
+	}
+
+	return BaseEnemy::Update();
 }
 
 void FairyEnemy::Draw() const{

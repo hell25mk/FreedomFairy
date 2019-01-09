@@ -8,15 +8,9 @@ enum ObjectType{
 };
 
 void ColliderManager::Create(){
-
-
-
 }
 
 void ColliderManager::Destroy(){
-
-
-
 }
 
 bool ColliderManager::Update(){
@@ -42,8 +36,6 @@ void ColliderManager::ListPush(BaseCollider* collider, int tag){
 }
 
 void ColliderManager::AliveCheck(){
-
-	//std::list<BaseCollider*> temp = listPlayerCollider;
 
 	for(auto itr = listPlayerCollider.begin(), end = listPlayerCollider.end(); itr != end;){
 
@@ -81,6 +73,9 @@ void ColliderManager::HitCheck(){
 			if(this->Squea(*pItr,*eItr)){
 				(*pItr)->SetHitFlag(true);
 				(*eItr)->SetHitFlag(true);
+			} else{
+				(*pItr)->SetHitFlag(false);
+				(*eItr)->SetHitFlag(false);
 			}
 
 			eItr++;

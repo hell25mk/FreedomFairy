@@ -1,29 +1,16 @@
 #include "BaseGameObject.h"
 
+BaseGameObject::BaseGameObject()
+	:moveSpeed(0), isAlive(true), width(0), height(0), imageHandle(0), imageDivHandle(nullptr){
+}
+
 BaseGameObject::BaseGameObject(float x, float y){
 
 	vec2.Set(x, y);
-	Init();
 
 }
 
-BaseGameObject::BaseGameObject(Vector2D<float>& vec){
-
-	vec2 = vec;
-	Init();
-
-}
-
-void BaseGameObject::Init(){
-
-	moveSpeed = 0.0f;
-	isAlive = true;
-	width = 0;
-	height = 0;
-
-	imageHandle = 0;
-	imageDivHandle = nullptr;
-
+BaseGameObject::BaseGameObject(Vector2D<float>& vec):vec2(vec){
 }
 
 Vector2D<float>& BaseGameObject::GetVector(){

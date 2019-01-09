@@ -15,19 +15,21 @@ BaseBullet::BaseBullet(Vector2D<float> vec):BaseGameObject(vec){
 
 }
 
+BaseBullet::BaseBullet(Vector2D<float> vec, const float ang):BaseGameObject(vec), moveAngle(ang){
+
+	Init();
+
+}
+
 void BaseBullet::Init(){
 
-	moveAngle = 0;
 	counter = 0;
-	width = 0;
-	height = 0;
 
 }
 
 bool BaseBullet::Update(){
 
 	bulletMove.Move(this);
-	//Move();
 	counter++;
 
 	return IsInside();
@@ -63,11 +65,6 @@ bool BaseBullet::IsInside() const{
 void BaseBullet::Move(){
 
 	bulletMove.Move(this);
-	/*float x, y;
-
-	x = cos(moveAngle) * moveSpeed;
-	y = sin(moveAngle) * moveSpeed;
-	vec2.Add(x, y);*/
 
 }
 

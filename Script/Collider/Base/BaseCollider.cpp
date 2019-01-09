@@ -1,14 +1,12 @@
 #include "BaseCollider.h"
 #include "../Manager/ColliderManager.h"
-#include "DxLib.h"
-
-const int Color_Green = GetColor(0, 255, 0);
+#include "../../Define/Define.h"
 
 BaseCollider::BaseCollider(Vector2D<float> vec, int rad, int tag){
 
 	isHit = false;
 	isAlive = true;
-	color = Color_Green;
+	color = Define::ColorCode::Color_Green;
 	this->vec2 = vec;
 	this->radius = rad;
 	objectTag = tag;
@@ -21,40 +19,40 @@ bool BaseCollider::Update(){
 	return true;
 }
 
-void BaseCollider::SetVector(Vector2D<float> vec){
+void BaseCollider::SetVector(const Vector2D<float> vec){
 
 	vec2 = vec;
 
 }
 
-Vector2D<float> BaseCollider::GetVector(){
+Vector2D<float> BaseCollider::GetVector() const{
 
 	return vec2;
 }
 
-int BaseCollider::GetRadius(){
+int BaseCollider::GetRadius() const{
 
 	return radius;
 }
 
-void BaseCollider::SetHitFlag(bool hit){
+void BaseCollider::SetHitFlag(const bool hit){
 
 	isHit = hit;
 
 }
 
-bool BaseCollider::GetHitFlag(){
+bool BaseCollider::GetHitFlag() const{
 
 	return isHit;
 }
 
-void BaseCollider::SetAliveFlag(bool alive){
+void BaseCollider::SetAliveFlag(const bool alive){
 
 	isAlive = alive;
 
 }
 
-bool BaseCollider::GetAliveFlag(){
+bool BaseCollider::GetAliveFlag() const{
 
 	return isAlive;
 }
