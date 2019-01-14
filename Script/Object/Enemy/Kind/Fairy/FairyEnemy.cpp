@@ -8,7 +8,7 @@ FairyEnemy::FairyEnemy(float x, float y):BaseEnemy(x, y){
 
 	moveSpeed = 2.0f;
 	moveAngle = Define::Math_Pai / 2 - Define::Math_Pai / 5;
-	movePatternID = 0;
+	movePatternID = rand() % 4;
 	
 	SetSize();
 

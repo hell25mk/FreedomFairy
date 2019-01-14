@@ -6,6 +6,7 @@
 void EnemyAction::MovePattern00(BaseEnemy* enemy){
 
 	const int count = enemy->GetCount();
+	const float speed = enemy->GetSpeed();
 	const int wait = 180;
 
 	if(count == 0){
@@ -14,11 +15,11 @@ void EnemyAction::MovePattern00(BaseEnemy* enemy){
 		return;
 	}
 	if(count > 50 && count <= 80){
-		enemy->SetSpeed(enemy->GetSpeed() - 0.1f);
+		enemy->SetSpeed(speed - 0.1f);
 		return;
 	}
 	if(count > wait + 80 && count <= wait + 80 + 30){
-		enemy->SetSpeed(enemy->GetSpeed() + 0.1f);
+		enemy->SetSpeed(speed + 0.1f);
 		return;
 	}
 
@@ -50,10 +51,11 @@ void EnemyAction::MovePattern02(BaseEnemy* enemy){
 
 }
 
-//下に下がってその位置で待機
+//下に下がって一時停止、その後再度上がる
 void EnemyAction::MovePattern03(BaseEnemy* enemy){
 
 	const int count = enemy->GetCount();
+	const float speed = enemy->GetSpeed();
 	const int wait = 180;
 
 	if(count == 0){
@@ -62,7 +64,11 @@ void EnemyAction::MovePattern03(BaseEnemy* enemy){
 		return;
 	}
 	if(count > 50 && count <= 80){
-		enemy->SetSpeed(enemy->GetSpeed() - 0.1f);
+		enemy->SetSpeed(speed - 0.1f);
+		return;
+	}
+	if(count > wait + 80 && count <= wait + 80 + 30){
+		enemy->SetSpeed(speed - 0.1f);
 		return;
 	}
 
