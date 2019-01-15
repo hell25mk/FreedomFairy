@@ -1,7 +1,7 @@
 #include "SceneFactory.h"
 #include "../Inheritance/StationeryScene.h"
-#include "../../../System/Parameter/Parameter.h"
-#include "../../../System/Error/ErrorMacro.h"
+#include "../../System/Parameter/Parameter.h"
+#include "../../System/Error/ErrorMacro.h"
 
 std::shared_ptr<BaseScene> SceneFactory::Create(SceneManager* scene, eSceneType type, const Parameter& param){
 

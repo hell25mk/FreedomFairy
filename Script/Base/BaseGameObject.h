@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../Base/BaseObject.h"
-#include "../../System/Vector2D.h"
+#include "BaseObject.h"
+#include "../System/Vector2D.h"
 
 enum ObjectTags{
 	eTag_Player,

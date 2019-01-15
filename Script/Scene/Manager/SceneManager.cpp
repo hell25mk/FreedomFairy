@@ -1,10 +1,10 @@
 #include "SceneManager.h"
 #include "../Factory/SceneFactory.h"
 #include "../Inheritance/StationeryScene.h"
-#include "../../../System/Parameter/Parameter.h"
-#include "../../../Input/Controller.h"
-#include "../../../System/Error/ErrorMacro.h"
-#include "../../../System/Image/Image.h"
+#include "../../System/Parameter/Parameter.h"
+#include "../../Input/Controller.h"
+#include "../../System/Error/ErrorMacro.h"
+#include "../../System/Image/Image.h"
 
 SceneManager::SceneManager(){
 

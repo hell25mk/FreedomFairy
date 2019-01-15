@@ -1,9 +1,9 @@
 #include "StationeryScene.h"
-#include "../../../MyLibrary/MyLibrary.h"
+#include "../../MyLibrary/MyLibrary.h"
 #include "../Manager/SceneManager.h"
-#include "../../../System/Parameter/Parameter.h"
-#include "../../../Object/ManagerIncluder.h"
-#include "../../../Input/Controller.h"
+#include "../../System/Parameter/Parameter.h"
+#include "../../Object/ManagerIncluder.h"
+#include "../../Input/Controller.h"
 
 GameScene::GameScene(SceneManager* scene, const Parameter& param):BaseScene(scene, param){
 
@@ -13,6 +13,7 @@ GameScene::GameScene(SceneManager* scene, const Parameter& param):BaseScene(scen
 	listObject.push_back(std::make_shared<PlayerManager>());
 	listObject.push_back(std::make_shared<EnemyManager>());
 	listObject.push_back(std::make_shared<BulletManager>());
+	listObject.push_back(std::make_shared<BoardManager>());
 
 	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
 

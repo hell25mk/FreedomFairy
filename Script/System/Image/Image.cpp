@@ -5,8 +5,9 @@ void Image::Load(){
 
 	//ˆê–‡‰æ‘œ
 	mapImage["Player"] = MyLoadGraph("Image/Player/Player.png");
-	mapImage["Board"] = MyLoadGraph("Image/Board/Board02.png");
-	mapImage["Background01"] = MyLoadGraph("Image/Background/Stage01.png");
+	mapImage["Board"] = MyLoadGraph("Image/Board/Board192x480.png");
+	mapImage["BackgroundBoard"] = MyLoadGraph("Image/Board/BackgroundBoard_480x480.png");
+	mapImage["Background"] = MyLoadGraph("Image/Background/Stage01_480x480.png");
 
 	//•¡”‰æ‘œ
 	MyLoadDivGraph("Image/Enemy/Fairy.png", 9, 3, 3, 43, 43, fairyEnemyImage);
@@ -16,7 +17,7 @@ void Image::Load(){
 
 void Image::Release(){
 
-	const int vecSize = vectorImage.size();
+	const int vecSize = (int)vectorImage.size();
 
 	for(int i = 0; i < vecSize; i++){
 

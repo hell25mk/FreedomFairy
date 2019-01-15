@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../Base/BaseGameObject.h"
+#include "../../../Base/BaseGameObject.h"
 #include "../Action/EnemyAction.h"
 
 class BaseEnemy : public BaseGameObject{

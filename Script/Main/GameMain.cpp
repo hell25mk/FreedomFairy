@@ -1,5 +1,5 @@
 #include "GameMain.h"
-#include "../Object/Scene/Manager/SceneManager.h"
+#include "../Scene/Manager/SceneManager.h"
 #include "../FPS/FPS.h"
 
 GameMain::GameMain(){

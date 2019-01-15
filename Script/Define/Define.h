@@ -9,7 +9,7 @@ namespace Define{
 	/// @brief ウィンドウサイズ
 	/// </summary>
 	namespace Window{
-		constexpr int Window_Width = 640;
+		constexpr int Window_Width = 640;		//デフォルトサイズ
 		constexpr int Window_Height = 480;
 	}
 
@@ -17,14 +17,14 @@ namespace Define{
 	/// @brief ゲームサイズ
 	/// </summary>
 	namespace GameSize{
-		constexpr int Out_Width = (int)(Window::Window_Width * 0.75);
-		constexpr int Out_Height = (int)(Window::Window_Height);
-		constexpr int In_Width = (int)(Out_Width * 0.858);
-		constexpr int In_Height = (int)(Window::Window_Height * 0.95);
-		constexpr int Center_Px = (int)(Out_Width / 2);
-		constexpr int Center_Py = (int)(Out_Height / 2);
-		constexpr int In_Px = (int)((Out_Width - In_Width) / 2);
-		constexpr int In_Py = (int)((Out_Height - In_Height) / 2);
+		constexpr int Out_Width = (int)(Window::Window_Width * 0.75);		//480
+		constexpr int Out_Height = (int)(Window::Window_Height);			//480
+		constexpr int In_Width = (int)(Out_Width * 0.858);					//412
+		constexpr int In_Height = (int)(Window::Window_Height * 0.95);		//456
+		constexpr int Center_Px = (int)(Out_Width / 2);						//240
+		constexpr int Center_Py = (int)(Out_Height / 2);					//240
+		constexpr int In_Px = (int)((Out_Width - In_Width) / 2);			//34
+		constexpr int In_Py = (int)((Out_Height - In_Height) / 2);			//12
 	}
 	/*class GameSize final{
 

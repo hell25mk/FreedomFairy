@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../Base/BaseGameObject.h"
+#include "../../../Base/BaseGameObject.h"
 #include "../Move/BulletMove.h"
 
 class BaseBullet : public BaseGameObject{

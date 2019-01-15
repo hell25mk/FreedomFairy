@@ -1,6 +1,5 @@
 #include "Board.h"
 #include "../../../Define/Define.h"
-#include "../../../FPS/FPS.h"
 #include "DxLib.h"
 #include "../../../System/Image/Image.h"
 
@@ -10,8 +9,9 @@ namespace Color = Define::ColorCode;
 
 Board::Board(){
 	
-	vec2.Set((float)Game::Out_Width, 0);
+	vec2.Set((float)Game::Out_Width, 0.0f);
 	imageHandle = Image::Instance().GetImage("Board");
+	bgbImageHandle = Image::Instance().GetImage("BackgroundBoard");
 
 }
 
@@ -22,8 +22,9 @@ bool Board::Update(){
 
 void Board::Draw() const{
 
-	//DrawGraphF(vec2.GetX(), vec2.GetY(),imageHandle, true);
-	//DrawGraphF(0, 0, imageHandle, true);
+	DrawGraphF(vec2.GetX(), vec2.GetY(),imageHandle, true);
+	DrawGraphF(0, 0, bgbImageHandle, true);
+
 #ifdef _DEBUG
 	GameFrame();
 #endif

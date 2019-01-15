@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../Base/BaseObject.h"
+#include "BaseObject.h"
 #include <memory>
 #include <list>
 

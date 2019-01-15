@@ -1,10 +1,10 @@
 #include "StationeryScene.h"
 #include "DxLib.h"
-#include "../../../MyLibrary/MyLibrary.h"
-#include "../../../Define/Define.h"
+#include "../../MyLibrary/MyLibrary.h"
+#include "../../Define/Define.h"
 #include "../Manager/SceneManager.h"
-#include "../../../System/Parameter/Parameter.h"
-#include "../../../Input/Controller.h"
+#include "../../System/Parameter/Parameter.h"
+#include "../../Input/Controller.h"
 
 TitleScene::TitleScene(SceneManager* scene, const Parameter& param):BaseScene(scene, param){
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../Base/BaseGameObject.h"
+#include "../../../Base/BaseGameObject.h"
 
 class Board : public BaseGameObject{
 
@@ -10,6 +10,9 @@ public:
 	virtual bool Update() override;
 	virtual void Draw() const override;
 	void GameFrame() const;
+
+private:
+	int bgbImageHandle;
 
 };
 

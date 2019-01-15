@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../Base/BaseObject.h"
+#include "../../Base/BaseObject.h"
 #include "../SceneList.h"
 
 class SceneManager;

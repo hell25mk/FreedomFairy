@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../../DesignPattern/Factory/AbstractFactory.h"
-#include "../../../DesignPattern/Singleton/Singleton.h"
+#include "../../DesignPattern/Factory/AbstractFactory.h"
+#include "../../DesignPattern/Singleton/Singleton.h"
 #include "../SceneList.h"
 
 class SceneManager;
