@@ -5,7 +5,10 @@
 #include "../../Input/Controller.h"
 #include "../../System/Image/Image.h"
 #include "../Bullet/Factory/ShotFactory.h"
+#include "../../Collider/Factory/ColliderFactory.h"
 #include "../../Collider/Inheritance/StationeryCollider.h"
+
+#include "../../Test/TestGameInfomation.h"
 
 using Key = Input::eInputType;
 namespace Game = Define::GameSize;
@@ -34,9 +37,22 @@ void Player::Init(){
 
 	shotDelayCount = 0;
 
+	collider = ColliderFactory::Instance().CreateCircleCollider(&vec2, 2, ObjectType::eType_Player, true);
+
+}
+
+void Player::Destroy(){
+
+	TestGameInfomation::Instance().isGameMode = false;
+	collider->SetAliveFlag(false);
+
 }
 
 bool Player::Update(){
+
+	if(collider->GetHitFlag()){
+		return false;
+	}
 
 	Move();
 
@@ -50,6 +66,11 @@ bool Player::Update(){
 void Player::Draw() const{
 
 	DrawRotaGraphF(vec2.GetX(), vec2.GetY(), 1.0, 0.0, imageHandle, true);
+
+	if(!isDrawHitRange){
+		return;
+	}
+	collider->Draw();
 
 }
 

@@ -6,6 +6,7 @@ bool BaseManager::Update(){
 	for(auto itr = listObject.begin(), end = listObject.end(); itr != end;){
 
 		if(!(*itr)->Update()){
+			(*itr)->Destroy();
 			itr = listObject.erase(itr);
 			continue;
 		}

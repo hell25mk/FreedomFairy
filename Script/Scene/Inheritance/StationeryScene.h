@@ -45,4 +45,21 @@ private:
 };
 #pragma endregion
 
+#pragma region ResultScene
+class ResultScene : public BaseScene{
+
+public:
+	ResultScene(SceneManager* scene, const Parameter& param);
+	virtual ~ResultScene() = default;
+	virtual bool Update() override;
+	virtual void Draw() const override;
+
+protected:
+	virtual void SceneChange() override;
+
+private:
+	int score;
+
+};
+#pragma endregion
 

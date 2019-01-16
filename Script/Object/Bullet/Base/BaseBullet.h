@@ -32,6 +32,7 @@ protected:
 	float moveAngle;
 	int counter;
 	int movePatternID;
+	int objectTag;
 
 };
 

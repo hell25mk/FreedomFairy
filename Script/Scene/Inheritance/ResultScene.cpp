@@ -6,10 +6,14 @@
 #include "../../System/Parameter/Parameter.h"
 #include "../../Input/Controller.h"
 
-TitleScene::TitleScene(SceneManager* scene, const Parameter& param):BaseScene(scene, param){
+#include "../../Test/TestGameInfomation.h"
+
+ResultScene::ResultScene(SceneManager* scene, const Parameter& param)
+	:BaseScene(scene, param),score(TestGameInfomation::Instance().score){
+
 }
 
-bool TitleScene::Update(){
+bool ResultScene::Update(){
 
 	if(Controller::Instance().Get(Input::eInputType::Shot) == 1){
 		SceneChange();
@@ -18,17 +22,17 @@ bool TitleScene::Update(){
 	return true;
 }
 
-void TitleScene::Draw() const{
+void ResultScene::Draw() const{
 
-	DrawString(100, 100, "Freedom Fairy", Define::ColorCode::Color_White);
+	DrawFormatString(100, 100, Define::ColorCode::Color_White, "Score = %8d", score);
 
 }
 
-void TitleScene::SceneChange(){
+void ResultScene::SceneChange(){
 
 	Parameter parameter;
 	parameter.Set(ParameterTag_Level, Define::eGameLevel::Easy);
-	
-	sceneManager->SceneChange(eSceneType::Game, parameter, false);
-	
+
+	sceneManager->SceneChange(eSceneType::Title, parameter, true);
+
 }

@@ -3,6 +3,10 @@
 #include "DxLib.h"
 #include "../../../../System/Image/Image.h"
 #include "../../../Bullet/Factory/BarrageFactory.h"
+#include "../../../../Collider/Factory/ColliderFactory.h"
+#include "../../../../Collider/Inheritance/StationeryCollider.h"
+
+#include "../../../../Test/TestGameInfomation.h"
 
 FairyEnemy::FairyEnemy(float x, float y):BaseEnemy(x, y){
 
@@ -12,9 +16,25 @@ FairyEnemy::FairyEnemy(float x, float y):BaseEnemy(x, y){
 	
 	SetSize();
 
+	collider = ColliderFactory::Instance().CreateCircleCollider(&vec2, width / 3, ObjectType::eType_Enemy, false);
+
+}
+
+void FairyEnemy::Destroy(){
+
+	if(isInside){
+		TestGameInfomation::Instance().score += 100;
+	}
+	
+	collider->SetAliveFlag(false);
+
 }
 
 bool FairyEnemy::Update(){
+
+	if(collider->GetHitFlag()){
+		return false;
+	}
 
 	if(counter == 60){
 		BarrageFactory::Instance().BarrageCreate(vec2);

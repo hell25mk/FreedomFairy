@@ -1,16 +1,12 @@
 #include "ColliderManager.h"
+#include "../Factory/ColliderFactory.h"
 #include "../Base/BaseCollider.h"
 #include "../../System/Vector2D.h"
 
-enum ObjectType{
-	eType_Player,
-	eType_Enemy,
-};
+ColliderManager::ColliderManager(){
 
-void ColliderManager::Create(){
-}
+	ColliderFactory::Instance().Init(this);
 
-void ColliderManager::Destroy(){
 }
 
 bool ColliderManager::Update(){
@@ -22,9 +18,25 @@ bool ColliderManager::Update(){
 	return true;
 }
 
-void ColliderManager::ListPush(BaseCollider* collider, int tag){
+void ColliderManager::Draw() const{
 
-	switch(tag){
+	/*for(auto itr = listPlayerCollider.begin(), end = listPlayerCollider.end(); itr != end;){
+
+		if(!(*itr)->GetIsDraw()){
+			continue;
+		}
+
+		(*itr)->Draw();
+
+		itr++;
+
+	}*/
+
+}
+
+void ColliderManager::AppendCollider(std::shared_ptr<BaseCollider> collider){
+
+	switch(collider->GetObjectTag()){
 		case eType_Player:
 			listPlayerCollider.push_back(collider);
 			break;
@@ -40,8 +52,6 @@ void ColliderManager::AliveCheck(){
 	for(auto itr = listPlayerCollider.begin(), end = listPlayerCollider.end(); itr != end;){
 
 		if(!(*itr)->GetAliveFlag()){
-			delete *itr;
-			*itr = nullptr;
 			itr = listPlayerCollider.erase(itr);
 			continue;
 		}
@@ -53,8 +63,6 @@ void ColliderManager::AliveCheck(){
 	for(auto itr = listEnemyCollider.begin(), end = listEnemyCollider.end(); itr != end;){
 
 		if(!(*itr)->GetAliveFlag()){
-			delete *itr;
-			*itr = nullptr;
 			itr = listEnemyCollider.erase(itr);
 			continue;
 		}
@@ -73,10 +81,10 @@ void ColliderManager::HitCheck(){
 			if(this->Squea(*pItr,*eItr)){
 				(*pItr)->SetHitFlag(true);
 				(*eItr)->SetHitFlag(true);
-			} else{
+			} /*else{
 				(*pItr)->SetHitFlag(false);
 				(*eItr)->SetHitFlag(false);
-			}
+			}*/
 
 			eItr++;
 
@@ -88,7 +96,7 @@ void ColliderManager::HitCheck(){
 
 }
 
-bool ColliderManager::Squea(BaseCollider* obj1,BaseCollider* obj2){
+bool ColliderManager::Squea(const std::shared_ptr<BaseCollider>& obj1, const std::shared_ptr<BaseCollider>& obj2){
 
 	Vector2D<float> v1 = obj1->GetVector();
 	Vector2D<float> v2 = obj2->GetVector();

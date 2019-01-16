@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../Base/BaseGameObject.h"
+#include <memory>
 
 class BaseCollider;
 
@@ -12,6 +13,7 @@ public:
 	Player(Vector2D<float>& vec);
 	virtual ~Player() = default;
 	virtual void Init() override;
+	virtual void Destroy() override;
 	virtual bool Update() override;
 	virtual void Draw() const override;
 	void Move();
@@ -20,6 +22,7 @@ public:
 private:
 	bool isDrawHitRange;
 	int shotDelayCount;
+	std::shared_ptr<BaseCollider> collider;
 
 };
 

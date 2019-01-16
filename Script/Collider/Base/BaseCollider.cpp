@@ -1,17 +1,8 @@
 #include "BaseCollider.h"
-#include "../Manager/ColliderManager.h"
 #include "../../Define/Define.h"
 
-BaseCollider::BaseCollider(Vector2D<float> vec, int rad, int tag){
-
-	isHit = false;
-	isAlive = true;
-	color = Define::ColorCode::Color_Green;
-	this->vec2 = vec;
-	this->radius = rad;
-	objectTag = tag;
-	ColliderManager::Instance().ListPush(this, tag);
-
+BaseCollider::BaseCollider()
+	:isHit(false),isAlive(true),color(Define::ColorCode::Color_Green){
 }
 
 bool BaseCollider::Update(){
@@ -21,13 +12,25 @@ bool BaseCollider::Update(){
 
 void BaseCollider::SetVector(const Vector2D<float> vec){
 
+	*vec2 = vec;
+
+}
+
+void BaseCollider::SetVector(Vector2D<float>* const vec){
+
 	vec2 = vec;
 
 }
 
 Vector2D<float> BaseCollider::GetVector() const{
 
-	return vec2;
+	return *vec2;
+}
+
+void BaseCollider::SetRadius(const int rad){
+
+	radius = rad;
+
 }
 
 int BaseCollider::GetRadius() const{
@@ -55,4 +58,26 @@ void BaseCollider::SetAliveFlag(const bool alive){
 bool BaseCollider::GetAliveFlag() const{
 
 	return isAlive;
+}
+
+void BaseCollider::SetObjectTag(const int tag){
+
+	objectTag = tag;
+
+}
+
+int BaseCollider::GetObjectTag() const{
+
+	return objectTag;
+}
+
+void BaseCollider::SetIsDraw(const bool flg){
+
+	isDraw = flg;
+
+}
+
+bool BaseCollider::GetIsDraw() const{
+
+	return isDraw;
 }

@@ -5,11 +5,15 @@
 #include "../../Object/ManagerIncluder.h"
 #include "../../Input/Controller.h"
 
+#include "../../Test/TestGameInfomation.h"
+
 GameScene::GameScene(SceneManager* scene, const Parameter& param):BaseScene(scene, param){
 
 	gameLevel = param.Get(ParameterTag_Level);
+	TestGameInfomation::Instance().Create();
 
 	listObject.push_back(std::make_shared<BackgroundManager>());
+	listObject.push_back(std::make_shared<ColliderManager>());
 	listObject.push_back(std::make_shared<PlayerManager>());
 	listObject.push_back(std::make_shared<EnemyManager>());
 	listObject.push_back(std::make_shared<BulletManager>());
@@ -50,10 +54,15 @@ void GameScene::Draw() const{
 
 	}
 
+	TestGameInfomation::Instance().Draw();
+
 }
 
 void GameScene::SceneChange(){
 
-	
+	if(!TestGameInfomation::Instance().isGameMode){
+		Parameter parameter;
+		sceneManager->SceneChange(eSceneType::Result, parameter, false);
+	}
 
 }

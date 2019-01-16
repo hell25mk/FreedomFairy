@@ -12,6 +12,6 @@ void ShotFactory::Init(BulletManager* bulletManager){
 
 void ShotFactory::PlayerBulletCreate(Vector2D<float>& vec){
 
-	bulletManager->PlayerShotCreate(std::make_shared<NormalBullet>(vec.GetX(), vec.GetY(), 10.0f, (Define::Math_Pai * 3 / 2)));
+	bulletManager->PlayerShotCreate(std::make_shared<NormalBullet>(vec.GetX(), vec.GetY(), 10.0f, (Define::Math_Pai * 3 / 2),0));
 
 }

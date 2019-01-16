@@ -22,6 +22,7 @@ bool BulletManager::Update(){
 	for(auto itr = listPlayerBullet.begin(), end = listPlayerBullet.end(); itr != end;){
 
 		if(!(*itr)->Update()){
+			(*itr)->Destroy();
 			itr = listPlayerBullet.erase(itr);
 			continue;
 		}

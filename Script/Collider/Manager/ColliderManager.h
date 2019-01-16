@@ -1,30 +1,24 @@
 #pragma once
 
-#include "../../DesignPattern/Singleton/Singleton.h"
-#include <list>
+#include "../../Base/BaseManager.h"
 
-class BaseGameObject;
 class BaseCollider;
 
-class ColliderManager : public Singleton<ColliderManager>{
+class ColliderManager : public BaseManager{
 
 public:
-	friend class Singleton<ColliderManager>;
-	virtual void Create() override;
-	virtual void Destroy() override;
-	bool Update();
-	void ListPush(BaseCollider* collider,int tag);
+	ColliderManager();
+	virtual ~ColliderManager() = default;
+	virtual bool Update() override;
+	virtual void Draw() const override;
+	void AppendCollider(std::shared_ptr<BaseCollider> collider);
 	void AliveCheck();
 	void HitCheck();
-	bool Squea(BaseCollider* obj1, BaseCollider* obj2);
-
-protected:
-	ColliderManager(){ }
-	virtual ~ColliderManager(){ }
+	bool Squea(const std::shared_ptr<BaseCollider>& obj1, const std::shared_ptr<BaseCollider>& obj2);
 
 private:
-	std::list<BaseCollider*> listPlayerCollider;
-	std::list<BaseCollider*> listEnemyCollider;
+	std::list<std::shared_ptr<BaseCollider>> listPlayerCollider;
+	std::list<std::shared_ptr<BaseCollider>> listEnemyCollider;
 
 };
 

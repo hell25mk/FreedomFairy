@@ -22,10 +22,11 @@ public:
 
 protected:
 	virtual void SetSize() = 0;
-	bool IsInside() const;
+	bool IsInside();
 
 protected:
 	EnemyAction enemyAction;
+	bool isInside;
 	float moveAngle;
 	int counter;
 	int movePatternID;

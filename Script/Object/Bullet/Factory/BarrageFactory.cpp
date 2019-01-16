@@ -18,7 +18,7 @@ void BarrageFactory::BarrageCreate(Vector2D<float>& vec){
 	for(int i = 0; i < 15; i++){
 
 		float angle = (Define::Math_Pai + (36.0f * i));
-		bulletManager->Create(std::make_shared<NormalBullet>(vec.GetX(), vec.GetY(), speed, angle));
+		bulletManager->Create(std::make_shared<NormalBullet>(vec.GetX(), vec.GetY(), speed, angle,1));
 	
 	}
 
