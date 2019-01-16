@@ -46,14 +46,14 @@ int Controller::Get(Input::eInputType eID) const{
 
 void Controller::Merge(){
 
-	aryInputState[aryInputID[Type::Left]]	= Max(gamePad->Get((Type::Left)), gameKeyboard->GetPressCount(KeyCode::Code_Left));
-	aryInputState[aryInputID[Type::Up]]		= Max(gamePad->Get((Type::Up)), gameKeyboard->GetPressCount(KeyCode::Code_Up));
-	aryInputState[aryInputID[Type::Right]]	= Max(gamePad->Get((Type::Right)), gameKeyboard->GetPressCount(KeyCode::Code_Right));
-	aryInputState[aryInputID[Type::Down]]	= Max(gamePad->Get((Type::Down)), gameKeyboard->GetPressCount(KeyCode::Code_Down));
+	aryInputState[aryInputID[Type::Left]]	= Max(gamePad->Get((Type::Left)),	gameKeyboard->GetPressCount(KeyCode::Code_Left));
+	aryInputState[aryInputID[Type::Up]]		= Max(gamePad->Get((Type::Up)),		gameKeyboard->GetPressCount(KeyCode::Code_Up));
+	aryInputState[aryInputID[Type::Right]]	= Max(gamePad->Get((Type::Right)),	gameKeyboard->GetPressCount(KeyCode::Code_Right));
+	aryInputState[aryInputID[Type::Down]]	= Max(gamePad->Get((Type::Down)),	gameKeyboard->GetPressCount(KeyCode::Code_Down));
 
-	aryInputState[aryInputID[Type::Shot]]	= Max(gamePad->Get((Type::Shot)), gameKeyboard->GetPressCount(KeyCode::Code_Z));
-	aryInputState[aryInputID[Type::Shot]]	= Max(gamePad->Get((Type::Shot)), gameKeyboard->GetPressCount(KeyCode::Code_Z));
-	aryInputState[aryInputID[Type::Bomb]]	= Max(gamePad->Get((Type::Bomb)), gameKeyboard->GetPressCount(KeyCode::Code_X));
-	aryInputState[aryInputID[Type::Slow]]	= Max(gamePad->Get((Type::Slow)), gameKeyboard->GetPressCount(KeyCode::Code_LShift));
+	aryInputState[aryInputID[Type::Shot]]	= Max(gamePad->Get((Type::Shot)),	gameKeyboard->GetPressCount(KeyCode::Code_Z));
+	aryInputState[aryInputID[Type::Shot]]	= Max(gamePad->Get((Type::Shot)),	gameKeyboard->GetPressCount(KeyCode::Code_Z));
+	aryInputState[aryInputID[Type::Bomb]]	= Max(gamePad->Get((Type::Bomb)),	gameKeyboard->GetPressCount(KeyCode::Code_X));
+	aryInputState[aryInputID[Type::Slow]]	= Max(gamePad->Get((Type::Slow)),	gameKeyboard->GetPressCount(KeyCode::Code_LShift));
 
 }

@@ -24,7 +24,9 @@ bool ResultScene::Update(){
 
 void ResultScene::Draw() const{
 
+	SetFontSize(36);
 	DrawFormatString(100, 100, Define::ColorCode::Color_White, "Score = %8d", score);
+	SetFontSize(DEFAULT_FONT_SIZE);
 
 }
 

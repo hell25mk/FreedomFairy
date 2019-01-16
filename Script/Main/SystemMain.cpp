@@ -34,7 +34,7 @@ bool SystemMain::Update() const{
 	return false;
 }
 
-void SystemMain::Final() const{
+void SystemMain::Destroy() const{
 
 	DxLib_End();
 

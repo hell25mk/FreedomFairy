@@ -36,6 +36,7 @@ void Player::Init(){
 	imageHandle = Image::Instance().GetImage("Player");
 
 	shotDelayCount = 0;
+	dirayTime = 0;
 
 	collider = ColliderFactory::Instance().CreateCircleCollider(&vec2, 2, ObjectType::eType_Player, true);
 
@@ -49,6 +50,11 @@ void Player::Destroy(){
 }
 
 bool Player::Update(){
+
+	if(dirayTime < 25){
+		dirayTime++;
+		return true;
+	}
 
 	if(collider->GetHitFlag()){
 		return false;
@@ -121,7 +127,7 @@ void Player::Move(){
 		moveY = 0;
 	} else if(py + moveY + height > Game::In_Py + Game::In_Height){
 		moveY = 0;
-	} 
+	}
 
 	vec2.Add(moveX , moveY);
 

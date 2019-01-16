@@ -11,8 +11,8 @@ public:
 	SystemMain() = default;
 	~SystemMain() = default;
 	bool Init() const;
+	void Destroy() const;
 	bool Update() const;
-	void Final() const;
 
 private:
 	bool ProcessLoop() const;

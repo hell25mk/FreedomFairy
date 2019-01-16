@@ -7,7 +7,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int){
 	if(systemMain.Init()){
 		systemMain.Update();
 	}
-	systemMain.Final();
+	systemMain.Destroy();
 
 	return 0;
 }

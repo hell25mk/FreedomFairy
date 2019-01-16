@@ -22,6 +22,7 @@ public:
 private:
 	bool isDrawHitRange;
 	int shotDelayCount;
+	int dirayTime;
 	std::shared_ptr<BaseCollider> collider;
 
 };

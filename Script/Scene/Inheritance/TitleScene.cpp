@@ -20,7 +20,9 @@ bool TitleScene::Update(){
 
 void TitleScene::Draw() const{
 
+	SetFontSize(36);
 	DrawString(100, 100, "Freedom Fairy", Define::ColorCode::Color_White);
+	SetFontSize(DEFAULT_FONT_SIZE);
 
 }
 
