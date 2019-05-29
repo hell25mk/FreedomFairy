@@ -52,7 +52,6 @@ void Controller::Merge(){
 	aryInputState[aryInputID[Type::Down]]	= Max(gamePad->Get((Type::Down)),	gameKeyboard->GetPressCount(KeyCode::Code_Down));
 
 	aryInputState[aryInputID[Type::Shot]]	= Max(gamePad->Get((Type::Shot)),	gameKeyboard->GetPressCount(KeyCode::Code_Z));
-	aryInputState[aryInputID[Type::Shot]]	= Max(gamePad->Get((Type::Shot)),	gameKeyboard->GetPressCount(KeyCode::Code_Z));
 	aryInputState[aryInputID[Type::Bomb]]	= Max(gamePad->Get((Type::Bomb)),	gameKeyboard->GetPressCount(KeyCode::Code_X));
 	aryInputState[aryInputID[Type::Slow]]	= Max(gamePad->Get((Type::Slow)),	gameKeyboard->GetPressCount(KeyCode::Code_LShift));
 

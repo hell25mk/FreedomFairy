@@ -13,11 +13,19 @@ BaseGameObject::BaseGameObject(float x, float y){
 BaseGameObject::BaseGameObject(Vector2D<float>& vec):vec2(vec){
 }
 
+/// <summary>
+/// @brief 自身の座標を返す
+/// </summary>
+/// <returns>座標</returns>
 Vector2D<float>& BaseGameObject::GetVector(){
 
 	return vec2;
 }
 
+/// <summary>
+/// @brief そのオブジェクトが生きているかのフラグをセットする
+/// </summary>
+/// <param name="alive">生きているか</param>
 void BaseGameObject::SetAlive(bool alive){
 
 	isAlive = alive;

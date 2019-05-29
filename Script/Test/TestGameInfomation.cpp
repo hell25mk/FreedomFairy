@@ -4,7 +4,6 @@
 
 void TestGameInfomation::Create(){
 
-	isGameMode = true;
 	score = 0;
 
 }

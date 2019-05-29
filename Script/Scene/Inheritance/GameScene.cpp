@@ -9,8 +9,8 @@
 
 GameScene::GameScene(SceneManager* scene, const Parameter& param):BaseScene(scene, param){
 
-	gameLevel = param.Get(ParameterTag_Level);
 	TestGameInfomation::Instance().Create();
+	gameLevel = param.Get(ParameterTag_Level);
 
 	listObject.push_back(std::make_shared<BackgroundManager>());
 	listObject.push_back(std::make_shared<ColliderManager>());
@@ -63,6 +63,7 @@ void GameScene::SceneChange(){
 	if(!TestGameInfomation::Instance().isGameMode){
 		Parameter parameter;
 		sceneManager->SceneChange(eSceneType::Result, parameter, false);
+		TestGameInfomation::Instance().isGameMode = true;
 	}
 
 }

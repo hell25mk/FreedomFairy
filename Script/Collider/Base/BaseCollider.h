@@ -11,6 +11,7 @@ public:
 	virtual bool Update();
 	virtual void Draw() const = 0;
 
+	/*変数を取得、セットする*/
 	void SetVector(const Vector2D<float> vec);
 	void SetVector(Vector2D<float>* const vec);
 	Vector2D<float> GetVector() const;

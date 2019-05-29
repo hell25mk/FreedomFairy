@@ -47,7 +47,7 @@ int Image::MyLoadGraph(const char* fileName){
 	return ret;
 }
 
-int Image::MyLoadDivGraph(const char* fileName, int allNum, int xNum, int yNum, int width, int height, int *buf){
+int Image::MyLoadDivGraph(const char* fileName, int allNum, int xNum, int yNum, int width, int height, int* buf){
 
 	int ret = LoadDivGraph(fileName, allNum, xNum, yNum, width, height, buf);
 

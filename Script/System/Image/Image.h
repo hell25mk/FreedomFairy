@@ -28,7 +28,7 @@ protected:
 
 private:
 	int MyLoadGraph(const char* fileName);
-	int MyLoadDivGraph(const char* fileName, int allNum, int xNum, int yNum, int width, int height, int *buf);
+	int MyLoadDivGraph(const char* fileName, int allNum, int xNum, int yNum, int width, int height, int* buf);
 
 private:
 	std::unordered_map<std::string, int> mapImage;
